@@ -3,28 +3,28 @@ import Link from "next/link";
 import Button from "./ui/Button";
 import GridPattern from "./ui/GridPattern";
 
-export default function ContentPreviewV2({
+export default function ContentPanel({
   itemsCount,
-  reversed,
   heading,
   theme,
   title,
   description,
-  cover,
   index,
+  translateY,
 }) {
   return (
-    <div className="w-screen h-[calc(100vh-110px)]">
-      <div
-        className={`flex flex-row${
-          reversed === true && "-reverse"
-        } h-[calc(100vh-110px)]`}
-      >
+    <div className="w-screen h-[calc(100vh-110px)] w-screen">
+      <div className={`flex flex-row h-[calc(100vh-110px)]`}>
         {/* CONTENTPANEL     */}
         <motion.div
           className={`bg-beige w-1/2 font-sans flex items-center flex-col justify-center ${
-            reversed === true && `translate-y-[calc(3*100vh)]`
-          }`}
+            index % 2 === 0
+              ? `translate-y-[calc(-1*(2*100vh-(2*110px)))]`
+              : `translate-x-[-50vw]`
+          } `}
+          initial={index % 2 === 0 ? { x: "50vw" } : { x: 0, y: 0 }}
+          animate={index % 2 === 0 ? { y: -translateY } : { y: translateY }}
+          transition={{ ease: "anticipate", duration: 2 }}
         >
           <GridPattern color={"white"} />
           <div className="z-20 pr-[7vmax] pl-[7vmax]">
@@ -60,15 +60,6 @@ export default function ContentPreviewV2({
           </div>
         </motion.div>
         {/* CONTENTPANEL     */}
-
-        {/* COVER PANEL */}
-        <motion.div
-          className={`bg-panel${index} bg-bottom flex w-1/2 items-center justify-center h-[calc(100vh-110px)] ${
-            reversed === false ? `translate-y-[400px]]` : ""
-          }`}
-        >
-          <GridPattern color={"deep-blue"} />
-        </motion.div>
       </div>
     </div>
   );

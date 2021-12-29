@@ -2,8 +2,9 @@ import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 import HomeSections from "../components/HomeSections";
-import ContentPreviewV2 from "../components/ContentPreviewV2";
 import Layout from "../components/Layout";
+import ContentPanel from "../components/ContentPanel";
+import CoverPanel from "../components/CoverPanel";
 
 export async function getStaticProps() {
   let itemsCount = [];
@@ -22,7 +23,6 @@ export async function getStaticProps() {
   // Making array with number of item
   for (let i = 0; i < studies.data.length; i++) {
     itemsCount.push(i + 1);
-    console.log(itemsCount);
   }
   return { props: { homeIntro, studies, itemsCount } };
 }
@@ -30,9 +30,8 @@ export async function getStaticProps() {
 export default function Test({ homeIntro, studies, itemsCount }) {
   const [scrollDirection, setScrollDirection] = useState();
   const [isScrolling, setIsScrolling] = useState(false);
-  const [translateY, setTranslateY] = useState(0);
+  const [translateY, setTranslateY] = useState("666");
   const [position, setPosition] = useState("");
-  console.log(itemsCount.length);
   const handleScroll = (direction) => {
     setIsScrolling = true;
     setScrollDirection(direction);
@@ -51,18 +50,27 @@ export default function Test({ homeIntro, studies, itemsCount }) {
       downHandler={(e) => handleScroll("ScrollDown")}
     >
       <Layout page={"Insight AM - Accueil"}>
-        {studies.data.map((study, index) => (
-          <ContentPreviewV2
-            key={study.id}
-            heading={study.attributes.heading}
-            theme={study.attributes.theme}
-            title={study.attributes.title}
-            description={study.attributes.description}
-            reversed={study.id % 2 === 0 ? true : false}
-            index={study.id}
-            itemsCount={itemsCount}
-          />
-        ))}
+        <div className="w-screen h-[calc(100vh-110px)] overflow-hidden">
+          <div className="flex flex-col h-[calc(100vh-110px)] w-1/2">
+            {studies.data.map((study, index) => (
+              <ContentPanel
+                key={study.id}
+                heading={study.attributes.heading}
+                theme={study.attributes.theme}
+                title={study.attributes.title}
+                description={study.attributes.description}
+                reversed={study.id % 2 === 0 ? true : false}
+                index={study.id}
+                itemsCount={itemsCount}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col h-[calc(100vh-110px)] w-1/2">
+            {studies.data.map((study, index) => (
+              <CoverPanel index={study.id} />
+            ))}
+          </div>
+        </div>
       </Layout>
     </ReactScrollWheelHandler>
   );

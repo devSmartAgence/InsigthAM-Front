@@ -16,33 +16,39 @@ export async function getStaticProps() {
     "http://localhost:1337/api/studies?populate=*"
   );
   const studies = await resStudies.json();
-  console.log("Studies HOME ===>", studies);
   return { props: { homeIntro, studies } };
 }
 
 export default function Home({ homeIntro, studies }) {
-  const [scrollDirection, setScrollDirection] = useState();
+  const [scrollDirection, setScrollDirection] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [translateY, setTranslateY] = useState(0);
+  const [translateY, setTranslateY] = useState(false);
   const [position, setPosition] = useState("");
+  console.log("TRANSLATE ====>", translateY);
+
   const handleScroll = (direction) => {
     setIsScrolling = true;
     setScrollDirection(direction);
     if (direction === "ScrollDown" && position === "") {
       setTranslateY(translateY - window.innerHeight + 110);
+      console.log("TRANSLATE ====>", translateY);
+
       // setPosition("End");
     } else if (direction === "ScrollUp" && position === "") {
       setTranslateY(translateY + window.innerHeight - 110);
+      console.log("TRANSLATE ====>", translateY);
+
       // setPosition("Start");
     }
   };
+
   return homeIntro ? (
     <ReactScrollWheelHandler
       upHandler={(e) => handleScroll("ScrollUp")}
       downHandler={(e) => handleScroll("ScrollDown")}
     >
       <Layout page={"Insight AM - Accueil"}>
-        <div className="w-screen h-[calc(100vh-110px)] overflow-hidden">
+        <div className="w-screen h-[calc(100vh-110px)] ">
           <HomeSections
             studies={studies}
             homeIntro={homeIntro}
