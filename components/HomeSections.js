@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Button from "./ui/Button";
 import ContentPreview from "./ContentPreview";
 import Panel from "./Panel";
-import GridPattern from "./ui/GridPatern";
+import GridPattern from "./ui/GridPattern";
 
 export default function HomeSection({ translateY, homeIntro, studies }) {
   console.log("ICI =====>", homeIntro.data.attributes);
