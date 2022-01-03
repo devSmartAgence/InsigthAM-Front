@@ -1,6 +1,5 @@
 import { motion, transform } from "framer-motion";
-import Link from "next/link";
-import Button from "./ui/Button";
+
 import GridPattern from "./ui/GridPattern";
 
 export default function CoverPanel({ index, itemsCount, cover, translateY }) {

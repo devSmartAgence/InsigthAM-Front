@@ -9,6 +9,8 @@ export default function ContentPanel({
   theme,
   title,
   description,
+  primaryButtonLabel,
+  secondaryButtonLabel,
   index,
   translateY,
 }) {
@@ -42,16 +44,19 @@ export default function ContentPanel({
                 {description}
               </p>
               <div className="mb-[3vmax]">
-                <Link href="/">
-                  <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
-                    Mon lien vers un site
-                  </a>
-                </Link>
+                <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
+                  Mon lien vers un site
+                </a>
               </div>
               <div>
-                <Button label={"Nous connaître"} type={"primary"} />
                 <Button
-                  label={"Nos études"}
+                  label={primaryButtonLabel}
+                  type={"primary"}
+                  index={index}
+                />
+
+                <Button
+                  label={secondaryButtonLabel}
                   type={"secondary"}
                   aspect={"light"}
                 />

@@ -31,6 +31,8 @@ export default function HomeSection({ homeIntro, studies, translateY }) {
             title={study.attributes.title}
             description={study.attributes.description}
             index={study.id}
+            primaryButtonLabel={study.attributes.primaryButtonLabel}
+            secondaryButtonLabel={study.attributes.secondaryButtonLabel}
             itemsCount={studies.data.length}
             translateY={translateY}
           />
