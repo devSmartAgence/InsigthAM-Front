@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+import { useWindowHeight } from "@react-hook/window-size";
+import useDeviceSize from "../components/hooks/useDevicesize";
 
+import ContactForm from "../components/ContactForm";
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
 
 export async function getStaticProps() {
-  // get home-intro content from Strapi
+  // Get home-intro content from Strapi
   const resHome = await fetch(
     "http://localhost:1337/api/home-introduction?populate=*"
   );
   const homeIntro = await resHome.json();
 
-  // get studies from Strapi
+  // Get studies from Strapi
   const resStudies = await fetch(
     "http://localhost:1337/api/studies?populate=*"
   );
@@ -20,23 +23,22 @@ export async function getStaticProps() {
 }
 
 export default function Home({ homeIntro, studies }) {
+  const [width, height] = useDeviceSize();
+  console.log("ITEM HEIGHT ====>", height);
   const [scrollDirection, setScrollDirection] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [translateY, setTranslateY] = useState(false);
+  const [itemPosition, setItemPosition] = useState(0);
   const [position, setPosition] = useState("");
-  console.log("TRANSLATE ====>", translateY);
+  console.log("ITEM POSITION ====>", itemPosition);
 
   const handleScroll = (direction) => {
     setIsScrolling = true;
-    setScrollDirection(direction);
-    if (direction === "ScrollDown" && position === "") {
-      setTranslateY(translateY - window.innerHeight + 110);
-      console.log("TRANSLATE ====>", translateY);
+    if (direction === "ScrollDown") {
+      setItemPosition(itemPosition - height + 110);
 
       // setPosition("End");
-    } else if (direction === "ScrollUp" && position === "") {
-      setTranslateY(translateY + window.innerHeight - 110);
-      console.log("TRANSLATE ====>", translateY);
+    } else if (direction === "ScrollUp") {
+      setItemPosition(itemPosition + height - 110);
 
       // setPosition("Start");
     }
@@ -50,15 +52,17 @@ export default function Home({ homeIntro, studies }) {
       <Layout page={"Insight AM - Accueil"}>
         <div className="w-screen h-[calc(100vh-110px)] ">
           <HomeSections
+            height={height}
             studies={studies}
             homeIntro={homeIntro}
             scrollDirection={scrollDirection}
             isScrolling={isScrolling}
             setIsScrolling={setIsScrolling}
-            translateY={translateY}
+            itemPosition={itemPosition}
             position={position}
           ></HomeSections>
         </div>
+        <ContactForm />
       </Layout>
     </ReactScrollWheelHandler>
   ) : (

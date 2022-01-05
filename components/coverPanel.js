@@ -1,21 +1,28 @@
 import { motion, transform } from "framer-motion";
+import useDeviceSize from "../components/hooks/useDevicesize";
 
 import GridPattern from "./ui/GridPattern";
 
-export default function CoverPanel({ index, itemsCount, cover, translateY }) {
-  console.log("ITEMS COUNT ===>", itemsCount);
+export default function CoverPanel({
+  index,
+  itemsCount,
+  cover,
+  itemPosition,
+  itemHeight,
+}) {
+  const [width, height] = useDeviceSize();
+  console.log("HEIGHT COVER =====>", height);
+
   return (
     <div className="w-screen h-[calc(100vh-110px)]">
-      <div className={`flex flex-row h-[calc(100vh-110px)]`}>
+      <div
+        className={`flex flex-row h-[calc(100vh-110px)] translate-y-[calc(-300vh+330px)]`}
+      >
         {/* COVER PANEL */}
         <motion.div
-          className={`bg-bottom flex w-1/2 items-center justify-center h-[calc(100vh-110px)] ${
-            index % 2 === 0
-              ? `translate-x-[-50vw]`
-              : `translate-y-[calc(-1*(2*100vh-(2*110px)))]`
-          }`}
-          initial={index % 2 === 0 ? { x: "-50vw", y: 0 } : { x: 0 }}
-          animate={index % 2 === 0 ? { y: translateY } : { y: -translateY }}
+          className={`bg-bottom flex w-1/2 items-center justify-center `}
+          initial={false}
+          animate={{ y: -itemPosition }}
           transition={{ ease: "anticipate", duration: 2 }}
         >
           <GridPattern color={"deep-blue"} cover={cover} />

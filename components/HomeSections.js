@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import ContentPanel from "./ContentPanel";
 import CoverPanel from "./CoverPanel";
+import ContactForm from "./ContactForm";
 // FETCH DATAS
 export async function getStaticProps() {
   // get home-intro content from Strapi
@@ -18,13 +19,20 @@ export async function getStaticProps() {
   return { props: { homeIntro, studies } };
 }
 
-export default function HomeSection({ homeIntro, studies, translateY }) {
+export default function HomeSection({
+  homeIntro,
+  studies,
+  itemPosition,
+  itemHeight,
+  scrollStarted,
+}) {
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <div className="w-1/2 ">
         {/* LOOP ON STUDIES */}
         {studies.data.map((study, index) => (
           <ContentPanel
+            itemHeight={itemHeight}
             key={index + "content"}
             heading={study.attributes.heading}
             theme={study.attributes.theme}
@@ -34,7 +42,7 @@ export default function HomeSection({ homeIntro, studies, translateY }) {
             primaryButtonLabel={study.attributes.primaryButtonLabel}
             secondaryButtonLabel={study.attributes.secondaryButtonLabel}
             itemsCount={studies.data.length}
-            translateY={translateY}
+            itemPosition={itemPosition}
           />
         ))}
       </div>
@@ -42,11 +50,12 @@ export default function HomeSection({ homeIntro, studies, translateY }) {
         {/* LOOP ON STUDIES */}
         {studies.data.map((study, index) => (
           <CoverPanel
+            itemHeight={itemHeight}
             key={index + "cover"}
             index={study.id}
             itemsCount={studies.data.length}
             cover={study.attributes.cover.data.attributes.formats.large.url}
-            translateY={translateY}
+            itemPosition={itemPosition}
           />
         ))}
       </div>

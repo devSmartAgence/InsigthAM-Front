@@ -1,4 +1,6 @@
 import { motion, transform } from "framer-motion";
+import useDeviceSize from "../components/hooks/useDevicesize";
+
 import Link from "next/link";
 import Button from "./ui/Button";
 import GridPattern from "./ui/GridPattern";
@@ -12,20 +14,19 @@ export default function ContentPanel({
   primaryButtonLabel,
   secondaryButtonLabel,
   index,
-  translateY,
+  itemPosition,
+  itemHeight,
 }) {
+  const [width, height] = useDeviceSize();
+  console.log("HEIGHT CONTENT =====>", height);
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
       <div className={`flex flex-row h-[calc(100vh-110px)]`}>
         {/* CONTENTPANEL     */}
         <motion.div
-          className={`bg-beige w-1/2 font-sans flex items-center flex-col justify-center ${
-            index % 2 === 0
-              ? `translate-y-[calc(-1*(2*100vh-(2*110px)))]`
-              : `translate-x-[-50vw]`
-          } `}
-          initial={index % 2 === 0 ? { x: "50vw" } : { x: 0, y: 0 }}
-          animate={index % 2 === 0 ? { y: -translateY } : { y: translateY }}
+          className={`bg-beige w-1/2 font-sans flex items-center flex-col justify-center`}
+          initial={false}
+          animate={{ y: itemPosition }}
           transition={{ ease: "anticipate", duration: 2 }}
         >
           <GridPattern color={"white"} />
