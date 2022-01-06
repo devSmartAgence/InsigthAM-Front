@@ -11,7 +11,6 @@ export default function CoverPanel({
   itemHeight,
 }) {
   const [width, height] = useDeviceSize();
-  console.log("HEIGHT COVER =====>", height);
 
   return (
     <div className="w-screen h-[calc(100vh-110px)]">
@@ -21,9 +20,8 @@ export default function CoverPanel({
         {/* COVER PANEL */}
         <motion.div
           className={`bg-bottom flex w-1/2 items-center justify-center `}
-          initial={false}
           animate={{ y: -itemPosition }}
-          transition={{ ease: "anticipate", duration: 2 }}
+          transition={{ ease: "anticipate", duration: 1 }}
         >
           <GridPattern color={"deep-blue"} cover={cover} />
         </motion.div>

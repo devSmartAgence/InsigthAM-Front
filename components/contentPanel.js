@@ -18,7 +18,6 @@ export default function ContentPanel({
   itemHeight,
 }) {
   const [width, height] = useDeviceSize();
-  console.log("HEIGHT CONTENT =====>", height);
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
       <div className={`flex flex-row h-[calc(100vh-110px)]`}>
@@ -27,7 +26,7 @@ export default function ContentPanel({
           className={`bg-beige w-1/2 font-sans flex items-center flex-col justify-center`}
           initial={false}
           animate={{ y: itemPosition }}
-          transition={{ ease: "anticipate", duration: 2 }}
+          transition={{ ease: "anticipate", duration: 1 }}
         >
           <GridPattern color={"white"} />
           <div className="z-20 pr-[7vmax] pl-[7vmax]">

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useWindowHeight } from "@react-hook/window-size";
-import useDeviceSize from "../components/hooks/useDevicesize";
+import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wondow sizes
 
 import ContactForm from "../components/ContactForm";
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
+import HomeSplitPanelControl from "../components/ui/HomeSplitPanelControl";
 
 export async function getStaticProps() {
   // Get home-intro content from Strapi
@@ -23,22 +24,44 @@ export async function getStaticProps() {
 }
 
 export default function Home({ homeIntro, studies }) {
-  const [width, height] = useDeviceSize();
-  console.log("ITEM HEIGHT ====>", height);
+  const studiesNumber = studies.data.length;
+  let [width, height] = useDeviceSize(); // Get window size
+  const [panelScrollIndex, setPanelScrollIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const [itemPosition, setItemPosition] = useState(0);
   const [position, setPosition] = useState("");
-  console.log("ITEM POSITION ====>", itemPosition);
+
+  const handleSplitPanelControlClick = (i) => {
+    if (i === panelScrollIndex) {
+      console.log("i ===>", i);
+      console.log("SCROLL INDEX ===>", panelScrollIndex);
+    } else if (i > panelScrollIndex) {
+      setItemPosition((itemPosition - height + 110) * (i - panelScrollIndex));
+      setPanelScrollIndex((panelScrollIndex = i));
+      console.log("i ===>", i);
+      console.log("SCROLL INDEX ===>", panelScrollIndex);
+    } else if (i < panelScrollIndex) {
+      setItemPosition((itemPosition + height - 110) * (panelScrollIndex - i));
+      setPanelScrollIndex((panelScrollIndex = i));
+      console.log("i ===>", i);
+      console.log("SCROLL INDEX ===>", panelScrollIndex);
+    }
+  };
 
   const handleScroll = (direction) => {
     setIsScrolling = true;
-    if (direction === "ScrollDown") {
+    if (direction === "ScrollDown" && panelScrollIndex < studiesNumber - 1) {
       setItemPosition(itemPosition - height + 110);
-
+      setPanelScrollIndex((panelScrollIndex += 1));
+      // console.log("Scroll Index ====>", panelScrollIndex);
       // setPosition("End");
-    } else if (direction === "ScrollUp") {
+      console.log("ITEM POSITION ====>", itemPosition);
+    } else if (direction === "ScrollUp" && panelScrollIndex > 0) {
       setItemPosition(itemPosition + height - 110);
+      setPanelScrollIndex((panelScrollIndex -= 1));
+      // console.log("Scroll Index ====>", panelScrollIndex);
+      console.log("ITEM POSITION ====>", itemPosition);
 
       // setPosition("Start");
     }
@@ -50,8 +73,10 @@ export default function Home({ homeIntro, studies }) {
       downHandler={(e) => handleScroll("ScrollDown")}
     >
       <Layout page={"Insight AM - Accueil"}>
-        <div className="w-screen h-[calc(100vh-110px)] ">
+        <div className="w-screen h-[calc(100vh-110px)] overflow-hidden ">
           <HomeSections
+            panelScrollIndex={panelScrollIndex}
+            studiesNumber={studiesNumber}
             height={height}
             studies={studies}
             homeIntro={homeIntro}
@@ -60,7 +85,8 @@ export default function Home({ homeIntro, studies }) {
             setIsScrolling={setIsScrolling}
             itemPosition={itemPosition}
             position={position}
-          ></HomeSections>
+            handleSplitPanelControlClick={handleSplitPanelControlClick}
+          />
         </div>
         <ContactForm />
       </Layout>
