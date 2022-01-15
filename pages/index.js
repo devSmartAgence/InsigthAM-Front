@@ -68,29 +68,31 @@ export default function Home({ homeIntro, studies }) {
   };
 
   return homeIntro ? (
-    <ReactScrollWheelHandler
-      upHandler={(e) => handleScroll("ScrollUp")}
-      downHandler={(e) => handleScroll("ScrollDown")}
-    >
-      <Layout page={"Insight AM - Accueil"}>
-        <div className="w-screen h-[calc(100vh-110px)] overflow-hidden ">
-          <HomeSections
-            panelScrollIndex={panelScrollIndex}
-            studiesNumber={studiesNumber}
-            height={height}
-            studies={studies}
-            homeIntro={homeIntro}
-            scrollDirection={scrollDirection}
-            isScrolling={isScrolling}
-            setIsScrolling={setIsScrolling}
-            itemPosition={itemPosition}
-            position={position}
-            handleSplitPanelControlClick={handleSplitPanelControlClick}
-          />
-        </div>
-        <ContactForm />
-      </Layout>
-    </ReactScrollWheelHandler>
+    <>
+      <ReactScrollWheelHandler
+        upHandler={(e) => handleScroll("ScrollUp")}
+        downHandler={(e) => handleScroll("ScrollDown")}
+      >
+        <Layout page={"Insight AM - Accueil"}>
+          <div className="w-screen h-[calc(100vh-110px)] overflow-hidden mt-[110px] ">
+            <HomeSections
+              panelScrollIndex={panelScrollIndex}
+              studiesNumber={studiesNumber}
+              height={height}
+              studies={studies}
+              homeIntro={homeIntro}
+              scrollDirection={scrollDirection}
+              isScrolling={isScrolling}
+              setIsScrolling={setIsScrolling}
+              itemPosition={itemPosition}
+              position={position}
+              handleSplitPanelControlClick={handleSplitPanelControlClick}
+            />
+          </div>
+          <ContactForm />
+        </Layout>
+      </ReactScrollWheelHandler>
+    </>
   ) : (
     <p> ...Loading</p>
   );
