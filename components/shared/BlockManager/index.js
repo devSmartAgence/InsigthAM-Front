@@ -9,6 +9,7 @@ import Verbatim from "../../blocks/Verbatim";
 import KeyNumberWide from "../../blocks/KeyNumberWide";
 import Faq from "../../blocks/Faq";
 import FramedText from "../../blocks/FramedText";
+import Partners from "../../blocks/Partners";
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
@@ -56,6 +57,10 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
 
     case "blocks.framed-text":
       Block = FramedText;
+      break;
+
+    case "blocks.partners":
+      Block = Partners;
       break;
   }
 

@@ -3,7 +3,6 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { useWindowHeight } from "@react-hook/window-size";
 import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wondow sizes
 
-import ContactForm from "../components/ContactForm";
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
 import HomeSplitPanelControl from "../components/ui/HomeSplitPanelControl";
@@ -89,7 +88,6 @@ export default function Home({ homeIntro, studies }) {
               handleSplitPanelControlClick={handleSplitPanelControlClick}
             />
           </div>
-          <ContactForm />
         </Layout>
       </ReactScrollWheelHandler>
     </>

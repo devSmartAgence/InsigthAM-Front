@@ -32,12 +32,12 @@ export default function Layout({ children, page }) {
           <nav>
             <ul className="flex items-center text-deep-blue">
               <Link href="/about">
-                <li className="mr-[50px] text-[12px] cursor-pointer">
+                <li className="mr-[50px] text-[12px] cursor-pointer uppercase">
                   À propos
                 </li>
               </Link>
               <Link href="/etudes">
-                <li className="mr-[50px] text-[12px] cursor-pointer">
+                <li className="mr-[50px] text-[12px] cursor-pointer uppercase">
                   Nos études
                 </li>
               </Link>
@@ -56,6 +56,51 @@ export default function Layout({ children, page }) {
         >
           {children}
         </motion.main>
+        <footer className="h-[244px] bg-deep-blue flex items-center ">
+          <div className="h-[160px] flex place-content-between w-screen">
+            <div className="flex">
+              <Link href="/">
+                <img
+                  className="h-16 ml-8 cursor-pointer mr-[60px]"
+                  src="/insightAM_white.svg"
+                  alt="Logo Insight AM"
+                />
+              </Link>
+              <Link href="https://ww.google.fr">
+                <img
+                  className="h-16 ml-8 cursor-pointer"
+                  src="/Linkedin.svg"
+                  alt="Linkedin"
+                />
+              </Link>
+            </div>
+            <nav>
+              <ul className="flex items-center text-deep-blue">
+                <Link href="/about">
+                  <li className="mr-[90px] text-[12px] text-white cursor-pointer uppercase">
+                    À propos
+                  </li>
+                </Link>
+                <Link href="/etudes">
+                  <li className="mr-[90px] text-[12px] text-white cursor-pointer uppercase">
+                    Nos études
+                  </li>
+                </Link>
+                <Link href="/CGVCVU">
+                  <li className="mr-[90px] text-[12px] text-white cursor-pointer uppercase">
+                    CGV/CVU
+                  </li>
+                </Link>
+                <Link href="/legal">
+                  <li className="mr-[90px] text-[12px] text-white cursor-pointer uppercase">
+                    MENTIONS LÉGALES
+                  </li>
+                </Link>
+                <Button type={"secondary"} aspect={"dark"} label={"Contact"} />
+              </ul>
+            </nav>
+          </div>
+        </footer>
       </AnimatePresence>
     </>
   );

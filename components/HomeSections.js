@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import ContentPanel from "./ContentPanel";
 import CoverPanel from "./CoverPanel";
-import ContactForm from "./ContactForm";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 // FETCH DATAS
 export async function getStaticProps() {
