@@ -34,7 +34,9 @@ module.exports = {
       pink: "#CB296C",
       white: "#FFFFFF",
       black: "#1D1D1B",
+      gray: "rgba(0, 0, 0, 0.3)",
       beige: "#FAF9F7",
+      "dark-beige": "#F5F4F0",
     },
   },
 
