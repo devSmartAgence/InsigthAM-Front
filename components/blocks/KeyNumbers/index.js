@@ -3,7 +3,7 @@ import KeyNumber from "./key-number";
 
 const KeyNumbers = ({ keyNumber }) => {
   return (
-    <div className="flex divide-x divide-gray mb-[30px]">
+    <div className="flex-row divide-y divide-gray md:flex md:divide-x md:divide-y-0 ">
       {keyNumber &&
         keyNumber.map((item, index) => (
           <KeyNumber

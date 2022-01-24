@@ -3,7 +3,7 @@ import FaqItem from "./faq-item";
 
 const faq = ({ faqItem }) => {
   return (
-    <ul className="ml-[50px] font-serif list-disc leading-[30px] mb-[60px]">
+    <ul className=" font-serif list-disc leading-[30px] mb-[5%] md:ml-13">
       {faqItem &&
         faqItem.map((item, index) => (
           <FaqItem

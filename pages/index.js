@@ -73,7 +73,7 @@ export default function Home({ homeIntro, studies }) {
         downHandler={(e) => handleScroll("ScrollDown")}
       >
         <Layout page={"Insight AM - Accueil"}>
-          <div className="w-screen h-[calc(100vh-110px)] overflow-hidden mt-[110px] ">
+          <div className="w-screen h-[calc(100vh-110px)] mt-[110px] overflow-hidden ">
             <HomeSections
               panelScrollIndex={panelScrollIndex}
               studiesNumber={studiesNumber}

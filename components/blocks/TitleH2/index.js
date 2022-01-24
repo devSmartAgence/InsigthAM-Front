@@ -1,9 +1,7 @@
+import H2 from "../../ui/TitleH2";
+
 const TitleH2 = ({ title }) => {
-  return (
-    <h2 className="font-sans text-[30px] text-deep-blue leading-[48px] place-content-start mb-[20px]">
-      {title}
-    </h2>
-  );
+  return <H2 title={title} />;
 };
 
 TitleH2.defaultProps = {};

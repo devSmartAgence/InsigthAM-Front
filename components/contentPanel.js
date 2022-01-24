@@ -16,6 +16,7 @@ export default function ContentPanel({
   index,
   itemPosition,
   itemHeight,
+  slug,
 }) {
   const [width, height] = useDeviceSize();
   return (
@@ -53,6 +54,7 @@ export default function ContentPanel({
                   label={primaryButtonLabel}
                   type={"primary"}
                   index={index}
+                  slug={slug}
                 />
 
                 <Button

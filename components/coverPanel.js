@@ -15,7 +15,7 @@ export default function CoverPanel({
   return (
     <div className="w-screen h-[calc(100vh-110px)]">
       <div
-        className={`flex flex-row h-[calc(100vh-110px)] translate-y-[calc(-300vh+330px)]`}
+        className={`flex flex-row h-[calc(100vh-110px)] translate-y-[calc(-500vh+550px)]`}
       >
         {/* COVER PANEL */}
         <motion.div

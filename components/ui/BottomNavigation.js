@@ -1,8 +1,8 @@
 export default function BottomNavigation() {
   return (
-    <div className="flex divide-x divide-gray max-w-[1230px] ml-[30px] mr-[30px] py-[50px] bg-white ">
-      <div className="flex w-1/2 items-center ml-[30px] ">
-        <div>
+    <div className="flex-row w-full divide-y divide-gray max-w-[1230px] mx-15 py-[50px] bg-white md:flex md:divide-x md:divide-y-0 ">
+      <div className="flex mb-4 w-full items-center md:w-1/2 md:mb-0 ">
+        <div className="ml-7">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25.263"
@@ -19,17 +19,17 @@ export default function BottomNavigation() {
           </svg>
         </div>
 
-        <p className="text-deep-blue ml-[30px] mr-[170px] leading-[30px]">
+        <p className="text-deep-blue ml-[6%] leading-[30px] md:mr-[28%]">
           Lien de rebond lorem ipsum dolor sit amet, consectetur adipiscing
           elit.
         </p>
       </div>
-      <div className="flex w-1/2 items-center">
-        <p className="ml-[170px] mr-[30px] text-deep-blue">
+      <div className="flex w-full items-center md:w-1/2  ">
+        <p className="text-deep-blue mr-[6%] mt-4 leading-[30px] text-right md:ml-[28%]">
           Lien de rebond lorem ipsum dolor sit amet, consectetur adipiscing
           elit.
         </p>
-        <div className="rotate-180 mr-[30px]">
+        <div className="rotate-180 mr-7 mt-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25.263"

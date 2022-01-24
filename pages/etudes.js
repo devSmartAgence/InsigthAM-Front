@@ -1,5 +1,18 @@
+import { getStaticProps } from ".";
 import Layout from "../components/Layout";
 import SummaryStudy from "../components/ui/SummaryStudy";
+
+// export async function getStaticProps () {
+// const studies = await fetch (
+//   "http://localhost:1337/api/studies"
+// );
+
+// const resStudies = await studies.json()
+
+// return {props:{
+//   resStudies
+// }}
+// }
 
 export default function Etudes() {
   return (

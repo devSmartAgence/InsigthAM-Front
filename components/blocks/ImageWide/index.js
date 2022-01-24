@@ -2,7 +2,7 @@ const ImageWide = ({ image }) => {
   let myImage = image.data.attributes.url;
   console.log("MYIMAGE ====>", myImage);
   return (
-    <div class="relative overflow-hidden pb-[56.25%] mb-[60px]">
+    <div class="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <img
         src={`http://localhost:1337${myImage}`}
         alt=""

@@ -1,6 +1,6 @@
 const Verbatim = ({ quote, author }) => {
   return (
-    <div className="flex ml-[50px] mt-[20px] mb-[50px]">
+    <div className="flex mt-[20px] mb-[5%] md:ml-13">
       <span className="font-sans text-deep-blue text-[30px] text-right mt-[-9px] ">
         «
       </span>

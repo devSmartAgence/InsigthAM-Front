@@ -96,8 +96,8 @@ export default function Layout({ children, page }) {
                     MENTIONS LÉGALES
                   </li>
                 </Link>
-                <Button type={"secondary"} aspect={"dark"} label={"Contact"} />
               </ul>
+              <Button type={"secondary"} aspect={"dark"} label={"Contact"} />
             </nav>
           </div>
         </footer>

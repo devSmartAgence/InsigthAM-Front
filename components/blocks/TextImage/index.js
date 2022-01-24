@@ -1,21 +1,21 @@
 const TextImage = ({ text, image, position }) => {
   const myImage = image.data.attributes.url;
   return (
-    <div className={`flex ${position && "flex-row-reverse"} mb-[60px]`}>
+    <div className={`mb-[5%]`}>
       <div
-        className={`font-serif ${
-          position ? "pl-[60px]" : "pr-[60px]"
-        } leading-[30px]`}
+        className={`w-full ml-0 ${
+          position
+            ? "mr-15 md:float-left md:w-[51.7%] "
+            : "ml-15 md:float-right md:w-[51.7%] md:ml-15"
+        }`}
       >
-        {text}
-      </div>
-      <div class="relative overflow-hidden pb-[36.2%] min-w-[420px]">
         <img
           src={`http://localhost:1337${myImage}`}
           alt=""
-          class="absolute h-full w-full object-cover"
+          className="mb-[35px]"
         />
       </div>
+      <div className={`font-serif leading-[30px]`}>{text}</div>
     </div>
   );
 };

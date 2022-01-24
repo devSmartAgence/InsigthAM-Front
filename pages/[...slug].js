@@ -1,5 +1,9 @@
 import delve from "dlv";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+
 import Layout from "../components/Layout";
 //UI components
 import Button from "../components/ui/Button";
@@ -10,45 +14,69 @@ import { getDataDependencies } from "./services/api";
 import { redirectToHomepage, getData } from "../utils";
 import { getLocalizedParams } from "../utils/localize";
 import BlockManager from "../components/shared/BlockManager";
+
 import ContactForm from "../components/ui/Forms/ContactForm";
+import BreadCrumModule from "../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  const blocks = delve(pageData, "attributes.blocks");
-  return (
-    <Layout page={"Insight AM - Accueil"}>
-      <div className="mt-[110px] bg-beige flex flex-col items-center">
-        <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px] ">
-          <div className="absolute left-0">
-            <Button label={"< Retour"} />
-          </div>
-          <div className="flex flex-col items-center ">
-            <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
-              {pageData.attributes.theme}
-            </div>
-            <div className="w-[40px] h-[6px] bg-pink"></div>
-          </div>
-        </div>
+  console.log("PAGE DATA 2 =====>", pageData);
+  const blocks = delve(pageData, "blocks");
 
-        <div className="flex flex-col max-w-[1230px] bg-white px-[180px] pt-[75px]">
-          <div>
-            <h1 className="font-sans text-deep-blue text-[40px] text-center leading-[48px] mb-[60px] ">
-              {pageData.attributes.title}
-            </h1>
-            <p className="font-serif font-bold text-black text-[20px] text-center leading-[30px] mb-[80px]">
-              Fidelity International a fait confiance à Insight AM pour mener
-              une étude sous forme de regards croisés auprès des épargnants
-              français (plus de 1000 épargnants interrogés) et des distributeurs
-              (plus de 400 Conseillers en Gestion de Patrimoine et Banques
-              Privées consultés) sur leurs perceptions de la baisse du rendement
-              du Fonds Euros.
-            </p>
+  const [modulePosition, setModulePosition] = useState(0);
+
+  let handleScroll = (modulePosition) => {
+    if (modulePosition === "Up") {
+      setModulePosition(0);
+    } else {
+      setModulePosition(110);
+    }
+  };
+  return (
+    <ReactScrollWheelHandler
+      upHandler={(e) => handleScroll("Up")}
+      downHandler={(e) => handleScroll("Down")}
+    >
+      <Layout page={"Insight AM - Accueil"}>
+        <div className="mt-[110px] bg-beige flex flex-col items-center">
+          <motion.div
+            className="w-full fixed flex items-center max-w-[1230px] h-[60px] bg-beige z-10 top-0"
+            animate={{ top: modulePosition }}
+            transition={{ duration: 0.3, type: "ease" }}
+          >
+            <BreadCrumModule />
+          </motion.div>
+
+          <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
+            <div className="absolute left-0">
+              <Button label={"< Retour"} />
+            </div>
+            <div className="flex flex-col items-center ">
+              <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
+                {pageData.theme}
+              </div>
+              <div className="w-[40px] h-[6px] bg-pink"></div>
+            </div>
           </div>
-          <div>{blocks && <BlockManager blocks={blocks} />}</div>
+
+          <div
+            className="flex flex-col max-w-[1230px] px-[10%] bg-white pt-8 md:pt-16 md:px-[14%]
+          "
+          >
+            <div>
+              <h1 className="text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 ">
+                {pageData.title}
+              </h1>
+              <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
+                {pageData.introduction}
+              </p>
+            </div>
+            <div>{blocks && <BlockManager blocks={blocks} />}</div>
+          </div>
+          <BottomNavigation />
+          <ContactForm />
         </div>
-        <BottomNavigation />
-        <ContactForm />
-      </div>
-    </Layout>
+      </Layout>
+    </ReactScrollWheelHandler>
   );
   //
 };
@@ -60,12 +88,14 @@ export async function getServerSideProps(context) {
     const data = getData(slug, locale);
     const res = await fetch(delve(data, "data"));
     const json = await res.json();
-    console.log("JSON ======", json);
+    console.log("JSON ====>", json.data.attributes.blocks);
+
     if (!json) {
       return redirectToHomepage();
     }
 
-    const pageData = await getDataDependencies(delve(json.data, "0"));
+    const pageData = await getDataDependencies(delve(json, "0"));
+    console.log("PAGE DATA 1 ====>", pageData);
     return {
       props: { pageData },
     };

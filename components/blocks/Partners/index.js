@@ -3,7 +3,7 @@ import PartnerLogo from "./partnerLogo";
 
 const Partners = ({ partnerLogo }) => {
   return (
-    <div className="flex mb-[60px] align-center">
+    <div className="flex leading-[48px] align-center">
       {partnerLogo &&
         partnerLogo.map((item, index) => (
           <PartnerLogo logo={delve(item, "partnerLogo")} />
