@@ -30,10 +30,7 @@ export default function HomeSection({
   panelScrollIndex,
   height,
 }) {
-  console.log(
-    "HOME INTRO =======",
-    homeIntro.data.attributes.cover.data.attributes.url
-  );
+  console.log("STUDIES =======", studies.data[0]);
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl
@@ -67,7 +64,7 @@ export default function HomeSection({
             itemHeight={itemHeight}
             key={index + "content"}
             heading={study.attributes.heading}
-            theme={"mon theme"}
+            theme={study.attributes.theme}
             title={study.attributes.title}
             description={study.attributes.description}
             index={study.id}

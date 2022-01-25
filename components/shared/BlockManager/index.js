@@ -19,9 +19,9 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       Block = KeyNumbers;
       break;
 
-    case "blocks.text-image":
-      Block = TextImage;
-      break;
+    // case "blocks.text-image":
+    //   Block = TextImage;
+    //   break;
 
     case "blocks.title-h2":
       Block = TitleH2;
@@ -39,9 +39,9 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
       Block = Text;
       break;
 
-    case "blocks.image-wide":
-      Block = ImageWide;
-      break;
+    // case "blocks.image-wide":
+    //   Block = ImageWide;
+    //   break;
 
     case "blocks.verbatim":
       Block = Verbatim;

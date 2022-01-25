@@ -19,6 +19,29 @@ export default function ContentPanel({
   slug,
 }) {
   const [width, height] = useDeviceSize();
+
+  // Themes beautyfing : from Pascale to original
+  switch (theme) {
+    case "EtudesReferencementThematique":
+      theme = "Études Référencement Thématique";
+      break;
+    case "EtudeCiblesClientele":
+      theme = "Études Cibles Clientèles";
+      break;
+    case "EtudesNotorietePositionnement":
+      theme = "Études Notoriété & positionnement";
+      break;
+    case "EtudesTestingProduit":
+      theme = "Études Testing produit";
+      break;
+    case "BarometresInstitutionnels":
+      theme = "Baromètres institutionnels";
+      break;
+    default:
+      theme = "Thématique";
+      break;
+  }
+
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
       <div className={`flex flex-row h-[calc(100vh-110px)]`}>

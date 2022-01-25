@@ -2,7 +2,6 @@ import delve from "dlv";
 
 // This functionn can merge required data but it is not used here.
 export async function checkRequiredData(block) {
-  console.log("cococcoc ===>", block);
   return block;
 }
 
@@ -10,7 +9,6 @@ export async function checkRequiredData(block) {
 export async function getDataDependencies(json) {
   let blocks = delve(json, "blocks", []);
   blocks = await Promise.all(blocks.map(checkRequiredData));
-  console.log("BLOCKS ====>", blocks);
   return {
     ...json,
     blocks,

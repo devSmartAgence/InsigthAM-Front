@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import Button from "./ui/Button";
 import PageTransitionIn from "./PageTransition";
 import { motion, AnimatePresence } from "framer-motion";
 export default function Layout({ children, page }) {
+  const router = useRouter();
   //Page transition animation
-
   const variants = {
     hidden: { opacity: 0, x: -200 },
     enter: { opacity: 1, x: 0 },
@@ -30,14 +32,26 @@ export default function Layout({ children, page }) {
             />
           </Link>
           <nav>
-            <ul className="flex items-center text-deep-blue">
+            <ul className="flex items-center">
               <Link href="/about">
-                <li className="mr-[50px] text-[12px] cursor-pointer uppercase">
+                <li
+                  className={
+                    router.pathname === "/about"
+                      ? "mr-[50px] text-[12px] cursor-pointer uppercase text-pink"
+                      : "mr-[50px] text-[12px] cursor-pointer uppercase text-deep-blue"
+                  }
+                >
                   À propos
                 </li>
               </Link>
-              <Link href="/etudes">
-                <li className="mr-[50px] text-[12px] cursor-pointer uppercase">
+              <Link href="/thematiques">
+                <li
+                  className={
+                    router.pathname === "/thematiques"
+                      ? "mr-[50px] text-[12px] cursor-pointer uppercase text-pink"
+                      : "mr-[50px] text-[12px] cursor-pointer uppercase text-deep-blue"
+                  }
+                >
                   Nos études
                 </li>
               </Link>

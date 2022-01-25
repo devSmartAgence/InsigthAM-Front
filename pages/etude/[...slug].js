@@ -4,17 +4,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
-import Layout from "../components/Layout"; //UI components
-import BackButton from "../components/ui/BackButton";
-import BottomNavigation from "../components/ui/BottomNavigation";
-//Strapi tools for dynamics zones
-import { getDataDependencies } from "./services/api";
-import { redirectToHomepage, getData } from "../utils";
-import { getLocalizedParams } from "../utils/localize";
-import BlockManager from "../components/shared/BlockManager";
+import Layout from "../../components/Layout";
+//UI components
+import BackButton from "../../components/ui/BackButton";
+import BottomNavigation from "../../components/ui/BottomNavigation";
 
-import ContactForm from "../components/ui/Forms/ContactForm";
-import BreadCrumModule from "../components/ui/BreadcrumbModule";
+//Strapi tools for dynamics zones
+import { getDataDependencies } from "../services/api";
+import { redirectToHomepage, getData } from "../../utils";
+import { getLocalizedParams } from "../../utils/localize";
+import BlockManager from "../../components/shared/BlockManager";
+
+import ContactForm from "../../components/ui/Forms/ContactForm";
+import BreadCrumModule from "../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
   console.log("PAGE DATA 2 =====>", pageData);
