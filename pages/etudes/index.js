@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import SummaryStudy from "../../components/ui/SummaryStudy";
 
@@ -57,7 +58,10 @@ export default function Thematiques({ resStudies }) {
           </p>
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
             {resStudies.data.map((study, index) => (
-              <SummaryStudy title={themesBeautifyng(study.attributes.theme)} />
+              <SummaryStudy
+                title={themesBeautifyng(study.attributes.theme)}
+                theme={study.attributes.theme}
+              />
             ))}
           </div>
         </div>

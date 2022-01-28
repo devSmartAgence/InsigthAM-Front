@@ -73,18 +73,22 @@ export default function ContentPanel({
                 </a>
               </div>
               <div>
-                <Button
-                  label={primaryButtonLabel}
-                  type={"primary"}
-                  index={index}
-                  slug={slug}
-                />
+                {primaryButtonLabel && (
+                  <Button
+                    label={primaryButtonLabel}
+                    type={"primary"}
+                    index={index}
+                    slug={slug}
+                  />
+                )}
 
-                <Button
-                  label={secondaryButtonLabel}
-                  type={"secondary"}
-                  aspect={"light"}
-                />
+                {secondaryButtonLabel && (
+                  <Button
+                    label={secondaryButtonLabel}
+                    type={"secondary"}
+                    style={"light"}
+                  />
+                )}
               </div>
             </div>
           </div>

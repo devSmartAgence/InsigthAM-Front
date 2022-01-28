@@ -10,7 +10,7 @@ export default function GridPattern({ color, cover }) {
         <Pattern color={color} />
       </div>
 
-      {color === "deep-blue" && (
+      {color === "deep-blue" && cover && (
         <img
           src={"http://localhost:1337" + cover}
           className="w-full h-full object-cover"

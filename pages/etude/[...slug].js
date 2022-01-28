@@ -38,13 +38,7 @@ const Universals = ({ pageData }) => {
     >
       <Layout page={"Insight AM - Accueil"}>
         <div className="mt-[110px] bg-beige flex flex-col items-center">
-          <motion.div
-            className="w-full fixed flex items-center max-w-[1230px] h-[60px] bg-beige z-10 top-0"
-            animate={{ top: modulePosition }}
-            transition={{ duration: 0.3, type: "ease" }}
-          >
-            <BreadCrumModule />
-          </motion.div>
+          <BreadCrumModule modulePosition={modulePosition} style={"light"} />
 
           <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
             <div className="absolute left-0">

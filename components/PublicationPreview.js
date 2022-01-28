@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "./ui/Button";
-export default function ContentPreview({
+export default function PublicationPreview({
   contentTitle,
   tag,
   title,

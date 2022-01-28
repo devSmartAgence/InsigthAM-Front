@@ -34,6 +34,9 @@ module.exports = {
       "11xl": "12.5rem",
     },
     extend: {
+      zIndex: {
+        "-10": "-10",
+      },
       fontFamily: {
         sans: ["Renogare", "sans-serif"],
         serif: ["Libre Caslon Text", "serif"],
@@ -64,7 +67,7 @@ module.exports = {
         sm: "576px",
         md: "768px",
         lg: "992px",
-        xl: "1173px",
+        xl: "1280px",
         "2xl": "1440px",
       },
       backgroundImage: {
