@@ -30,7 +30,6 @@ export default function HomeSection({
   panelScrollIndex,
   height,
 }) {
-  console.log("STUDIES =======", studies.data[0]);
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl

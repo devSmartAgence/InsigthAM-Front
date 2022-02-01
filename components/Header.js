@@ -38,10 +38,10 @@ export default function Header() {
       {width > 720 ? (
         <nav className="">
           <ul className="flex items-center">
-            <Link href="/Apropos">
+            <Link href="/a-propos">
               <li
                 className={
-                  router.pathname === "/Apropos"
+                  router.pathname === "/a-propos"
                     ? "mr-[50px] text-[12px] cursor-pointer uppercase text-pink"
                     : "mr-[50px] text-[12px] cursor-pointer uppercase text-deep-blue"
                 }
@@ -49,7 +49,7 @@ export default function Header() {
                 À propos
               </li>
             </Link>
-            <Link href="/etudes">
+            <Link href="/nos-etudes">
               <li
                 className={
                   router.pathname === "/thematiques"
@@ -97,10 +97,10 @@ export default function Header() {
                   animate="animate"
                   exit="exit"
                 >
-                  <Link href="/Apropos">
+                  <Link href="/a-propos">
                     <motion.li
                       className={
-                        router.pathname === "/Apropos"
+                        router.pathname === "/a-propos"
                           ? "text-[36px] cursor-pointer uppercase text-pink mb-[30px]"
                           : "text-[36px] cursor-pointer uppercase text-white mb-[30px]"
                       }
@@ -109,7 +109,7 @@ export default function Header() {
                       À propos
                     </motion.li>
                   </Link>
-                  <Link href="/etudes">
+                  <Link href="/nos-etudes">
                     <motion.li
                       key="2"
                       className={

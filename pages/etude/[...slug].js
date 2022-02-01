@@ -10,8 +10,8 @@ import BackButton from "../../components/ui/BackButton";
 import BottomNavigation from "../../components/ui/BottomNavigation";
 
 //Strapi tools for dynamics zones
-import { getDataDependencies } from "../services/api";
-import { redirectToHomepage, getData } from "../../utils";
+import { getDataStudyDependencies } from "../services/api";
+import { redirectToHomepage, getDataStudy } from "../../utils";
 import { getLocalizedParams } from "../../utils/localize";
 import BlockManager from "../../components/shared/BlockManager";
 
@@ -19,9 +19,7 @@ import ContactForm from "../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  console.log("PAGE DATA 2 =====>", pageData);
   const blocks = delve(pageData, "data.attributes.blocks");
-  console.log("BLOCKS ===>", blocks);
   const [modulePosition, setModulePosition] = useState(0);
 
   let handleScroll = (modulePosition) => {
@@ -46,7 +44,7 @@ const Universals = ({ pageData }) => {
             </div>
             <div className="flex flex-col items-center ">
               <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
-                {pageData.data.attributes.heading}
+                {pageData.data.attributes.theme}
               </div>
               <div className="w-[40px] h-[6px] bg-pink"></div>
             </div>
@@ -79,17 +77,15 @@ export async function getServerSideProps(context) {
   const { slug, locale } = getLocalizedParams(context.query);
 
   try {
-    const data = getData(slug, locale);
+    const data = getDataStudy(slug, locale);
     const res = await fetch(delve(data, "data"));
     const json = await res.json();
-    console.log("JSON ====>", json);
 
     if (!json) {
       return redirectToHomepage();
     }
 
-    const pageData = await getDataDependencies(json);
-    console.log("PAGE DATA 1 ====>", pageData);
+    const pageData = await getDataStudyDependencies(json);
     return {
       props: { pageData },
     };

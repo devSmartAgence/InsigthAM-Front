@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Layout from "../../../components/Layout";
 import Button from "../../../components/ui/Button";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
 import GridPattern from "../../../components/ui/GridPattern";
-import BreadcrumbModule from "../../../components/ui/BreadcrumbModule";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-export default function Apropos() {
+
+export default function Etudes({ study }) {
+  let theme = study.data[0].attributes.theme;
+
   const [modulePosition, setModulePosition] = useState(0);
 
   let handleScroll = (modulePosition) => {
@@ -40,7 +41,7 @@ export default function Apropos() {
               <BackButton label={"< Retour"} style="dark"></BackButton>
 
               <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
-                Etudes référencement thématique
+                {theme}
               </h1>
               <Button type="primary" label={"Méthode déployée"}></Button>
             </div>
@@ -75,20 +76,30 @@ export default function Apropos() {
   );
 }
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch(
-    "http://localhost:1337/api/studies?filters[theme][$eq]=EtudesReferencementThematique"
-  );
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const res = await fetch(`http://localhost:1337/api/studies?populate=*`);
   const studies = await res.json();
-  console.log("STUDIES 3 ======>", studies);
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      studies,
-    },
-  };
+  // Get the paths we want to pre-render based on posts
+  const paths = studies.data.map((study) => ({
+    params: { etudes: study.attributes.theme },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+  // params contains the study `theme`.
+  const res = await fetch(
+    `http://localhost:1337/api/studies?filters[theme][$eq]=${params.etudes}`
+  );
+  const study = await res.json();
+
+  // Pass post data to the page via props
+  return { props: { study } };
 }

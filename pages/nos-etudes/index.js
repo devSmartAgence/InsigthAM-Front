@@ -1,17 +1,6 @@
-import Link from "next/link";
 import Layout from "../../components/Layout";
 import SummaryStudy from "../../components/ui/SummaryStudy";
-
-export async function getStaticProps() {
-  const studies = await fetch("http://localhost:1337/api/studies");
-  const resStudies = await studies.json();
-
-  return {
-    props: {
-      resStudies,
-    },
-  };
-}
+import { useRouter } from "next/router";
 
 export default function Thematiques({ resStudies }) {
   let themeArray = [];
@@ -19,7 +8,6 @@ export default function Thematiques({ resStudies }) {
   let themesBeautifyng = (theme) => {
     if (themeArray.indexOf(theme) === -1) {
       themeArray.push(theme);
-      console.log(themeArray);
     }
     switch (theme) {
       case "EtudesReferencementThematique":
@@ -68,4 +56,15 @@ export default function Thematiques({ resStudies }) {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const studies = await fetch("http://localhost:1337/api/studies");
+  const resStudies = await studies.json();
+
+  return {
+    props: {
+      resStudies,
+    },
+  };
 }

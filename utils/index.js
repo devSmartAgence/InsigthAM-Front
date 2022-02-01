@@ -18,7 +18,7 @@ export function getStrapiMedia(url) {
   }${url}`;
 }
 
-// handle the redirection to the homepage if the page we are browsinng doesn't exists
+// handle the redirection to the homepage if the page we are browsing doesn't exists
 export function redirectToHomepage() {
   return {
     redirect: {
@@ -29,9 +29,20 @@ export function redirectToHomepage() {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getData(slug, locale) {
-  const slugToReturn = `studies/${slug}?populate=*`;
+export function getDataStudy(slug, locale) {
+  const slugToReturn = `studies/${slug}`;
   const apiUrl = `/studies/${slug}?populate=*`;
+
+  return {
+    data: getStrapiURL(apiUrl),
+    slug: slugToReturn,
+  };
+}
+
+// This function will build the url to fetch on the Strapi API
+export function getDataAbout(slug, locale) {
+  const slugToReturn = `about`;
+  const apiUrl = `/about?populate=*`;
 
   return {
     data: getStrapiURL(apiUrl),

@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
           <nav className="mt-[30px] xl:mt-0">
             <ul className="flex-col md:flex items-center text-deep-blue md:flex-row">
-              <Link href="/Apropos">
+              <Link href="/a-propos">
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   À propos
                 </li>

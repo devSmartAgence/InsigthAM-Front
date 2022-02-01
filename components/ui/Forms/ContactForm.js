@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 import Button from "../Button";
 import TextField from "./TextField";
 import TitleH2 from "../TitleH2";
@@ -12,6 +12,27 @@ export default function ContactForm() {
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const formData = {
+    email: "test@mail.com",
+    message: "Mon message de test lorem dolorit et excalibum rosaee",
+  };
+
+  // Form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:1337/api/forms",
+        formData
+      );
+      console.log(response);
+    } catch (error) {
+      console.log("ERROR");
+    }
+  };
+  //////////
 
   return (
     <div className="py-[85px] flex flex-col items-center relative w-full">
@@ -32,7 +53,10 @@ export default function ContactForm() {
         </svg>
       </div>
       <TitleH2 title={"Demander l'étude complète"} />
-      <form className="flex justify-center max-w-[1230px] w-full bg-dark-beige place-content-between gap-x-40 ">
+      <form
+        className="flex justify-center max-w-[1230px] w-full bg-dark-beige place-content-between gap-x-40 "
+        onSubmit={handleSubmit}
+      >
         <div className="w-1/2">
           <TextField label={"Prénom*"} setter={setFirstName} />
           <TextField label={"Nom*"} setter={setLastName} />
@@ -41,9 +65,9 @@ export default function ContactForm() {
         </div>
 
         <div className="w-1/2">
-          <TextField label={"E-mail*"} setter={setEmail} />
-          <TextField label={"Message"} setter={setMessage} />
-          <input type="submit" value="Envoyer" />{" "}
+          <TextField label={"E-mail*"} setter={setEmail} name="email" />
+          <TextField label={"Message"} setter={setMessage} name="message" />
+          <input type="submit" value="Envoyer" />
         </div>
       </form>
     </div>
