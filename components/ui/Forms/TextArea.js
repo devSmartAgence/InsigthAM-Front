@@ -1,7 +1,7 @@
-export default function TextField({ label, setter, type }) {
+export default function TextArea({ label, setter, type }) {
   return (
     <div className="floating-input mb-5 relative">
-      <input
+      <textarea
         onChange={(e) => setter(e.target.value)}
         type={type}
         id={
@@ -9,7 +9,7 @@ export default function TextField({ label, setter, type }) {
             ? label.toLowerCase().substring(0, label.length - 1)
             : label.toLowerCase()
         }
-        className="font-sans text-deep-blue focus:outline-none rounded-full focus:border-gray-500 focus:shadow-sm w-full p-4 h-[60px] px-[24px]"
+        className="font-sans text-deep-blue h-[120px] rounded-[30px] focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-4 px-[24px]"
         autoComplete="off"
       />
       <label

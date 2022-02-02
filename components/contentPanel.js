@@ -1,9 +1,10 @@
 import { motion, transform } from "framer-motion";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
-import Link from "next/link";
 import Button from "./ui/Button";
 import GridPattern from "./ui/GridPattern";
+
+import { themeBeautyfier } from "../utils/themeBeautyfier";
 
 export default function ContentPanel({
   itemsCount,
@@ -19,28 +20,6 @@ export default function ContentPanel({
   slug,
 }) {
   const [width, height] = useDeviceSize();
-
-  // Themes beautyfing : from Pascale to original
-  switch (theme) {
-    case "EtudesReferencementThematique":
-      theme = "Études Référencement Thématique";
-      break;
-    case "EtudeCiblesClientele":
-      theme = "Études Cibles Clientèles";
-      break;
-    case "EtudesNotorietePositionnement":
-      theme = "Études Notoriété & positionnement";
-      break;
-    case "EtudesTestingProduit":
-      theme = "Études Testing produit";
-      break;
-    case "BarometresInstitutionnels":
-      theme = "Baromètres institutionnels";
-      break;
-    default:
-      theme = "Thématique";
-      break;
-  }
 
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
@@ -59,7 +38,9 @@ export default function ContentPanel({
                 {heading}
               </p>
 
-              <p className="uppercase text-pink text-[0.7vmax]">{theme}</p>
+              <p className="uppercase text-pink text-[0.7vmax]">
+                {themeBeautyfier(theme)}
+              </p>
               <div className="w-[2.5vmax] h-[0.4vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"></div>
               <h2 className="text-deep-blue font-serif text-[3vmax] mb-[1vmax] leading-[3.7vmax]  ">
                 {title}

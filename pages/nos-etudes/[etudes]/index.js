@@ -38,7 +38,7 @@ export default function Etudes({ study }) {
           </div>
           <div className="flex flex-col items-center mx-[30px] relative md:items-start">
             <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
-              <BackButton label={"< Retour"} style="dark"></BackButton>
+              <BackButton label={"Retour"} style="dark"></BackButton>
 
               <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
                 {theme}

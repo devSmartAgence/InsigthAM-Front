@@ -9,6 +9,8 @@ import Layout from "../../components/Layout";
 import BackButton from "../../components/ui/BackButton";
 import BottomNavigation from "../../components/ui/BottomNavigation";
 
+import { themeBeautyfier } from "../../utils/themeBeautyfier";
+
 //Strapi tools for dynamics zones
 import { getDataStudyDependencies } from "../services/api";
 import { redirectToHomepage, getDataStudy } from "../../utils";
@@ -40,18 +42,18 @@ const Universals = ({ pageData }) => {
 
           <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
             <div className="absolute left-0">
-              <BackButton label={"< Retour"} />
+              <BackButton label={"Retour"} style="light" />
             </div>
             <div className="flex flex-col items-center ">
               <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
-                {pageData.data.attributes.theme}
+                {themeBeautyfier(pageData.data.attributes.theme)}
               </div>
               <div className="w-[40px] h-[6px] bg-pink"></div>
             </div>
           </div>
 
           <div
-            className="flex flex-col max-w-[1230px] px-[10%] bg-white pt-8 md:pt-16 md:px-[14%]
+            className="flex flex-col max-w-[1230px] px-[10%] bg-white pt-8 md:pt-16
           "
           >
             <div>

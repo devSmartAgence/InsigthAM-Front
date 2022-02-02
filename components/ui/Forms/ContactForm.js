@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "../Button";
 import TextField from "./TextField";
+import TextArea from "./TextArea";
 import TitleH2 from "../TitleH2";
 
 export default function ContactForm() {
@@ -14,8 +15,16 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
 
   const formData = {
-    email: "test@mail.com",
-    message: "Mon message de test lorem dolorit et excalibum rosaee",
+    from: process.env.insight_email,
+    to: process.env.insight_email,
+    subject: `Nouvelle demande d'étude`,
+    email: email,
+    message: message,
+    firstName: firstName,
+    lastName: lastName,
+    position: position,
+    company: company,
+    html: `<p>${message}<p>`,
   };
 
   // Form submit
@@ -24,7 +33,7 @@ export default function ContactForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:1337/api/forms",
+        "http://localhost:1337/api/email",
         formData
       );
       console.log(response);
@@ -58,15 +67,21 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
       >
         <div className="w-1/2">
-          <TextField label={"Prénom*"} setter={setFirstName} />
-          <TextField label={"Nom*"} setter={setLastName} />
-          <TextField label={"Poste*"} setter={setPosition} />
-          <TextField label={"Entreprise*"} setter={setCompany} />
+          <TextField label={"Prénom*"} setter={setFirstName} type="text" />
+          <TextField label={"Nom*"} setter={setLastName} type="text" />
+          <TextField label={"Poste*"} setter={setPosition} type="text" />
+          <TextField label={"Entreprise*"} setter={setCompany} type="text" />
         </div>
 
         <div className="w-1/2">
-          <TextField label={"E-mail*"} setter={setEmail} name="email" />
-          <TextField label={"Message"} setter={setMessage} name="message" />
+          <TextField
+            label={"E-mail*"}
+            setter={setEmail}
+            name="email"
+            type="email"
+          />
+
+          <TextArea label={"Message"} setter={setMessage} name="message" />
           <input type="submit" value="Envoyer" />
         </div>
       </form>

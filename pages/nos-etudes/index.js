@@ -1,36 +1,10 @@
 import Layout from "../../components/Layout";
 import SummaryStudy from "../../components/ui/SummaryStudy";
-import { useRouter } from "next/router";
+import { themeBeautyfier } from "../../utils/themeBeautyfier";
 
 export default function Thematiques({ resStudies }) {
-  let themeArray = [];
-  // Themes beautyfing : from Pascale to original
-  let themesBeautifyng = (theme) => {
-    if (themeArray.indexOf(theme) === -1) {
-      themeArray.push(theme);
-    }
-    switch (theme) {
-      case "EtudesReferencementThematique":
-        theme = "Études Référencement Thématique";
-        break;
-      case "EtudeCiblesClientele":
-        theme = "Études Cibles Clientèles";
-        break;
-      case "EtudesNotorietePositionnement":
-        theme = "Études Notoriété & positionnement";
-        break;
-      case "EtudesTestingProduit":
-        theme = "Études Testing produit";
-        break;
-      case "BarometresInstitutionnels":
-        theme = "Baromètres institutionnels";
-        break;
-      default:
-        theme = "Thématique";
-        break;
-    }
-    return theme;
-  };
+  let arrThemes = resStudies.data.map;
+  console.log("LISTE =====>", arrThemes);
   return (
     <Layout>
       <div className="bg-deep-blue w-screen h-screen">
@@ -47,7 +21,7 @@ export default function Thematiques({ resStudies }) {
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
             {resStudies.data.map((study, index) => (
               <SummaryStudy
-                title={themesBeautifyng(study.attributes.theme)}
+                title={themeBeautyfier(study.attributes.theme)}
                 theme={study.attributes.theme}
               />
             ))}
