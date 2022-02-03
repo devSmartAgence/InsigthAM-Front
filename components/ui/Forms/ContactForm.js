@@ -15,16 +15,26 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
 
   const formData = {
+    data: {
+      // from: process.env.insight_email,
+      // to: process.env.insight_email,
+      subject: `Nouvelle demande d'étude`,
+      email: email,
+      message: message,
+      firstName: firstName,
+      lastName: lastName,
+      position: position,
+      company: company,
+      // html: `<p>${message}<p>`,
+    },
+  };
+
+  const emailData = {
     from: process.env.insight_email,
-    to: process.env.insight_email,
-    subject: `Nouvelle demande d'étude`,
-    email: email,
-    message: message,
-    firstName: firstName,
-    lastName: lastName,
-    position: position,
-    company: company,
-    html: `<p>${message}<p>`,
+    to: email,
+    replyTo: "dev@smartagence.com",
+    subject: "Nouvelle demande d'étude ",
+    html: `<p>{${message}</p>`,
   };
 
   // Form submit
@@ -33,12 +43,22 @@ export default function ContactForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:1337/api/email",
+        "http://localhost:1337/api/forms",
         formData
       );
       console.log(response);
+      /// If form submit is OK, then send email
+      try {
+        const response = await axios.post(
+          "http://localhost:1337/api/email",
+          emailData
+        );
+        console.log(response);
+      } catch (error) {
+        console.log("An error occured, e-mail not sent");
+      }
     } catch (error) {
-      console.log("ERROR");
+      console.log("An error occured, something went wrong");
     }
   };
   //////////
