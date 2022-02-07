@@ -34,7 +34,7 @@ export default function Thematiques({ resStudies }) {
 }
 
 export async function getStaticProps() {
-  const studies = await fetch("http://localhost:1337/api/studies");
+  const studies = await fetch(`${DB_HOST}:1337/api/studies`);
   const resStudies = await studies.json();
 
   return {
