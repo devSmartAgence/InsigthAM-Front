@@ -43,11 +43,17 @@ export default function ContactForm({ title }) {
     if (!isLoading) {
       setIsLoading(true);
       try {
-        const response = await axios.post(`${DB_HOST}/api/forms`, formData);
+        const response = await axios.post(
+          `${process.env.DB_HOST}/api/forms`,
+          formData
+        );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
-          const response = await axios.post(`${DB_HOST}/api/email`, emailData);
+          const response = await axios.post(
+            `${process.env.DB_HOST}/api/email`,
+            emailData
+          );
           console.log(response, "E-mail sent");
           setIsLoading(false);
           setIsConfirmed(true);

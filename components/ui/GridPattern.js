@@ -12,7 +12,7 @@ export default function GridPattern({ color, cover }) {
 
       {color === "deep-blue" && cover && (
         <img
-          src={`${DB_HOST}` + cover}
+          src={process.env.DB_HOST + cover}
           className="w-full h-full object-cover"
         ></img>
       )}

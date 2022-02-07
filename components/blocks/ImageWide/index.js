@@ -4,7 +4,7 @@ const ImageWide = ({ image }) => {
   return (
     <div class="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <img
-        src={`${DB_HOST}/api${myImage}`}
+        src={`${process.env.DB_HOST}/api${myImage}`}
         alt=""
         class="absolute h-full w-full object-cover"
       />

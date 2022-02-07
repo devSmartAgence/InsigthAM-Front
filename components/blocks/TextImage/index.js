@@ -9,7 +9,11 @@ const TextImage = ({ text, image, position }) => {
             : "ml-15 md:float-right md:w-[51.7%] md:ml-15"
         }`}
       >
-        <img src={`${DB_HOST}${myImage}`} alt="" className="mb-[35px]" />
+        <img
+          src={`${process.env.DB_HOST}${myImage}`}
+          alt=""
+          className="mb-[35px]"
+        />
       </div>
       <div className={`font-serif leading-[30px]`}>{text}</div>
     </div>

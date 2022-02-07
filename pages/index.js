@@ -9,11 +9,15 @@ import HomeSplitPanelControl from "../components/ui/HomeSplitPanelControl";
 
 export async function getStaticProps() {
   // Get home-intro content from Strapi
-  const resHome = await fetch(`${DB_HOST}/api/home-introduction?populate=*`);
+  const resHome = await fetch(
+    `${process.env.DB_HOST}/api/home-introduction?populate=*`
+  );
   const homeIntro = await resHome.json();
 
   // Get studies from Strapi
-  const resStudies = await fetch(`${DB_HOST}/api/studies?populate=*`);
+  const resStudies = await fetch(
+    `${process.env.DB_HOST}/api/studies?populate=*`
+  );
   const studies = await resStudies.json();
   return { props: { homeIntro, studies } };
 }
