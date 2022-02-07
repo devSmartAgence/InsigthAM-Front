@@ -1,4 +1,4 @@
-export default function TextArea({ label, setter, type }) {
+export default function TextArea({ label, setter, type, required }) {
   return (
     <div className="floating-input mb-5 relative">
       <textarea
@@ -9,8 +9,10 @@ export default function TextArea({ label, setter, type }) {
             ? label.toLowerCase().substring(0, label.length - 1)
             : label.toLowerCase()
         }
-        className="font-sans text-deep-blue h-[120px] rounded-[30px] focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-4 px-[24px]"
+        className="font-sans text-deep-blue h-[220px] rounded-[25px] focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-4 px-[24px]"
         autoComplete="off"
+        placeholder="name@example.com"
+        required={required}
       />
       <label
         htmlFor={

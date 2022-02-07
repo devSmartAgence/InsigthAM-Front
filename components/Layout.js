@@ -1,39 +1,31 @@
 import Head from "next/head";
 import Header from "./Header";
-import PageTransitionIn from "./PageTransition";
-import { motion, AnimatePresence } from "framer-motion";
 import Footer from "./Footer";
-export default function Layout({ children, page }) {
-  //Page transition animation
-  const variants = {
-    hidden: { opacity: 0, x: -200 },
-    enter: { opacity: 1, x: 0 },
-    exit: { opacity: 0, transition: { ease: "circOut", duration: 0.3 } },
-  };
+import { motion } from "framer-motion";
 
+export default function Layout({ children, page }) {
+  const variants = {
+    hidden: { opacity: 0 },
+    enter: { opacity: 1, x: 0, y: 0 },
+    exit: { opacity: 0, x: 0, y: 100 },
+  };
   return (
     <>
-      <PageTransitionIn />
+      <Head>
+        <title>{page}</title>
+      </Head>
 
-      <AnimatePresence initial={false}>
-        <Head>
-          <title>{page}</title>
-        </Head>
-
-        <Header />
-
-        <motion.main
-          key={page}
-          variants={variants}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-          transition="transition"
-        >
-          {children}
-        </motion.main>
-        <Footer />
-      </AnimatePresence>
+      <Header />
+      <motion.main
+        variants={variants} // Pass the variant object into Framer Motion
+        initial="hidden" // Set the initial state to variants.hidden
+        animate="enter" // Animated state to variants.enter
+        exit="exit" // Exit state (used later) to variants.exit
+        transition={{ type: "linear" }} // Set the transition to linear
+      >
+        {children}
+      </motion.main>
+      <Footer />
     </>
   );
 }

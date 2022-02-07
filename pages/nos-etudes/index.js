@@ -21,6 +21,7 @@ export default function Thematiques({ resStudies }) {
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
             {resStudies.data.map((study, index) => (
               <SummaryStudy
+                key={study.attributes.theme + index}
                 title={themeBeautyfier(study.attributes.theme)}
                 theme={study.attributes.theme}
               />

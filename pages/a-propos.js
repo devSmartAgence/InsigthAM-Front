@@ -54,7 +54,7 @@ const Universals = ({ pageData }) => {
             <div>{blocks && <BlockManager blocks={blocks} />}</div>
           </div>
 
-          <ContactForm />
+          <ContactForm title={"Nous contacter"} />
         </div>
       </Layout>
     </ReactScrollWheelHandler>

@@ -11,6 +11,8 @@ module.exports = {
       "bg-yellow-300",
       "bg-green-300",
       "text-white",
+      "text-msg-confirm",
+      "text-msg-err",
     ],
   },
   darkMode: false, // or 'media' or 'class'
@@ -88,6 +90,8 @@ module.exports = {
       gray: "rgba(0, 0, 0, 0.3)",
       beige: "#FAF9F7",
       "dark-beige": "#F5F4F0",
+      "msg-confirm": "#3CBA96",
+      "msg-err": "#D96D6D",
     },
   },
 
