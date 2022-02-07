@@ -12,7 +12,7 @@ export default function GridPattern({ color, cover }) {
 
       {color === "deep-blue" && cover && (
         <img
-          src={"http://localhost:1337" + cover}
+          src={`${DB_HOST}` + cover}
           className="w-full h-full object-cover"
         ></img>
       )}

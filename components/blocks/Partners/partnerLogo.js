@@ -3,7 +3,7 @@ const PartnerLogo = ({ logo }) => {
   return (
     <div className="h-[40px] mr-[50px] ">
       <img
-        src={`http://localhost:1337${myLogo}`}
+        src={`${DB_HOST}${myLogo}`}
         alt=""
         className="h-full w-full object-cover"
       />

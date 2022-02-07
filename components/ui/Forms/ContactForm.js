@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import Button from "../Button";
 import TextField from "./TextField";
 import TextArea from "./TextArea";
 import TitleH2 from "../TitleH2";
@@ -19,8 +18,6 @@ export default function ContactForm({ title }) {
 
   const formData = {
     data: {
-      // from: process.env.insight_email,
-      // to: process.env.insight_email,
       subject: `Nouvelle demande d'étude`,
       email: email,
       message: message,
@@ -33,9 +30,9 @@ export default function ContactForm({ title }) {
   };
 
   const emailData = {
-    from: process.env.insight_email,
+    from: process.env.INSIGHT_ADMIN_EMAIL,
     to: email,
-    replyTo: "dev@smartagence.com",
+    replyTo: process.env.INSIGHT_ADMIN_EMAIL,
     subject: "Nouvelle demande d'étude ",
     html: `<p>{${message}</p>`,
   };
@@ -46,17 +43,11 @@ export default function ContactForm({ title }) {
     if (!isLoading) {
       setIsLoading(true);
       try {
-        const response = await axios.post(
-          "http://localhost:1337/api/forms",
-          formData
-        );
+        const response = await axios.post(`${DB_HOST}/api/forms`, formData);
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
-          const response = await axios.post(
-            "http://localhost:1337/api/email",
-            emailData
-          );
+          const response = await axios.post(`${DB_HOST}/api/email`, emailData);
           console.log(response, "E-mail sent");
           setIsLoading(false);
           setIsConfirmed(true);
