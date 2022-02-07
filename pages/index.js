@@ -1,24 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import { useWindowHeight } from "@react-hook/window-size";
 import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wondow sizes
 
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
-import HomeSplitPanelControl from "../components/ui/HomeSplitPanelControl";
 
 export async function getStaticProps() {
+  console.log("ENV===>", process.env.DB_HOST);
   // Get home-intro content from Strapi
   const resHome = await fetch(
-    `${process.env.DB_HOST}/api/home-introduction?populate=*`
+    `http://localhost:1337/api/home-introduction?populate=*`
   );
   const homeIntro = await resHome.json();
+  console.log("HOMEINTRO=======>", homeIntro);
 
   // Get studies from Strapi
   const resStudies = await fetch(
-    `${process.env.DB_HOST}/api/studies?populate=*`
+    `http://localhost:1337/api/studies?populate=*`
   );
   const studies = await resStudies.json();
+  console.log("STUDIES=======>", studies);
+
   return { props: { homeIntro, studies } };
 }
 

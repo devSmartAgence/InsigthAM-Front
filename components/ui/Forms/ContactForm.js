@@ -44,14 +44,14 @@ export default function ContactForm({ title }) {
       setIsLoading(true);
       try {
         const response = await axios.post(
-          `${process.env.DB_HOST}/api/forms`,
+          `http://localhost:1337/api/forms`,
           formData
         );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
           const response = await axios.post(
-            `${process.env.DB_HOST}/api/email`,
+            `http://localhost:1337/api/email`,
             emailData
           );
           console.log(response, "E-mail sent");
@@ -179,7 +179,7 @@ export default function ContactForm({ title }) {
                         d="M136.212,124.836A11.616,11.616,0,0,0,124.84,136.2a13.572,13.572,0,0,0,.118,1.619c.212,1.388.965,1.714,1.589,1.658a1.119,1.119,0,0,0,.79-.415,1.241,1.241,0,0,0,.217-1.007c-.015-.064-.02-.136-.03-.2a8.711,8.711,0,0,1-.178-1.658,8.842,8.842,0,1,1,5.765,8.292,1.259,1.259,0,1,0-1,2.31,10.272,10.272,0,0,0,4.1.76A11.348,11.348,0,0,0,147.564,136.2a11.723,11.723,0,0,0-11.352-11.362Z"
                         transform="translate(65.371 -170.533) rotate(60)"
                         fill="#fff"
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                       />
                     </svg>
                   </div>

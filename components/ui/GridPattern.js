@@ -1,6 +1,7 @@
 import Pattern from "./Pattern";
-
+import Image from "next/image";
 export default function GridPattern({ color, cover }) {
+  console.log("GP ENV====>", process.env.DB_HOST + cover);
   return (
     <>
       <div className="z-1 absolute w-[50vw] h-[calc(100vh-110px)] grid grid-cols-2 grid-rows-2 overflow-hidden">
@@ -11,10 +12,12 @@ export default function GridPattern({ color, cover }) {
       </div>
 
       {color === "deep-blue" && cover && (
-        <img
-          src={process.env.DB_HOST + cover}
+        <Image
+          src={"http://localhost:1337/uploads/" + cover}
           className="w-full h-full object-cover"
-        ></img>
+          layout="fill"
+          alt="Pattern"
+        />
       )}
     </>
   );

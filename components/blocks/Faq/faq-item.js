@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const faqItem = ({ question, answer }) => {
+const FaqItem = ({ question, answer }) => {
   const [isBlockOpen, setIsBlockOpen] = useState(false);
   let handleOnClick = () => {
     setIsBlockOpen(!isBlockOpen);
@@ -47,6 +47,6 @@ const faqItem = ({ question, answer }) => {
   );
 };
 
-faqItem.defaultProps = {};
+FaqItem.defaultProps = {};
 
-export default faqItem;
+export default FaqItem;

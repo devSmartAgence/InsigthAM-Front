@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "./ui/Button";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import useDeviceSize from "../components/hooks/useDevicesize";
@@ -28,17 +29,15 @@ export default function Header() {
   };
   return (
     <header className="flex h-[110px] w-screen bg-white justify-between items-center pl-[70px] pr-[70px] fixed z-50 top-0">
-      <Link href="/">
-        <img
-          className="h-16 ml-8 cursor-pointer"
-          src="/insightAM.svg"
-          alt="Logo Insight AM"
-        />
+      <Link href="/" passHref>
+        <div className="h-16 ml-8 cursor-pointer">
+          <Image src="/insightAM.svg" alt="Logo Insight AM" layout="fill" />
+        </div>
       </Link>
       {width > 720 ? (
         <nav className="">
           <ul className="flex items-center">
-            <Link href="/a-propos">
+            <Link href="/a-propos" passHref>
               <li
                 className={
                   router.pathname === "/a-propos"
@@ -49,7 +48,7 @@ export default function Header() {
                 À propos
               </li>
             </Link>
-            <Link href="/nos-etudes">
+            <Link href="/nos-etudes" passHref>
               <li
                 className={
                   router.pathname === "/thematiques"
@@ -97,7 +96,7 @@ export default function Header() {
                   animate="animate"
                   exit="exit"
                 >
-                  <Link href="/a-propos">
+                  <Link href="/a-propos" passHref>
                     <motion.li
                       className={
                         router.pathname === "/a-propos"
@@ -109,7 +108,7 @@ export default function Header() {
                       À propos
                     </motion.li>
                   </Link>
-                  <Link href="/nos-etudes">
+                  <Link href="/nos-etudes" passHref>
                     <motion.li
                       key="2"
                       className={

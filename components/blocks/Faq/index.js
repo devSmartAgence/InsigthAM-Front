@@ -4,9 +4,10 @@ import FaqItem from "./faq-item";
 const faq = ({ faqItem }) => {
   return (
     <ul className=" font-serif list-disc leading-[30px] mb-[5%] md:ml-13">
-      {faqItem &&
-        faqItem.map((item, index) => (
+      {FaqItem &&
+        FaqItem.map((item, index) => (
           <FaqItem
+            key={index}
             question={delve(item, "question")}
             answer={delve(item, "answer")}
           />

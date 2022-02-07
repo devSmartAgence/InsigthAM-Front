@@ -12,7 +12,7 @@ import BottomNavigation from "../../components/ui/BottomNavigation";
 import { themeBeautyfier } from "../../utils/themeBeautyfier";
 
 //Strapi tools for dynamics zones
-import { getDataStudyDependencies } from "../services/api";
+import { getDataStudyDependencies } from "../../components/services/api";
 import { redirectToHomepage, getDataStudy } from "../../utils";
 import { getLocalizedParams } from "../../utils/localize";
 import BlockManager from "../../components/shared/BlockManager";

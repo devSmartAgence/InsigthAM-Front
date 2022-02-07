@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "./ui/Button";
 export default function Footer() {
   return (
@@ -6,39 +7,44 @@ export default function Footer() {
       <div className="mb-[40px] flex md:mb-[70px]">
         <div className="items-center flex flex-col place-content-between w-screen xl:flex-row">
           <div className="flex flex-col md:flex-row">
-            <Link href="/">
-              <img
+            <Link href="/" passHref>
+              <Image
                 className="h-16 cursor-pointer md:mr-[60px]"
                 src="/insightAM_white.svg"
                 alt="Logo Insight AM"
+                layout="fill"
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/pascalskoenig/?originalSubdomain=fr#experience">
-              <img
+            <Link
+              href="https://www.linkedin.com/in/pascalskoenig/?originalSubdomain=fr#experience"
+              passHref
+            >
+              <Image
                 className="h-16 cursor-pointer mt-[20px] md:ml-8 md:mt-0"
                 src="/Linkedin.svg"
                 alt="Linkedin"
+                layout="fill"
               />
             </Link>
           </div>
           <nav className="mt-[30px] xl:mt-0">
             <ul className="flex-col md:flex items-center text-deep-blue md:flex-row">
-              <Link href="/a-propos">
+              <Link href="/a-propos" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   À propos
                 </li>
               </Link>
-              <Link href="/etudes">
+              <Link href="/etudes" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   Nos études
                 </li>
               </Link>
-              <Link href="/CGVCVU">
+              <Link href="/CGVCVU" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   CGV/CVU
                 </li>
               </Link>
-              <Link href="/legal">
+              <Link href="/legal" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   MENTIONS LÉGALES
                 </li>

@@ -7,6 +7,7 @@ const KeyNumbers = ({ keyNumber }) => {
       {keyNumber &&
         keyNumber.map((item, index) => (
           <KeyNumber
+            key={index}
             number={delve(item, "Number")}
             description={delve(item, "Description")}
           />

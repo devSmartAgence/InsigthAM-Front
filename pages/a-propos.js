@@ -1,13 +1,12 @@
 import delve from "dlv";
 
 import { useState } from "react";
-import { useRouter } from "next/router";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 import Layout from "../components/Layout";
 
 //Strapi tools for dynamics zones
-import { getDataAboutDependencies } from "./services/api";
+import { getDataAboutDependencies } from "../components/services/api";
 import { redirectToHomepage, getDataAbout } from "../utils";
 import { getLocalizedParams } from "../utils/localize";
 import BlockManager from "../components/shared/BlockManager";
@@ -17,6 +16,7 @@ import BreadCrumModule from "../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
   const blocks = delve(pageData, "data.attributes.blocks");
+
   const [modulePosition, setModulePosition] = useState(0);
 
   let handleScroll = (modulePosition) => {

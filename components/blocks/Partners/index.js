@@ -6,7 +6,7 @@ const Partners = ({ partnerLogo }) => {
     <div className="flex leading-[48px] align-center">
       {partnerLogo &&
         partnerLogo.map((item, index) => (
-          <PartnerLogo logo={delve(item, "partnerLogo")} />
+          <PartnerLogo key={index} logo={delve(item, "partnerLogo")} />
         ))}
     </div>
   );

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import ContentPanel from "./ContentPanel";
 import CoverPanel from "./CoverPanel";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
@@ -7,13 +6,13 @@ import GridPattern from "./ui/GridPattern";
 export async function getStaticProps() {
   // get home-intro content from Strapi
   const resHome = await fetch(
-    `${process.env.DB_HOST}/api/home-introduction?populate=*`
+    `http://localhost:1337/api/home-introduction?populate=*`
   );
   const homeIntro = await resHome.json();
 
   // get studies from Strapi
   const resStudies = await fetch(
-    `${process.env.DB_HOST}/api/studies?populate=*`
+    `http://localhost:1337/api/studies?populate=*`
   );
   const studies = await resStudies.json();
 
@@ -21,7 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function HomeSection({
-  homeIntro,
   studies,
   itemPosition,
   itemHeight,

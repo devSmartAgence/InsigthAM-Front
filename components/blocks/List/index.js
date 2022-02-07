@@ -6,7 +6,7 @@ const List = ({ listItem }) => {
     <ul className="md:ml-20 font-serif list-disc leading-[30px] mb-[30px] md:ml-20">
       {listItem &&
         listItem.map((item, index) => (
-          <ListItem item={delve(item, "listItem")} />
+          <ListItem key={index} item={delve(item, "listItem")} />
         ))}
     </ul>
   );
