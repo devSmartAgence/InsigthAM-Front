@@ -6,6 +6,7 @@ import StudyPreview from "../../../components/StudyPreview";
 import GridPattern from "../../../components/ui/GridPattern";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
+import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 export default function Etudes({ study }) {
   let theme = study.data[0].attributes.theme;
@@ -32,7 +33,7 @@ export default function Etudes({ study }) {
             <GridPattern
               color={"deep-blue"}
               cover={
-                "large_egor_vikhrev_Z_5i0_R_Vukd_U_unsplash_8755a365d8.png"
+                "/uploads/large_egor_vikhrev_Z_5i0_R_Vukd_U_unsplash_8755a365d8.png"
               }
             />
           </div>
@@ -41,7 +42,7 @@ export default function Etudes({ study }) {
               <BackButton label={"Retour"} style="dark"></BackButton>
 
               <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
-                {theme}
+                {themeBeautyfier(theme)}
               </h1>
               <Button type="primary" label={"Méthode déployée"}></Button>
             </div>

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
 import TextField from "./TextField";
 import TextArea from "./TextArea";
 import TitleH2 from "../TitleH2";
+import axios from "axios";
 
 export default function ContactForm({ title }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,20 +37,30 @@ export default function ContactForm({ title }) {
     html: `<p>{${message}</p>`,
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     axios.post(`http://localhost:1337/api/forms`, formData);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   // Form submit
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!isLoading) {
       setIsLoading(true);
       try {
-        const response = await axios.post(
+        const response = axios.post(
           `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
           formData
         );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
-          const response = await axios.post(
+          const response = axios.post(
             `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
             emailData
           );
@@ -72,7 +82,7 @@ export default function ContactForm({ title }) {
       }
     }
   };
-  //////////
+  ////////
 
   return (
     <div className="py-[85px] flex flex-col items-center relative w-full bg-dark-beige">

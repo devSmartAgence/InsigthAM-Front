@@ -3,7 +3,6 @@ import SummaryStudy from "../../components/ui/SummaryStudy";
 import { themeBeautyfier } from "../../utils/themeBeautyfier";
 
 export default function Thematiques({ resStudies }) {
-  let arrThemes = resStudies.data.map;
   return (
     <Layout>
       <div className="bg-deep-blue w-screen h-screen">

@@ -16,9 +16,7 @@ import BreadCrumModule from "../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
   const blocks = delve(pageData, "data.attributes.blocks");
-
   const [modulePosition, setModulePosition] = useState(0);
-
   let handleScroll = (modulePosition) => {
     if (modulePosition === "Up") {
       setModulePosition(0);

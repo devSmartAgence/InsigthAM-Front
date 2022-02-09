@@ -7,11 +7,12 @@ export default function StudyPreview() {
       <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
         Fonds en Euros : quelle place demain dans l’épargne des Français ?
       </h2>
-      <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px]">
+      <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
         <Image
           src="/img/Couv_etude_Fidelity_2905-1024x768.png"
           alt=""
           layout="fill"
+          objectFit="cover"
         />
       </div>
       <p className="font-serif text[20px] leading-[30px] mb-[30px]">
