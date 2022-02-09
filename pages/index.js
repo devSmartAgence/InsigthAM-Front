@@ -1,9 +1,9 @@
 import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wondow sizes
+import useDeviceSize from "@/components/hooks/useDevicesize"; // Hook to get wondow sizes
 
-import HomeSections from "../components/HomeSections";
-import Layout from "../components/Layout";
+import HomeSections from "@/components/HomeSections";
+import Layout from "@/components/Layout";
 
 export async function getStaticProps() {
   // Get home-intro content from Strapi
