@@ -1,5 +1,4 @@
 import { motion, transform } from "framer-motion";
-import useDeviceSize from "../components/hooks/useDevicesize";
 
 import GridPattern from "./ui/GridPattern";
 
@@ -10,7 +9,6 @@ export default function CoverPanel({
   itemPosition,
   itemHeight,
 }) {
-  const [width, height] = useDeviceSize();
   return (
     <div className="w-screen h-[calc(100vh-110px)]">
       <div
