@@ -5,22 +5,6 @@ import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wo
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
 
-export async function getStaticProps() {
-  // Get home-intro content from Strapi
-  const resHome = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
-  );
-  const homeIntro = await resHome.json();
-
-  // Get studies from Strapi
-  const resStudies = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
-  );
-  const studies = await resStudies.json();
-
-  return { props: { homeIntro, studies } };
-}
-
 export default function Home({ homeIntro, studies }) {
   const studiesNumber = studies.data.length;
   let [width, height] = useDeviceSize(); // Get window size
@@ -85,4 +69,20 @@ export default function Home({ homeIntro, studies }) {
   ) : (
     <p> ...Loading</p>
   );
+}
+
+export async function getStaticProps() {
+  // Get home-intro content from Strapi
+  const resHome = await fetch(
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
+  );
+  const homeIntro = await resHome.json();
+
+  // Get studies from Strapi
+  const resStudies = await fetch(
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
+  );
+  const studies = await resStudies.json();
+
+  return { props: { homeIntro, studies } };
 }
