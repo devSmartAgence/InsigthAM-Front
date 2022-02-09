@@ -30,8 +30,13 @@ export default function Header() {
   return (
     <header className="flex h-[110px] w-screen bg-white justify-between items-center pl-[70px] pr-[70px] fixed z-50 top-0">
       <Link href="/" passHref>
-        <div className="h-16 ml-8 cursor-pointer">
-          <Image src="/insightAM.svg" alt="Logo Insight AM" layout="fill" />
+        <div className="h-16 w-[105px] cursor-pointer relative">
+          <Image
+            src="/insightAM.svg"
+            alt="Logo Insight AM"
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
       </Link>
       {width > 720 ? (

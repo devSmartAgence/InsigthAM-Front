@@ -59,24 +59,22 @@ const Universals = ({ pageData }) => {
       </Layout>
     </ReactScrollWheelHandler>
   );
-  //
 };
 
 export async function getServerSideProps(context) {
-  const { slug, locale } = getLocalizedParams(context.query);
+  const { slug } = getLocalizedParams(context.query);
 
   try {
-    const data = getDataAbout(slug, locale);
+    const data = getDataAbout(slug);
     const res = await fetch(delve(data, "data"));
     const json = await res.json();
-    console.log("JSON ====>", json);
 
-    if (!json) {
-      return redirectToHomepage();
-    }
+    // if (!json) {
+    //   return redirectToHomepage();
+    // }
 
     const pageData = await getDataAboutDependencies(json);
-    console.log("PAGE DATA 1 ====>", pageData);
+    // console.log("PAGE DATA 1 ====>", pageData);
     return {
       props: { pageData },
     };

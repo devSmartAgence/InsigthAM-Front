@@ -32,7 +32,7 @@ export default function Etudes({ study }) {
             <GridPattern
               color={"deep-blue"}
               cover={
-                "uploads/large_egor_vikhrev_Z_5i0_R_Vukd_U_unsplash_8755a365d8.png"
+                "large_egor_vikhrev_Z_5i0_R_Vukd_U_unsplash_8755a365d8.png"
               }
             />
           </div>
@@ -79,7 +79,9 @@ export default function Etudes({ study }) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch(`http://localhost:1337/api/studies?populate=*`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
+  );
   const studies = await res.json();
 
   // Get the paths we want to pre-render based on posts
@@ -96,7 +98,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the study `theme`.
   const res = await fetch(
-    process.env.DB_HOST + `/api/studies?filters[theme][$eq]=${params.etudes}`
+    process.env.NEXT_PUBLIC_DB_HOST +
+      `/api/studies?filters[theme][$eq]=${params.etudes}`
   );
   const study = await res.json();
 

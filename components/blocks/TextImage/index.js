@@ -12,7 +12,7 @@ const TextImage = ({ text, image, position }) => {
         }`}
       >
         <Image
-          src={`http://localhost:1337/${myImage}`}
+          src={`${process.env.NEXT_PUBLIC_DB_HOST}/${myImage}`}
           alt=""
           className="mb-[35px]"
           layout="fill"

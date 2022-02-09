@@ -1,7 +1,7 @@
 // Get the url of the Strapi API based om the env variable or the default local one.
 export function getStrapiURL(path) {
   return `${
-    process.env.NEXT_PUBLIC_API_URL || `http://localhost:1337/api`
+    process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_DB_HOST}/api`
   }${path}`;
 }
 
@@ -14,11 +14,11 @@ export function getStrapiMedia(url) {
     return url;
   }
   return `${
-    process.env.NEXT_PUBLIC_API_URL || `http://localhost:1337/api`
+    process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_DB_HOST}/api`
   }${url}`;
 }
 
-// handle the redirection to the homepage if the page we are browsing doesn't exists
+// Handle the redirection to the homepage if the page we are browsing doesn't exists
 export function redirectToHomepage() {
   return {
     redirect: {

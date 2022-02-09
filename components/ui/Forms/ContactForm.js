@@ -44,14 +44,14 @@ export default function ContactForm({ title }) {
       setIsLoading(true);
       try {
         const response = await axios.post(
-          `http://localhost:1337/api/forms`,
+          `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
           formData
         );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
           const response = await axios.post(
-            `http://localhost:1337/api/email`,
+            `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
             emailData
           );
           console.log(response, "E-mail sent");

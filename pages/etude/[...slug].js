@@ -83,9 +83,9 @@ export async function getServerSideProps(context) {
     const res = await fetch(delve(data, "data"));
     const json = await res.json();
 
-    if (!json) {
-      return redirectToHomepage();
-    }
+    // if (!json) {
+    //   return redirectToHomepage();
+    // }
 
     const pageData = await getDataStudyDependencies(json);
     return {

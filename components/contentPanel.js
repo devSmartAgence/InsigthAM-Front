@@ -7,7 +7,6 @@ import GridPattern from "./ui/GridPattern";
 import { themeBeautyfier } from "../utils/themeBeautyfier";
 
 export default function ContentPanel({
-  itemsCount,
   heading,
   theme,
   title,
@@ -16,7 +15,6 @@ export default function ContentPanel({
   secondaryButtonLabel,
   index,
   itemPosition,
-  itemHeight,
   slug,
 }) {
   const [width, height] = useDeviceSize();

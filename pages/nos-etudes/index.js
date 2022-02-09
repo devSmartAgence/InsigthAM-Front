@@ -4,7 +4,6 @@ import { themeBeautyfier } from "../../utils/themeBeautyfier";
 
 export default function Thematiques({ resStudies }) {
   let arrThemes = resStudies.data.map;
-  console.log("LISTE =====>", arrThemes);
   return (
     <Layout>
       <div className="bg-deep-blue w-screen h-screen">
@@ -34,7 +33,7 @@ export default function Thematiques({ resStudies }) {
 }
 
 export async function getStaticProps() {
-  const studies = await fetch(`http://localhost:1337/api/studies`);
+  const studies = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/api/studies`);
   const resStudies = await studies.json();
 
   return {

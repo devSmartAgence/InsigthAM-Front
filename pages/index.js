@@ -6,20 +6,17 @@ import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
 
 export async function getStaticProps() {
-  console.log("ENV===>", process.env.DB_HOST);
   // Get home-intro content from Strapi
   const resHome = await fetch(
-    `http://localhost:1337/api/home-introduction?populate=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
   );
   const homeIntro = await resHome.json();
-  console.log("HOMEINTRO=======>", homeIntro);
 
   // Get studies from Strapi
   const resStudies = await fetch(
-    `http://localhost:1337/api/studies?populate=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
   );
   const studies = await resStudies.json();
-  console.log("STUDIES=======>", studies);
 
   return { props: { homeIntro, studies } };
 }
@@ -35,18 +32,12 @@ export default function Home({ homeIntro, studies }) {
 
   const handleSplitPanelControlClick = (i) => {
     if (i === panelScrollIndex) {
-      console.log("i ===>", i);
-      console.log("SCROLL INDEX ===>", panelScrollIndex);
     } else if (i > panelScrollIndex) {
       setItemPosition((itemPosition - height + 110) * (i - panelScrollIndex));
       setPanelScrollIndex((panelScrollIndex = i));
-      console.log("i ===>", i);
-      console.log("SCROLL INDEX ===>", panelScrollIndex);
     } else if (i < panelScrollIndex) {
       setItemPosition((itemPosition + height - 110) * (panelScrollIndex - i));
       setPanelScrollIndex((panelScrollIndex = i));
-      console.log("i ===>", i);
-      console.log("SCROLL INDEX ===>", panelScrollIndex);
     }
   };
 
@@ -55,13 +46,11 @@ export default function Home({ homeIntro, studies }) {
     if (direction === "ScrollDown" && panelScrollIndex < studiesNumber - 1) {
       setItemPosition(itemPosition - height + 110);
       setPanelScrollIndex((panelScrollIndex += 1));
-      // console.log("Scroll Index ====>", panelScrollIndex);
       // setPosition("End");
       console.log("ITEM POSITION ====>", itemPosition);
     } else if (direction === "ScrollUp" && panelScrollIndex > 0) {
       setItemPosition(itemPosition + height - 110);
       setPanelScrollIndex((panelScrollIndex -= 1));
-      // console.log("Scroll Index ====>", panelScrollIndex);
       console.log("ITEM POSITION ====>", itemPosition);
 
       // setPosition("Start");

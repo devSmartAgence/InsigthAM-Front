@@ -2,11 +2,10 @@ import Image from "next/image";
 
 const ImageWide = ({ image }) => {
   let myImage = image.data.attributes.url;
-  console.log("MYIMAGE ====>", image);
   return (
     <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <Image
-        src={`http://localhost:1337/api${myImage}`}
+        src={`${process.env.NEXT_PUBLIC_DB_HOST}/api${myImage}`}
         alt=""
         className="absolute h-full w-full object-cover"
         layout="fill"

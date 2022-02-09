@@ -2,22 +2,6 @@ import ContentPanel from "./ContentPanel";
 import CoverPanel from "./CoverPanel";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 import GridPattern from "./ui/GridPattern";
-// FETCH DATAS
-export async function getStaticProps() {
-  // get home-intro content from Strapi
-  const resHome = await fetch(
-    `http://localhost:1337/api/home-introduction?populate=*`
-  );
-  const homeIntro = await resHome.json();
-
-  // get studies from Strapi
-  const resStudies = await fetch(
-    `http://localhost:1337/api/studies?populate=*`
-  );
-  const studies = await resStudies.json();
-
-  return { props: { homeIntro, studies } };
-}
 
 export default function HomeSection({
   studies,
@@ -77,7 +61,7 @@ export default function HomeSection({
         <div
           className={`bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
-          <GridPattern color={"deep-blue"} />
+          {/* <GridPattern color={"deep-blue"} /> */}
 
           <div className="absolute bg-deep-blue bg-opacity-85 h-[calc(50%-46px)] flex flex-col justify-center pr-[7vmax] pl-[7vmax]">
             <h2 className="text-white font-serif text-[1.2vmax] mb-[1vmax]">

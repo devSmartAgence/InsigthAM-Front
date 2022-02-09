@@ -6,25 +6,24 @@ export default function Footer() {
     <footer className="pb-[30px] bg-deep-blue relative px-[40px] pt-[30px] md:pb-[80px]">
       <div className="mb-[40px] flex md:mb-[70px]">
         <div className="items-center flex flex-col place-content-between w-screen xl:flex-row">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col items-center md:flex-row">
             <Link href="/" passHref>
-              <Image
-                className="h-16 cursor-pointer md:mr-[60px]"
-                src="/insightAM_white.svg"
-                alt="Logo Insight AM"
-                layout="fill"
-              />
+              <div className="h-16 w-[105px] cursor-pointer relative md:mr-[60px]">
+                <Image
+                  src="/insightAM_white.svg"
+                  alt="Logo Insight AM"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
             </Link>
             <Link
               href="https://www.linkedin.com/in/pascalskoenig/?originalSubdomain=fr#experience"
               passHref
             >
-              <Image
-                className="h-16 cursor-pointer mt-[20px] md:ml-8 md:mt-0"
-                src="/Linkedin.svg"
-                alt="Linkedin"
-                layout="fill"
-              />
+              <div className="h-16 relative w-[50px] cursor-pointer mt-[20px] md:ml-8 md:mt-0">
+                <Image src="/Linkedin.svg" alt="Linkedin" layout="fill" />
+              </div>
             </Link>
           </div>
           <nav className="mt-[30px] xl:mt-0">
