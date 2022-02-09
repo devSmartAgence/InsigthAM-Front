@@ -1,7 +1,7 @@
 import delve from "dlv";
 import FaqItem from "./faq-item";
 
-const faq = ({ faqItem }) => {
+const faq = ({ FaqItem }) => {
   return (
     <ul className=" font-serif list-disc leading-[30px] mb-[5%] md:ml-13">
       {FaqItem &&
