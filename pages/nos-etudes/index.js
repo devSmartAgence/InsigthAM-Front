@@ -1,6 +1,6 @@
-import Layout from "../../components/Layout";
-import SummaryStudy from "../../components/ui/SummaryStudy";
-import { themeBeautyfier } from "../../utils/themeBeautyfier";
+import Layout from "../../components/Layout.js";
+import SummaryStudy from "../../components/ui/SummaryStudy.js";
+import { themeBeautyfier } from "../../utils/themeBeautyfier.js";
 
 export default function Thematiques({ resStudies }) {
   return (
