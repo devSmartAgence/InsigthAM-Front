@@ -2,8 +2,8 @@ import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
-import HomeSections from "/components/HomeSections";
-import Layout from "/components/Layout";
+import HomeSections from "../components/HomeSections";
+import Layout from "../components/Layout";
 
 export default function Home({ homeIntro, studies }) {
   const studiesNumber = studies.data.length;

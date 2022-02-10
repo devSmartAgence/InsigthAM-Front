@@ -6,7 +6,7 @@ import GridPattern from "./ui/GridPattern";
 
 import { themeBeautyfier } from "../utils/themeBeautyfier";
 
-export default function Contentpanel({
+export default function ContentPanel({
   heading,
   theme,
   title,
