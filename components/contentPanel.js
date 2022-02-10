@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import useDeviceSize from "../components/hooks/useDevicesize";
+import useDeviceSize from "./hooks/useDevicesize";
 
 import Button from "./ui/Button";
 import GridPattern from "./ui/GridPattern";
 
 import { themeBeautyfier } from "../utils/themeBeautyfier";
 
-export default function ContentPanel({
+export default function Contentpanel({
   heading,
   theme,
   title,
