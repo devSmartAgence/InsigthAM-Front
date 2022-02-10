@@ -1,5 +1,5 @@
-import ContentPanel from "./ContentPanel";
-import CoverPanel from "./CoverPanel";
+import ContentPanel from "/components/ContentPanel";
+import CoverPanel from "/components/CoverPanel";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 import GridPattern from "./ui/GridPattern";
 

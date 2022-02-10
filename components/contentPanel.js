@@ -1,4 +1,4 @@
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
 import Button from "./ui/Button";
@@ -17,8 +17,6 @@ export default function ContentPanel({
   itemPosition,
   slug,
 }) {
-  const [width, height] = useDeviceSize();
-
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
       <div className={`flex flex-row h-[calc(100vh-110px)]`}>

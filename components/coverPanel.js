@@ -1,14 +1,8 @@
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 
 import GridPattern from "./ui/GridPattern";
 
-export default function CoverPanel({
-  index,
-  itemsCount,
-  cover,
-  itemPosition,
-  itemHeight,
-}) {
+export default function CoverPanel({ cover, itemPosition }) {
   return (
     <div className="w-screen h-[calc(100vh-110px)]">
       <div
