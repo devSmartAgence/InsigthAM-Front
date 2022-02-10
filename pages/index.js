@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import useDeviceSize from "../components/hooks/useDevicesize"; // Hook to get wondow sizes
+import useDeviceSize from "../components/hooks/useDevicesize";
 
 import HomeSections from "../components/HomeSections";
 import Layout from "../components/Layout";
