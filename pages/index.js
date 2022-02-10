@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ReactScrollWheelHandler from "react-scroll-wheel-handler.js";
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useDeviceSize from "../components/hooks/useDevicesize.js";
 
 import HomeSections from "../components/HomeSections.js";
