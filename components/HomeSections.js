@@ -1,7 +1,7 @@
-import ContentPanel from "./ContentPanel.js";
-import CoverPanel from "./CoverPanel.js";
-import HomeSplitPanelControl from "./ui/HomeSplitPanelControl.js";
-import GridPattern from "./ui/GridPattern.js";
+import ContentPanel from "./ContentPanel";
+import CoverPanel from "./CoverPanel";
+import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
+import GridPattern from "./ui/GridPattern";
 
 export default function HomeSection({
   studies,

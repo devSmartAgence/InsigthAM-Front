@@ -72,7 +72,6 @@ export async function getServerSideProps(context) {
     // }
 
     const pageData = await getDataAboutDependencies(json);
-    // console.log("PAGE DATA 1 ====>", pageData);
     return {
       props: { pageData },
     };
