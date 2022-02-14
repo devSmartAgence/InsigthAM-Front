@@ -2,7 +2,7 @@ import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
-import HomeSections from "../components/HomeSections";
+import HomeSections from "../components/HomeSections.js";
 import Layout from "../components/Layout";
 
 export default function Home({ homeIntro, studies }) {
