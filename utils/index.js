@@ -31,7 +31,7 @@ export function redirectToHomepage() {
 // This function will build the url to fetch on the Strapi API
 export function getDataStudy(slug, locale) {
   const slugToReturn = `studies/${slug}`;
-  const apiUrl = `/studies/${slug}?populate=*`;
+  const apiUrl = `/studies/${slug}?populate[blocks][populate]=*&populate[cover]=*`;
 
   return {
     data: getStrapiURL(apiUrl),
@@ -42,7 +42,7 @@ export function getDataStudy(slug, locale) {
 // This function will build the url to fetch on the Strapi API
 export function getDataAbout(slug, locale) {
   const slugToReturn = `about`;
-  const apiUrl = `/about?populate=*`;
+  const apiUrl = `/about?populate[blocks][populate]=*&populate[cover]=*`;
 
   return {
     data: getStrapiURL(apiUrl),

@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export default function Button({ label, type, style, slug, size }) {
   return (
-    <Link href={`/etude/${slug}?populate=*`} passHref>
+    <Link
+      href={`/etude/${slug}?populate[blocks][populate]=*&populate[cover]=*`}
+      passHref
+    >
       <button
         type="button"
         className={

@@ -3,7 +3,7 @@ import CoverPanel from "./CoverPanel";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 import GridPattern from "./ui/GridPattern";
 
-export default function HomeSection({
+export default function HomeSections({
   studies,
   itemPosition,
   itemHeight,
@@ -12,6 +12,8 @@ export default function HomeSection({
   panelScrollIndex,
   height,
 }) {
+  console.log("STUDIES 0 HOME SECTION ==>", studies.data[0]);
+
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl

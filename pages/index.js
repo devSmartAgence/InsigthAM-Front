@@ -74,13 +74,13 @@ export default function Home({ homeIntro, studies }) {
 export async function getStaticProps() {
   // Get home-intro content from Strapi
   const resHome = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate[blocks][populate]=*&populate[cover]=*`
   );
   const homeIntro = await resHome.json();
 
   // Get studies from Strapi
   const resStudies = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*`
   );
   const studies = await resStudies.json();
 

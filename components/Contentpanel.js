@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import useDeviceSize from "./hooks/useDevicesize";
 
 import Button from "./ui/Button";
 import GridPattern from "./ui/GridPattern";

@@ -81,7 +81,7 @@ export default function Etudes({ study }) {
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*`
   );
   const studies = await res.json();
 
@@ -97,6 +97,7 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  console.log("PARAMS ===>", params.etudes);
   // params contains the study `theme`.
   const res = await fetch(
     process.env.NEXT_PUBLIC_DB_HOST +

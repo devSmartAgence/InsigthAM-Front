@@ -5,7 +5,7 @@ const ImageWide = ({ image }) => {
   return (
     <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <Image
-        src={`${process.env.NEXT_PUBLIC_DB_HOST}/api${myImage}`}
+        src={`${process.env.NEXT_PUBLIC_DB_HOST}${myImage}`}
         alt=""
         className="absolute h-full w-full object-cover"
         layout="fill"
