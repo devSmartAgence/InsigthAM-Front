@@ -49,3 +49,14 @@ export function getDataAbout(slug, locale) {
     slug: slugToReturn,
   };
 }
+
+// This function will build the url to fetch on the Strapi API
+export function getDataMethode(slug, locale) {
+  const slugToReturn = `methodes`;
+  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*`;
+
+  return {
+    data: getStrapiURL(apiUrl),
+    slug: slugToReturn,
+  };
+}

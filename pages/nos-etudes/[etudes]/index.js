@@ -7,6 +7,7 @@ import GridPattern from "../../../components/ui/GridPattern";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { themeBeautyfier } from "../../../utils/themeBeautyfier";
+import Link from "next/link";
 
 export default function Etudes({ study }) {
   let theme = study.data[0].attributes.theme;
@@ -44,7 +45,9 @@ export default function Etudes({ study }) {
               <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
                 {themeBeautyfier(theme)}
               </h1>
-              <Button type="primary" label={"Méthode déployée"}></Button>
+              <Link href="/" passHref>
+                <Button type="primary" label={"Méthode déployée"}></Button>
+              </Link>
             </div>
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
               <div>
