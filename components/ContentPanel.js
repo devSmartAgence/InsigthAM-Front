@@ -29,7 +29,7 @@ export default function ContentPanel({
           <GridPattern color={"white"} />
           <div className="z-20 pr-[7vmax] pl-[7vmax]">
             <div className="z-20">
-              <p className="text-deep-blue font-sans text-[1.2vmax] mb-[1vmax] uppercase">
+              <p className="text-deep-blue font-sans text-[1.2vmax] mb-[1vmax] uppercase ">
                 {heading}
               </p>
 

@@ -34,3 +34,13 @@ export async function getDataMethodeDependencies(json) {
     blocks,
   };
 }
+
+// This function will get the data dependencies for every blocks.
+export async function getDataCGVDependencies(json) {
+  let blocks = delve(json, "blocks", []);
+  blocks = await Promise.all(blocks.map(checkRequiredData));
+  return {
+    ...json,
+    blocks,
+  };
+}

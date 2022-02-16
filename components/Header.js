@@ -56,7 +56,7 @@ export default function Header() {
             <Link href="/nos-etudes" passHref>
               <li
                 className={
-                  router.pathname === "/thematiques"
+                  router.pathname === "/nos-etudes"
                     ? "mr-[50px] text-[12px] cursor-pointer uppercase text-pink"
                     : "mr-[50px] text-[12px] cursor-pointer uppercase text-deep-blue"
                 }

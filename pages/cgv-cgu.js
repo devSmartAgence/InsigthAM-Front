@@ -2,13 +2,12 @@ import delve from "dlv";
 
 import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
-import { motion } from "framer-motion";
 
 import Layout from "../components/Layout";
 
 //Strapi tools for dynamics zones
-import { getDataAboutDependencies } from "../components/services/api";
-import { redirectToHomepage, getDataAbout } from "../utils";
+import { getDataCGVDependencies } from "../components/services/api";
+import { redirectToHomepage, getDataCGV } from "../utils";
 import { getLocalizedParams } from "../utils/localize";
 import BlockManager from "../components/shared/BlockManager";
 
@@ -47,28 +46,18 @@ const Universals = ({ pageData }) => {
               <AnimatedH1Type
                 title={pageData.data.attributes.title}
                 className={
-                  "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
+                  "flex overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
                 }
               />
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { delay: 0.2, duration: 1 },
-                }}
-              >
-                <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
-                  {pageData.data.attributes.introduction}
-                </p>
-
-                <div>{blocks && <BlockManager blocks={blocks} />}</div>
-              </motion.div>
-
-              <ContactForm title={"Nous contacter"} />
+              <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
+                {pageData.data.attributes.introduction}
+              </p>
             </div>
+            <div>{blocks && <BlockManager blocks={blocks} />}</div>
           </div>
+
+          <ContactForm title={"Nous contacter"} />
         </div>
       </Layout>
     </ReactScrollWheelHandler>
@@ -79,7 +68,7 @@ export async function getServerSideProps(context) {
   const { slug } = getLocalizedParams(context.query);
 
   try {
-    const data = getDataAbout(slug);
+    const data = getDataCGV(slug);
     const res = await fetch(delve(data, "data"));
     const json = await res.json();
 
@@ -87,7 +76,7 @@ export async function getServerSideProps(context) {
     //   return redirectToHomepage();
     // }
 
-    const pageData = await getDataAboutDependencies(json);
+    const pageData = await getDataCGVDependencies(json);
     return {
       props: { pageData },
     };

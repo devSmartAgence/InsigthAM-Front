@@ -1,7 +1,10 @@
+import { motion } from "framer-motion";
+
 import ContentPanel from "./ContentPanel.js";
 import CoverPanel from "./CoverPanel.js";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 import GridPattern from "./ui/GridPattern";
+import AnimatedH1 from "./ui/AnimatedH1Home";
 
 export default function HomeSections({
   studies,
@@ -30,14 +33,33 @@ export default function HomeSections({
         >
           <GridPattern color={"deep-blue"} />
           <div className="absolute h-1/2 flex flex-col justify-center p-[5vmax]">
-            <h1 className="uppercase text-white text-[4vmax] ">Insight AM</h1>
-            <div className="w-[3vmax] h-[0.5vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"></div>
-            <p className="font-serif text-white text-[2vmax] leading-normal tracking-wider	">
+            <AnimatedH1
+              title="Insight AM"
+              className="uppercase text-white text-[4vmax] flex h-[6vmax] overflow-hidden "
+            />
+            <motion.div
+              className="w-[3vmax] h-[0.5vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"
+              initial={{ y: -20, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: 0.3, duration: 0.5 },
+              }}
+            ></motion.div>
+            <motion.p
+              className="font-serif text-white text-[2vmax] leading-normal tracking-wider"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1, delay: 0.4 },
+              }}
+            >
               Études de marché et stratégies marketing&nbsp;
               <span className="text-pink">
                 pour les producteurs et intermédiaires en produits financiers.
               </span>
-            </p>
+            </motion.p>
           </div>
         </div>
 
@@ -66,28 +88,37 @@ export default function HomeSections({
           {/* <GridPattern color={"deep-blue"} /> */}
 
           <div className="absolute bg-deep-blue bg-opacity-85 h-[calc(50%-46px)] flex flex-col justify-center pr-[7vmax] pl-[7vmax]">
-            <h2 className="text-white font-serif text-[1.2vmax] mb-[1vmax]">
-              Nos objectifs
-            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 1, duration: 1 },
+              }}
+            >
+              <h2 className="text-white font-serif text-[1.2vmax] mb-[1vmax]">
+                Nos objectifs
+              </h2>
 
-            <ul className="text-white font-serif text-[1vmax] list-disc mb-[2vmax] ml-[17px] leading-[2vmax]">
-              <li>
-                Accompagner les acteurs du marché dans la compréhension des
-                attentes des investisseurs et distributeurs,
-              </li>
-              <li>
-                Identifier les tendances et capter les signaux faibles de la
-                tiers distribution,
-              </li>
-              <li>
-                Revisiter le positionnement des gammes de produits à destination
-                des épargnants,
-              </li>
-              <li>
-                Valider les choix des producteurs et distributeurs dans le
-                lancement de nouveaux produits.
-              </li>
-            </ul>
+              <ul className="text-white font-serif text-[1vmax] list-disc mb-[2vmax] ml-[17px] leading-[2vmax]">
+                <li>
+                  Accompagner les acteurs du marché dans la compréhension des
+                  attentes des investisseurs et distributeurs,
+                </li>
+                <li>
+                  Identifier les tendances et capter les signaux faibles de la
+                  tiers distribution,
+                </li>
+                <li>
+                  Revisiter le positionnement des gammes de produits à
+                  destination des épargnants,
+                </li>
+                <li>
+                  Valider les choix des producteurs et distributeurs dans le
+                  lancement de nouveaux produits.
+                </li>
+              </ul>
+            </motion.div>
           </div>
         </div>
 

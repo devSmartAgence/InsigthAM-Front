@@ -38,7 +38,7 @@ export default function Footer() {
                   Nos études
                 </li>
               </Link>
-              <Link href="/CGVCVU" passHref>
+              <Link href="/cgv-cgu" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   CGV/CVU
                 </li>

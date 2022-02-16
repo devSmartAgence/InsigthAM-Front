@@ -60,3 +60,14 @@ export function getDataMethode(slug, locale) {
     slug: slugToReturn,
   };
 }
+
+// This function will build the url to fetch on the Strapi API
+export function getDataCGV(slug, locale) {
+  const slugToReturn = `cgv-cgu`;
+  const apiUrl = `/cgv?populate[blocks][populate]=*&populate[cover]=*`;
+
+  return {
+    data: getStrapiURL(apiUrl),
+    slug: slugToReturn,
+  };
+}
