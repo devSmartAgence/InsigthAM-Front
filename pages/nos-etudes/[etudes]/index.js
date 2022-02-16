@@ -100,7 +100,6 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  console.log("PARAMS ===>", params.etudes);
   // params contains the study `theme`.
   const res = await fetch(
     process.env.NEXT_PUBLIC_DB_HOST +

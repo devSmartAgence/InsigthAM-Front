@@ -55,6 +55,7 @@ export default function ContentPanel({
                     type={"primary"}
                     index={index}
                     slug={slug}
+                    theme={theme}
                   />
                 )}
 

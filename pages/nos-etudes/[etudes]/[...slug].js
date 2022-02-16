@@ -3,21 +3,21 @@ import delve from "dlv";
 import { useState } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
-import Layout from "../../components/Layout";
+import Layout from "../../../components/Layout";
 //UI components
-import BackButton from "../../components/ui/BackButton";
-import BottomNavigation from "../../components/ui/BottomNavigation";
+import BackButton from "../../../components/ui/BackButton";
+import BottomNavigation from "../../../components/ui/BottomNavigation";
 
-import { themeBeautyfier } from "../../utils/themeBeautyfier";
+import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 //Strapi tools for dynamics zones
-import { getDataStudyDependencies } from "../../components/services/api";
-import { redirectToHomepage, getDataStudy } from "../../utils";
-import { getLocalizedParams } from "../../utils/localize";
-import BlockManager from "../../components/shared/BlockManager";
+import { getDataStudyDependencies } from "../../../components/services/api";
+import { redirectToHomepage, getDataStudy } from "../../../utils";
+import { getLocalizedParams } from "../../../utils/localize";
+import BlockManager from "../../../components/shared/BlockManager";
 
-import ContactForm from "../../components/ui/Forms/ContactForm";
-import BreadCrumModule from "../../components/ui/BreadcrumbModule";
+import ContactForm from "../../../components/ui/Forms/ContactForm";
+import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
   const blocks = delve(pageData, "data.attributes.blocks");

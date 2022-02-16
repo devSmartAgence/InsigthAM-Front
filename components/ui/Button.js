@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Button({ label, type, style, slug, size }) {
+export default function Button({ label, type, style, slug, size, theme }) {
   return (
     <Link
-      href={`/etude/${slug}?populate[blocks][populate]=*&populate[cover]=*`}
+      href={`/nos-etudes/${theme}/${slug}?populate[blocks][populate]=*&populate[cover]=*`}
       passHref
     >
       <button
