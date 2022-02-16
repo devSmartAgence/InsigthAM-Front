@@ -1,15 +1,16 @@
 import Button from "./ui/Button";
 import Image from "next/image";
 
-export default function StudyPreview() {
+export default function StudyPreview({ title, cover }) {
+  console.log("ICI ===>", `${process.env.NEXT_PUBLIC_DB_HOST}/${cover}`);
   return (
     <div className="max-w-[580px] bg-white p-[45px] mb-[35px]">
       <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
-        Fonds en Euros : quelle place demain dans l’épargne des Français ?
+        {title}
       </h2>
       <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
         <Image
-          src="/img/Couv_etude_Fidelity_2905-1024x768.png"
+          src={`${process.env.NEXT_PUBLIC_DB_HOST}${cover}`}
           alt=""
           layout="fill"
           objectFit="cover"

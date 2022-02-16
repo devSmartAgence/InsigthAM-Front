@@ -71,3 +71,14 @@ export function getDataCGV(slug, locale) {
     slug: slugToReturn,
   };
 }
+
+// This function will build the url to fetch on the Strapi API
+export function getDataContact(slug, locale) {
+  const slugToReturn = `contact`;
+  const apiUrl = `/contact?populate[blocks][populate]=*&populate[cover]=*`;
+
+  return {
+    data: getStrapiURL(apiUrl),
+    slug: slugToReturn,
+  };
+}
