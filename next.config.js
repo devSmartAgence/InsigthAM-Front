@@ -3,6 +3,6 @@ module.exports = {
     customKey: "my-value",
   },
   images: {
-    domains: ["localhost", "images.unsplash.com"],
+    domains: ["localhost", "res.cloudinary.com"],
   },
 };

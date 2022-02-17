@@ -33,7 +33,8 @@ export default function Etudes({ studies }) {
             <GridPattern
               color={"deep-blue"}
               cover={
-                "/uploads/large_egor_vikhrev_Z_5i0_R_Vukd_U_unsplash_8755a365d8.png"
+                studies.data[0].attributes.cover.data.attributes.formats.large
+                  .url
               }
             />
           </div>
@@ -60,9 +61,9 @@ export default function Etudes({ studies }) {
                     key={study.attributes.title + index}
                     slug={study.attributes.slug}
                     theme={study.attributes.theme}
-                    // cover={
-                    //   study.attributes.cover.data.attributes.formats.large.url
-                    // }
+                    cover={
+                      study.attributes.cover.data.attributes.formats.large.url
+                    }
                   />
                 ))}
               </div>
