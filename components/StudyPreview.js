@@ -1,7 +1,7 @@
 import Button from "./ui/Button";
 import Image from "next/image";
 
-export default function StudyPreview({ title, cover, slug }) {
+export default function StudyPreview({ title, cover, slug, theme }) {
   return (
     <div className="max-w-[580px] bg-white p-[45px] mb-[35px]">
       <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
@@ -24,7 +24,7 @@ export default function StudyPreview({ title, cover, slug }) {
       </p>
       <Button
         label={"Résultat et téléchargement de l'étude"}
-        href="/nos-etudes/"
+        href={`/nos-etudes/${theme}/${slug}`}
       ></Button>
     </div>
   );

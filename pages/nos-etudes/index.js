@@ -4,7 +4,6 @@ import SummaryStudy from "../../components/ui/SummaryStudy.js";
 import { themeBeautyfier } from "../../utils/themeBeautyfier.js";
 
 export default function Thematiques({ resStudies }) {
-  console.log("RESSTUDIES ====>", resStudies.data[0].attributes.theme);
   let arrThemes = resStudies.data.map((x) => x.attributes.theme);
   let singleThemes = [...new Set(arrThemes)];
 

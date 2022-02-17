@@ -20,6 +20,7 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
+  console.log("MY PAGE DATA ===>", pageData.data[0].attributes);
   const blocks = delve(pageData, "data.attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
@@ -45,7 +46,7 @@ const Universals = ({ pageData }) => {
             </div>
             <div className="flex flex-col items-center">
               <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
-                {themeBeautyfier(pageData.data.attributes.theme)}
+                {themeBeautyfier(pageData.data[0].attributes.theme)}
               </div>
               <div className="w-[40px] h-[6px] bg-pink"></div>
             </div>
@@ -57,10 +58,10 @@ const Universals = ({ pageData }) => {
           >
             <div>
               <h1 className="text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 ">
-                {pageData.data.attributes.title}
+                {pageData.data[0].attributes.title}
               </h1>
               <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
-                {pageData.data.attributes.introduction}
+                {pageData.data[0].attributes.introduction}
               </p>
             </div>
             <div>{blocks && <BlockManager blocks={blocks} />}</div>

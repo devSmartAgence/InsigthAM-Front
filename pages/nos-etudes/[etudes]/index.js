@@ -59,6 +59,7 @@ export default function Etudes({ studies }) {
                     description={study.attributes.description}
                     key={study.attributes.title + index}
                     slug={study.attributes.slug}
+                    theme={study.attributes.theme}
                     cover={
                       study.attributes.cover.data.attributes.formats.large.url
                     }
@@ -70,6 +71,8 @@ export default function Etudes({ studies }) {
                   <StudyPreview
                     title={study.attributes.title}
                     key={study.attributes.title + index}
+                    slug={study.attributes.slug}
+                    theme={study.attributes.theme}
                     cover={
                       study.attributes.cover.data.attributes.formats.large.url
                     }
