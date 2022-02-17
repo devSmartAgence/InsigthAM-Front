@@ -130,7 +130,7 @@ export default function HomeSections({
               key={index + "cover"}
               index={study.id}
               itemsCount={studies.data.length}
-              cover={study.attributes.cover.data.attributes.formats.large.url}
+              cover="study.attributes.cover.data.attributes.formats.large.url"
               itemPosition={itemPosition}
             />
           ))}
