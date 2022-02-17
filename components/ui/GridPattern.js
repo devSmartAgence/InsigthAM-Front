@@ -12,12 +12,7 @@ export default function GridPattern({ color, cover }) {
 
       {color === "deep-blue" && cover && (
         <div className="w-full h-full relative -z-10">
-          <Image
-            src={process.env.NEXT_PUBLIC_DB_HOST + cover}
-            layout="fill"
-            objectFit="cover"
-            alt="Pattern"
-          />
+          <Image src={cover} layout="fill" objectFit="cover" alt="Pattern" />
         </div>
       )}
     </>

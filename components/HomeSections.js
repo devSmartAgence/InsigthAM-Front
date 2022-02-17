@@ -130,7 +130,7 @@ export default function HomeSections({
               key={index + "cover"}
               index={study.id}
               itemsCount={studies.data.length}
-              cover="study.attributes.cover.data.attributes.formats.large.url"
+              cover="https://images.unsplash.com/photo-1645104787913-aeb889b0e190?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
               itemPosition={itemPosition}
             />
           ))}
