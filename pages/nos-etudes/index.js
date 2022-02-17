@@ -4,6 +4,11 @@ import SummaryStudy from "../../components/ui/SummaryStudy.js";
 import { themeBeautyfier } from "../../utils/themeBeautyfier.js";
 
 export default function Thematiques({ resStudies }) {
+  console.log("RESSTUDIES ====>", resStudies.data[0].attributes.theme);
+  let arrThemes = resStudies.data.map((x) => x.attributes.theme);
+  let singleThemes = [...new Set(arrThemes)];
+
+  console.log("singleThemes", singleThemes);
   return (
     <Layout>
       <div className="bg-deep-blue w-screen h-screen">
@@ -22,11 +27,11 @@ export default function Thematiques({ resStudies }) {
             vel erat posuere.
           </p>
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
-            {resStudies.data.map((study, index) => (
+            {singleThemes.map((theme, index) => (
               <SummaryStudy
-                key={study.attributes.theme + index}
-                title={themeBeautyfier(study.attributes.theme)}
-                theme={study.attributes.theme}
+                key={theme + index}
+                title={themeBeautyfier(theme)}
+                theme={theme}
               />
             ))}
           </div>
