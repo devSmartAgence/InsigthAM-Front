@@ -20,7 +20,6 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  console.log("PAGE DATA ICI =====>", pageData.data[0].attributes.theme);
   const blocks = delve(pageData, "data.attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
@@ -88,7 +87,6 @@ export async function getServerSideProps(context) {
     // }
 
     const pageData = await getDataMethodeDependencies(json);
-    console.log("PAGE DATA ===>", pageData);
     return {
       props: { pageData },
     };

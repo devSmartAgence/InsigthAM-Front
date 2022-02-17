@@ -8,7 +8,6 @@ export default function Thematiques({ resStudies }) {
   let arrThemes = resStudies.data.map((x) => x.attributes.theme);
   let singleThemes = [...new Set(arrThemes)];
 
-  console.log("singleThemes", singleThemes);
   return (
     <Layout>
       <div className="bg-deep-blue w-screen h-screen">

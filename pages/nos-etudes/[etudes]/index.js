@@ -10,6 +10,7 @@ import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 import Link from "next/link";
 
 export default function Etudes({ studies }) {
+  console.log("THEME ====>", studies.data[0].attributes.theme);
   let theme = studies.data[0].attributes.theme;
   const [modulePosition, setModulePosition] = useState(0);
   let handleScroll = (modulePosition) => {
@@ -43,13 +44,12 @@ export default function Etudes({ studies }) {
               <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
                 {themeBeautyfier(theme)}
               </h1>
-              <Link href="/" passHref>
-                <Button
-                  type="primary"
-                  label={"Méthode déployéee"}
-                  href={`/contact`}
-                ></Button>
-              </Link>
+
+              <Button
+                type="primary"
+                label={"Méthode déployée"}
+                href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
+              ></Button>
             </div>
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
               <div>
@@ -104,7 +104,6 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  console.log("PARAMS ===>", params.etudes);
   // params contains the study `theme`.
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=${params.etudes}`

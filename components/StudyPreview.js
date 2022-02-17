@@ -1,7 +1,7 @@
 import Button from "./ui/Button";
 import Image from "next/image";
 
-export default function StudyPreview({ title, cover }) {
+export default function StudyPreview({ title, cover, slug }) {
   return (
     <div className="max-w-[580px] bg-white p-[45px] mb-[35px]">
       <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
