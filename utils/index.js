@@ -29,7 +29,7 @@ export function redirectToHomepage() {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getDataStudy(slug, locale) {
+export function getDataStudy(slug) {
   const slugToReturn = `studies/${slug}`;
   const apiUrl = `/studies/${slug}?populate[blocks][populate]=*&populate[cover]=*`;
 
@@ -40,7 +40,7 @@ export function getDataStudy(slug, locale) {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getDataAbout(slug, locale) {
+export function getDataAbout() {
   const slugToReturn = `about`;
   const apiUrl = `/about?populate[blocks][populate]=*&populate[cover]=*`;
 
@@ -51,9 +51,10 @@ export function getDataAbout(slug, locale) {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getDataMethode(slug, locale) {
+export function getDataMethode(slug) {
+  console.log("SLIUG ===>", slug);
   const slugToReturn = `methodes`;
-  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*`;
+  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=EtudesReferencementThematique`;
 
   return {
     data: getStrapiURL(apiUrl),
@@ -62,7 +63,7 @@ export function getDataMethode(slug, locale) {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getDataCGV(slug, locale) {
+export function getDataCGV() {
   const slugToReturn = `cgv-cgu`;
   const apiUrl = `/cgv?populate[blocks][populate]=*&populate[cover]=*`;
 
@@ -73,7 +74,7 @@ export function getDataCGV(slug, locale) {
 }
 
 // This function will build the url to fetch on the Strapi API
-export function getDataContact(slug, locale) {
+export function getDataContact() {
   const slugToReturn = `contact`;
   const apiUrl = `/contact?populate[blocks][populate]=*&populate[cover]=*`;
 

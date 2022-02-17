@@ -28,8 +28,13 @@ export default function PublicationPreview({
         </Link>
       </div>
       <div>
-        <Button label={"Nous connaître"} type={"primary"} />
-        <Button label={"Nos études"} type={"secondary"} aspect={"light"} />
+        <Button label={"Nous connaître"} type={"primary"} href="/" />
+        <Button
+          label={"Nos études"}
+          type={"secondary"}
+          aspect={"light"}
+          href={"/"}
+        />
       </div>
     </div>
   );

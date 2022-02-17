@@ -56,6 +56,7 @@ export default function ContentPanel({
                     index={index}
                     slug={slug}
                     theme={theme}
+                    href={`/nos-etudes/${theme}/${slug}`}
                   />
                 )}
 
@@ -64,6 +65,7 @@ export default function ContentPanel({
                     label={secondaryButtonLabel}
                     type={"secondary"}
                     style={"light"}
+                    href={`/nos-etudes/${theme}/${slug}`}
                   />
                 )}
               </div>

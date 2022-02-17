@@ -33,22 +33,27 @@ export default function Footer() {
                   À propos
                 </li>
               </Link>
-              <Link href="/etudes" passHref>
+              <Link href="/nos-etudes" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   Nos études
                 </li>
               </Link>
               <Link href="/cgv-cgu" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
-                  CGV/CVU
+                  CGV/CGU
                 </li>
               </Link>
-              <Link href="/legal" passHref>
+              <Link href="/cgv-cgu" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   MENTIONS LÉGALES
                 </li>
               </Link>
-              <Button type={"secondary"} style={"dark"} label={"Contact"} />
+              <Button
+                type={"secondary"}
+                style={"dark"}
+                label={"Contact"}
+                href={"/contact"}
+              />
             </ul>
           </nav>
         </div>

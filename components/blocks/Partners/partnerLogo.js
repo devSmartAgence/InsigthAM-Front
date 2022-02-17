@@ -1,8 +1,6 @@
 import Image from "next/image";
 
 const PartnerLogo = ({ logo }) => {
-  console.log(logo);
-
   let myLogo = logo.data.attributes.url;
   return (
     <div className="h-[40px] mr-[50px] ">

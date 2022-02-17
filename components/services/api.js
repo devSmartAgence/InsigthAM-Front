@@ -1,6 +1,6 @@
 import delve from "dlv";
 
-// This functionn can merge required data but it is not used here.
+// This function can merge required data but it is not used here.
 export async function checkRequiredData(block) {
   return block;
 }

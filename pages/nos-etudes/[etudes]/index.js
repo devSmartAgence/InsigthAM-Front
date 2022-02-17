@@ -10,14 +10,8 @@ import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 import Link from "next/link";
 
 export default function Etudes({ studies }) {
-  console.log(
-    "STUDYYY ====>",
-    studies.data[0].attributes.cover.data.attributes.formats.large.url
-  );
   let theme = studies.data[0].attributes.theme;
-
   const [modulePosition, setModulePosition] = useState(0);
-
   let handleScroll = (modulePosition) => {
     if (modulePosition === "Up") {
       setModulePosition(0);
@@ -50,7 +44,11 @@ export default function Etudes({ studies }) {
                 {themeBeautyfier(theme)}
               </h1>
               <Link href="/" passHref>
-                <Button type="primary" label={"Méthode déployée"}></Button>
+                <Button
+                  type="primary"
+                  label={"Méthode déployéee"}
+                  href={`/contact`}
+                ></Button>
               </Link>
             </div>
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
@@ -59,7 +57,9 @@ export default function Etudes({ studies }) {
                   <div>
                     <StudyPreview
                       title={study.attributes.title}
+                      description={study.attributes.description}
                       key={study.attributes.title + index}
+                      slug={study.attributes.slug}
                       cover={
                         study.attributes.cover.data.attributes.formats.large.url
                       }
@@ -108,9 +108,10 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
+  console.log("PARAMS ===>", params.etudes);
   // params contains the study `theme`.
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=${params.etudes}`
   );
   const studies = await res.json();
 

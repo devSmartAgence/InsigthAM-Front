@@ -64,7 +64,12 @@ export default function Header() {
                 Nos études
               </li>
             </Link>
-            <Button type={"secondary"} style={"light"} label={"Contact"} />
+            <Button
+              type={"secondary"}
+              style={"light"}
+              label={"Contact"}
+              href={`/contact`}
+            />
           </ul>
         </nav>
       ) : (
@@ -137,6 +142,7 @@ export default function Header() {
                       type={"secondary"}
                       style={"dark"}
                       label={"Contact"}
+                      href={`/contact`}
                     />
                   </motion.div>
                 </motion.ul>

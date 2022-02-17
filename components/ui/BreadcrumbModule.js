@@ -11,7 +11,7 @@ export default function BreadCrumModule({ modulePosition, style }) {
       animate={{ top: modulePosition }}
       transition={{ duration: 0.3, type: "ease" }}
     >
-      <Button label={"Retour"} size={"small"} />
+      <Button label={"Retour"} size={"small"} href="/" />
       <div className="flex items-center ml-[30px]">
         <div
           className={

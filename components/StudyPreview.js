@@ -2,7 +2,6 @@ import Button from "./ui/Button";
 import Image from "next/image";
 
 export default function StudyPreview({ title, cover }) {
-  console.log("ICI ===>", `${process.env.NEXT_PUBLIC_DB_HOST}/${cover}`);
   return (
     <div className="max-w-[580px] bg-white p-[45px] mb-[35px]">
       <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
@@ -23,7 +22,10 @@ export default function StudyPreview({ title, cover }) {
         Conseillers en Gestion de Patrimoine et Banques Privées consultés) sur
         leurs perceptions de la baisse du rendement du Fonds Euros.
       </p>
-      <Button label={"Résultat et téléchargement de l'étude"}></Button>
+      <Button
+        label={"Résultat et téléchargement de l'étude"}
+        href="/nos-etudes/"
+      ></Button>
     </div>
   );
 }

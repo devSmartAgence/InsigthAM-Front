@@ -1,11 +1,17 @@
 import Link from "next/link";
 
-export default function Button({ label, type, style, slug, size, theme }) {
+export default function Button({
+  label,
+  type,
+  style,
+  slug,
+  size,
+  theme,
+  href,
+}) {
+  console.log("HREF ==>", href);
   return (
-    <Link
-      href={`/nos-etudes/${theme}/${slug}?populate[blocks][populate]=*&populate[cover]=*`}
-      passHref
-    >
+    <Link href={href} passHref>
       <button
         type="button"
         className={
