@@ -15,6 +15,10 @@ export default function HomeSections({
   panelScrollIndex,
   height,
 }) {
+  console.log(
+    "STUDIIIIES ===>",
+    studies.data[0].attributes.cover.data.attributes.url
+  );
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl
@@ -130,7 +134,7 @@ export default function HomeSections({
               key={index + "cover"}
               index={study.id}
               itemsCount={studies.data.length}
-              cover={study.attributes.cover.data.attributes.formats.large.url}
+              cover={study.attributes.cover.data.attributes.url}
               itemPosition={itemPosition}
             />
           ))}
