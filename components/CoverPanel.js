@@ -10,7 +10,7 @@ export default function CoverPanel({ cover, itemPosition }) {
       >
         {/* COVER PANEL */}
         <motion.div
-          className={`bg-bottom flex w-1/2 items-center justify-center `}
+          className={`bg-bottom flex w-1/2 items-center justify-center`}
           animate={{ y: -itemPosition }}
           transition={{ ease: "anticipate", duration: 1 }}
         >

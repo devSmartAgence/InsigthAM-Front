@@ -32,10 +32,7 @@ export default function Etudes({ studies }) {
           <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
             <GridPattern
               color={"deep-blue"}
-              cover={
-                studies.data[0].attributes.cover.data.attributes.formats.large
-                  .url
-              }
+              cover={studies.data[0].attributes.cover.data.attributes.url}
             />
           </div>
           <div className="flex flex-col items-center mx-[30px] relative md:items-start">
@@ -61,9 +58,7 @@ export default function Etudes({ studies }) {
                     key={study.attributes.title + index}
                     slug={study.attributes.slug}
                     theme={study.attributes.theme}
-                    cover={
-                      study.attributes.cover.data.attributes.formats.large.url
-                    }
+                    cover={study.attributes.cover.data.attributes.url}
                   />
                 ))}
               </div>
