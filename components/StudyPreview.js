@@ -9,7 +9,7 @@ export default function StudyPreview({ title, cover, slug, theme }) {
       </h2>
       <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
         <Image
-          src={`${process.env.NEXT_PUBLIC_DB_HOST}${cover}`}
+          src="https://images.unsplash.com/photo-1645104787913-aeb889b0e190?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
           alt=""
           layout="fill"
           objectFit="cover"
