@@ -54,30 +54,26 @@ export default function Etudes({ studies }) {
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
               <div>
                 {studies.data.slice(0, 2).map((study, index) => (
-                  <div>
-                    <StudyPreview
-                      title={study.attributes.title}
-                      description={study.attributes.description}
-                      key={study.attributes.title + index}
-                      slug={study.attributes.slug}
-                      cover={
-                        study.attributes.cover.data.attributes.formats.large.url
-                      }
-                    />
-                  </div>
+                  <StudyPreview
+                    title={study.attributes.title}
+                    description={study.attributes.description}
+                    key={study.attributes.title + index}
+                    slug={study.attributes.slug}
+                    cover={
+                      study.attributes.cover.data.attributes.formats.large.url
+                    }
+                  />
                 ))}
               </div>
               <div className="mt-[-30px] md:mt-[280px]">
                 {studies.data.slice(2, 4).map((study, index) => (
-                  <div>
-                    <StudyPreview
-                      title={study.attributes.title}
-                      key={study.attributes.title + index}
-                      cover={
-                        study.attributes.cover.data.attributes.formats.large.url
-                      }
-                    />
-                  </div>
+                  <StudyPreview
+                    title={study.attributes.title}
+                    key={study.attributes.title + index}
+                    cover={
+                      study.attributes.cover.data.attributes.formats.large.url
+                    }
+                  />
                 ))}
               </div>
             </div>
