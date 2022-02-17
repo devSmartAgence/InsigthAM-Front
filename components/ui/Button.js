@@ -11,7 +11,7 @@ export default function Button({
 }) {
   console.log("HREF ==>", href);
   return (
-    <Link href={href} passHref>
+    <Link href={href ? href : "/"} passHref>
       <button
         type="button"
         className={
