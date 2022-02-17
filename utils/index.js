@@ -52,8 +52,9 @@ export function getDataAbout() {
 
 // This function will build the url to fetch on the Strapi API
 export function getDataMethode(slug) {
+  console.log("MON SLUG====>", slug);
   const slugToReturn = `methodes`;
-  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=EtudesReferencementThematique`;
+  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=EtudeCiblesClientele`;
 
   return {
     data: getStrapiURL(apiUrl),
