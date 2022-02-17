@@ -20,6 +20,7 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
+  console.log("PAGE DATA ===>", pageData.data.attributes);
   const blocks = delve(pageData, "data.attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
@@ -43,7 +44,7 @@ const Universals = ({ pageData }) => {
             <div className="absolute left-0">
               <BackButton label={"Retour"} style="light" />
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center">
               <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
                 {themeBeautyfier(pageData.data.attributes.theme)}
               </div>
