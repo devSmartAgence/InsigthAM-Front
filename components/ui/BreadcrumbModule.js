@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 import Button from "./Button";
-
-export default function BreadCrumModule({ modulePosition, style }) {
+import { breadcrumbBeautyfier } from "../../utils/breadcrumbBeautyfier";
+export default function BreadCrumModule({ modulePosition, style, arrPath }) {
   return (
     <motion.div
       className={`w-full fixed flex items-center max-w-[1230px] h-[60px] ${
@@ -13,53 +13,29 @@ export default function BreadCrumModule({ modulePosition, style }) {
     >
       <Button label={"Retour"} size={"small"} href="/" />
       <div className="flex items-center ml-[30px]">
-        <div
-          className={
-            style === "light"
-              ? "text-deep-blue text-[11px]"
-              : "text-white text-[11px]"
-          }
-        >
-          Étude
-        </div>
-        <div
-          className={
-            style === "light"
-              ? "text-deep-blue text-[11px]"
-              : "text-white text-[11px]"
-          }
-        >
-          &#x3e;
-        </div>
-        <div
-          className={
-            style === "light"
-              ? "text-deep-blue text-[11px]"
-              : "text-white text-[11px]"
-          }
-        >
-          Étude référencement thématique
-        </div>
-        <div
-          className={
-            style === "light"
-              ? "text-deep-blue text-[11px]"
-              : "text-white text-[11px]"
-          }
-        >
-          &#x3e;
-        </div>
-
-        <div
-          className={
-            style === "light"
-              ? "text-deep-blue text-[11px] text-light-blue"
-              : "text-white text-[11px] text-light-blue"
-          }
-        >
-          Fonds en Euros : quelle place demain dans l’épargne des Français ?
-          Titre long lorem dolor consectetur adipiscing (H1)
-        </div>
+        <Link href="/" passHref>
+          <div
+            className={
+              style === "light"
+                ? "text-deep-blue text-[11px] cursor-pointer"
+                : "text-white text-[11px]"
+            }
+          >
+            Accueil&nbsp; &nbsp; &#x0003E;
+          </div>
+        </Link>
+        {arrPath.map((path, index) => (
+          <div
+            key={index}
+            className={
+              style === "light"
+                ? "text-deep-blue text-[11px] cursor-pointer"
+                : "text-white text-[11px]"
+            }
+          >
+            {breadcrumbBeautyfier(path)}
+          </div>
+        ))}
       </div>
     </motion.div>
   );

@@ -20,7 +20,6 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  console.log("MY PAGE DATA ===>", pageData.data[0].attributes);
   const blocks = delve(pageData, "data.attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 

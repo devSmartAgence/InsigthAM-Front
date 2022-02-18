@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const ImageWide = ({ image }) => {
-  console.log("IMAGE ===>", image);
   let myImage = image.data.attributes.url;
   return (
     <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">

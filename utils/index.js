@@ -30,6 +30,8 @@ export function redirectToHomepage() {
 
 // This function will build the url to fetch on the Strapi API
 export function getDataStudy(slug) {
+  console.log("MON SLUG1====>", slug);
+
   const slugToReturn = `studies/${slug}`;
   const apiUrl = `/studies?filters[slug][$eq]=${slug}`;
 
@@ -52,9 +54,9 @@ export function getDataAbout() {
 
 // This function will build the url to fetch on the Strapi API
 export function getDataMethode(slug) {
-  console.log("MON SLUG====>", slug);
+  console.log("MON SLUG 2====>", slug);
   const slugToReturn = `methodes`;
-  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=EtudeCiblesClientele`;
+  const apiUrl = `/methodes?populate[blocks][populate]=*&populate[cover]=*&filters[slug][$eq]=${slug}`;
 
   return {
     data: getStrapiURL(apiUrl),

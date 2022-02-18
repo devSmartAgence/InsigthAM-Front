@@ -9,7 +9,6 @@ export default function Button({
   theme,
   href,
 }) {
-  console.log("HREF ==>", href);
   return (
     <Link href={href ? href : "/"} passHref>
       <button

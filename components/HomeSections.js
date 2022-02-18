@@ -15,10 +15,6 @@ export default function HomeSections({
   panelScrollIndex,
   height,
 }) {
-  console.log(
-    "STUDIIIIES ===>",
-    studies.data[0].attributes.cover.data.attributes.url
-  );
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl
@@ -87,7 +83,7 @@ export default function HomeSections({
         <div
           className={`bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
-          {/* <GridPattern color={"deep-blue"} /> */}
+          <GridPattern color={"deep-blue"} />
 
           <div className="absolute bg-deep-blue bg-opacity-85 h-[calc(50%-46px)] flex flex-col justify-center pr-[7vmax] pl-[7vmax]">
             <motion.div
