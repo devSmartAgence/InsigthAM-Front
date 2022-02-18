@@ -74,9 +74,7 @@ export default function Etudes({ studies }) {
                     key={study.attributes.title + index}
                     slug={study.attributes.slug}
                     theme={study.attributes.theme}
-                    // cover={
-                    //   study.attributes.cover.data.attributes.formats.large.url
-                    // }
+                    cover={study.attributes.cover.data.attributes.url}
                   />
                 ))}
               </div>

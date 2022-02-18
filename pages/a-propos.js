@@ -68,10 +68,9 @@ const Universals = ({ pageData }) => {
 
                 <div>{blocks && <BlockManager blocks={blocks} />}</div>
               </motion.div>
-
-              <ContactForm title={"Nous contacter"} />
             </div>
           </div>
+          <ContactForm title={"Nous contacter"} />
         </div>
       </Layout>
     </ReactScrollWheelHandler>

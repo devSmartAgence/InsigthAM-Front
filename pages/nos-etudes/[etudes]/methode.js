@@ -23,8 +23,7 @@ import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 const Universals = ({ pageData }) => {
   const router = useRouter();
   let arrPath = router.asPath.split("/");
-  console.log(arrPath);
-  const blocks = delve(pageData, "data.attributes.blocks");
+  const blocks = delve(pageData.data[0], "attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
   let handleScroll = (modulePosition) => {

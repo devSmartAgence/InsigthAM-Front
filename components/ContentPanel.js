@@ -48,7 +48,7 @@ export default function ContentPanel({
                   Mon lien vers un site
                 </a>
               </div>
-              <div>
+              <div className="flex ">
                 {primaryButtonLabel && (
                   <Button
                     label={primaryButtonLabel}
@@ -61,12 +61,14 @@ export default function ContentPanel({
                 )}
 
                 {secondaryButtonLabel && (
-                  <Button
-                    label={secondaryButtonLabel}
-                    type={"secondary"}
-                    style={"light"}
-                    href={`/nos-etudes/${theme}/${slug}`}
-                  />
+                  <div className="ml-[15px]">
+                    <Button
+                      label={secondaryButtonLabel}
+                      type={"secondary"}
+                      style={"light"}
+                      href={`/nos-etudes/${theme}/${slug}`}
+                    />
+                  </div>
                 )}
               </div>
             </div>

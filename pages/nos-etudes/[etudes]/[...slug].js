@@ -1,6 +1,8 @@
 import delve from "dlv";
 
 import { useState } from "react";
+import { useRouter } from "next/router";
+
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 import Layout from "../../../components/Layout";
@@ -20,7 +22,10 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  const blocks = delve(pageData, "data.attributes.blocks");
+  console.log("PAGE DATA STUDYY ===>", pageData.data[0]);
+  const router = useRouter();
+  let arrPath = router.asPath.split("/");
+  const blocks = delve(pageData.data[0], "attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
   let handleScroll = (modulePosition) => {
@@ -37,7 +42,11 @@ const Universals = ({ pageData }) => {
     >
       <Layout page={"Insight AM - Accueil"}>
         <div className="mt-[110px] bg-beige flex flex-col items-center">
-          <BreadCrumModule modulePosition={modulePosition} style={"light"} />
+          <BreadCrumModule
+            modulePosition={modulePosition}
+            style={"light"}
+            arrPath={arrPath}
+          />
 
           <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
             <div className="absolute left-0">

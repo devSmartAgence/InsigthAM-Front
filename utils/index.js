@@ -33,7 +33,7 @@ export function getDataStudy(slug) {
   console.log("MON SLUG1====>", slug);
 
   const slugToReturn = `studies/${slug}`;
-  const apiUrl = `/studies?filters[slug][$eq]=${slug}`;
+  const apiUrl = `/studies?populate[blocks][populate]=*&populate[cover]=*&filters[slug][$eq]=${slug}`;
 
   return {
     data: getStrapiURL(apiUrl),

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const TextImage = ({ text, image, position }) => {
   const myImage = image.data.attributes.url;
   return (
@@ -11,7 +9,7 @@ const TextImage = ({ text, image, position }) => {
             : "ml-15 md:float-right md:w-[51.7%] md:ml-15"
         }`}
       >
-        <Image src={myImage} alt="" className="mb-[35px]" layout="fill" />
+        <img src={myImage} alt="" className="mb-[35px]" />
       </div>
       <div className={`font-serif leading-[30px]`}>{text}</div>
     </div>
