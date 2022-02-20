@@ -14,7 +14,9 @@ export default function HomeSections({
   handleSplitPanelControlClick,
   panelScrollIndex,
   height,
+  homeIntro,
 }) {
+  console.log("HomeIntro ====>", homeIntro);
   return (
     <section className="flex w-screen h-[calc(100vh-110px)] ">
       <HomeSplitPanelControl
@@ -32,7 +34,7 @@ export default function HomeSections({
           <GridPattern color={"deep-blue"} />
           <div className="absolute h-1/2 flex flex-col justify-center p-[5vmax]">
             <AnimatedH1
-              title="Insight AM"
+              title={homeIntro.data.attributes.title}
               className="uppercase text-white text-[4vmax] flex h-[6vmax] overflow-hidden "
             />
             <motion.div
@@ -62,7 +64,7 @@ export default function HomeSections({
         </div>
 
         {/* LOOP ON STUDIES */}
-        {studies.data.map((study, index) => (
+        {studies.data.slice(0, 4).map((study, index) => (
           <ContentPanel
             itemHeight={itemHeight}
             key={index + "content"}
@@ -122,7 +124,7 @@ export default function HomeSections({
 
         {/* LOOP ON STUDIES */}
         {studies.data
-          .slice(0)
+          .slice(0, 4)
           .reverse()
           .map((study, index) => (
             <CoverPanel

@@ -1,6 +1,8 @@
 import delve from "dlv";
 
 import { useState } from "react";
+import { useRouter } from "next/router";
+
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 import Layout from "../components/Layout";
@@ -16,6 +18,8 @@ import BreadCrumModule from "../components/ui/BreadcrumbModule";
 import AnimatedH1Type from "../components/ui/AnimatedH1Type";
 
 const Universals = ({ pageData }) => {
+  const router = useRouter();
+  let arrPath = router.asPath.split("/");
   const blocks = delve(pageData, "data.attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
   let handleScroll = (modulePosition) => {
@@ -35,7 +39,7 @@ const Universals = ({ pageData }) => {
           <BreadCrumModule
             modulePosition={modulePosition}
             style={"light"}
-            path={""}
+            arrPath={arrPath}
           />
 
           <div

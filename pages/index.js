@@ -27,7 +27,7 @@ export default function Home({ homeIntro, studies }) {
 
   const handleScroll = (direction) => {
     setIsScrolling = true;
-    if (direction === "ScrollDown" && panelScrollIndex < studiesNumber - 1) {
+    if (direction === "ScrollDown" && panelScrollIndex < studiesNumber - 2) {
       setItemPosition(itemPosition - height + 110);
       setPanelScrollIndex((panelScrollIndex += 1));
       // setPosition("End");

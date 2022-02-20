@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Button from "./ui/Button";
+import PrimaryButton from "./ui/PrimaryButton";
+import SecondaryButton from "./ui/SecondaryButton";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -64,7 +65,7 @@ export default function Header() {
                 Nos études
               </li>
             </Link>
-            <Button
+            <SecondaryButton
               type={"secondary"}
               style={"light"}
               label={"Contact"}
@@ -138,7 +139,7 @@ export default function Header() {
                     animate="animate"
                     exit="exit"
                   >
-                    <Button
+                    <PrimaryButton
                       type={"secondary"}
                       style={"dark"}
                       label={"Contact"}

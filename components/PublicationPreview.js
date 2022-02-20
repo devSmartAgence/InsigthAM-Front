@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Button from "./ui/Button";
+import PrimaryButton from "./ui/PrimaryButton";
 export default function PublicationPreview({
   contentTitle,
   tag,
@@ -28,8 +28,8 @@ export default function PublicationPreview({
         </Link>
       </div>
       <div>
-        <Button label={"Nous connaître"} type={"primary"} href="/" />
-        <Button
+        <PrimaryButton label={"Nous connaître"} type={"primary"} href="/" />
+        <PrimaryButton
           label={"Nos études"}
           type={"secondary"}
           aspect={"light"}

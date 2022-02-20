@@ -1,4 +1,4 @@
-import Button from "./ui/Button";
+import PrimaryButton from "./ui/PrimaryButton";
 import Image from "next/image";
 
 export default function StudyPreview({ title, cover, slug, theme }) {
@@ -17,10 +17,10 @@ export default function StudyPreview({ title, cover, slug, theme }) {
         Conseillers en Gestion de Patrimoine et Banques Privées consultés) sur
         leurs perceptions de la baisse du rendement du Fonds Euros.
       </p>
-      <Button
+      <PrimaryButton
         label={"Résultat et téléchargement de l'étude"}
         href={`/nos-etudes/${theme}/${slug}`}
-      ></Button>
+      ></PrimaryButton>
     </div>
   );
 }

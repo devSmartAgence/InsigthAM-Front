@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Button from "./Button";
+import BackButton from "./BackButton";
 import { breadcrumbBeautyfier } from "../../utils/breadcrumbBeautyfier";
 export default function BreadCrumModule({ modulePosition, style, arrPath }) {
   return (
@@ -11,7 +11,7 @@ export default function BreadCrumModule({ modulePosition, style, arrPath }) {
       animate={{ top: modulePosition }}
       transition={{ duration: 0.3, type: "ease" }}
     >
-      <Button label={"Retour"} size={"small"} href="/" />
+      <BackButton label={"Retour"} size={"small"} href="/" style={"dark"} />
       <div className="flex items-center ml-[30px]">
         <Link href="/" passHref>
           <div

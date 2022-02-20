@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Button from "./ui/Button";
+import PrimaryButton from "./ui/PrimaryButton";
 export default function Footer() {
   return (
     <footer className="pb-[30px] bg-deep-blue relative px-[40px] pt-[30px] md:pb-[80px]">
@@ -48,7 +48,7 @@ export default function Footer() {
                   MENTIONS LÉGALES
                 </li>
               </Link>
-              <Button
+              <PrimaryButton
                 type={"secondary"}
                 style={"dark"}
                 label={"Contact"}

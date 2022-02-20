@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
-import Button from "./ui/Button";
+import PrimaryButton from "./ui/PrimaryButton";
+import SecondaryButton from "./ui/SecondaryButton";
+
 import GridPattern from "./ui/GridPattern";
 
 import { themeBeautyfier } from "../utils/themeBeautyfier";
@@ -50,7 +52,7 @@ export default function ContentPanel({
               </div>
               <div className="flex ">
                 {primaryButtonLabel && (
-                  <Button
+                  <PrimaryButton
                     label={primaryButtonLabel}
                     type={"primary"}
                     index={index}
@@ -62,9 +64,8 @@ export default function ContentPanel({
 
                 {secondaryButtonLabel && (
                   <div className="ml-[15px]">
-                    <Button
+                    <SecondaryButton
                       label={secondaryButtonLabel}
-                      type={"secondary"}
                       style={"light"}
                       href={`/nos-etudes/${theme}/${slug}`}
                     />

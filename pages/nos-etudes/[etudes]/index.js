@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout";
-import Button from "../../../components/ui/Button";
+import PrimaryButton from "../../../components/ui/PrimaryButton";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
 import GridPattern from "../../../components/ui/GridPattern";
@@ -48,11 +48,11 @@ export default function Etudes({ studies }) {
                 {themeBeautyfier(theme)}
               </h1>
 
-              <Button
+              <PrimaryButton
                 type="primary"
                 label={"Méthode déployée"}
                 href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
-              ></Button>
+              ></PrimaryButton>
             </div>
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
               <div>

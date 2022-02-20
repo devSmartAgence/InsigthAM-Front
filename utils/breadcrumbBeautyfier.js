@@ -25,6 +25,12 @@ export function breadcrumbBeautyfier(path) {
     case "methode":
       path = "> \xa0 \xa0 Méthode \xa0 \xa0 ";
       break;
+    case "contact":
+      path = " \xa0 \xa0 Contact \xa0 \xa0 ";
+      break;
+    case "cgv-cgu":
+      path = " \xa0 \xa0 CGV/CGU \xa0 \xa0 ";
+      break;
     default:
       path = "";
       break;

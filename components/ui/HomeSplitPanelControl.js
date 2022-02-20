@@ -3,11 +3,9 @@ import { motion } from "framer-motion";
 export default function HomeSplitPanelControl({
   studiesNumber,
   panelScrollIndex,
-  height,
   handleSplitPanelControlClick,
 }) {
   const itemNumbers = Array.from(Array(studiesNumber).keys());
-  let test = 0;
   //Animation control
   const sliderControl = {
     show: {
