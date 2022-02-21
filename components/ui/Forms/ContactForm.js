@@ -3,6 +3,7 @@ import TextField from "./TextField";
 import TextArea from "./TextArea";
 import TitleH2 from "../TitleH2";
 import axios from "axios";
+import Selector from "./Selector";
 
 export default function ContactForm({ title }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +15,7 @@ export default function ContactForm({ title }) {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
   const formData = {
@@ -33,7 +35,7 @@ export default function ContactForm({ title }) {
     from: process.env.INSIGHT_ADMIN_EMAIL,
     to: email,
     replyTo: process.env.INSIGHT_ADMIN_EMAIL,
-    subject: "Nouvelle demande d'étude ",
+    subject: "Nouvelle demande d'étude",
     html: `<p>{${message}</p>`,
   };
 
@@ -146,6 +148,7 @@ export default function ContactForm({ title }) {
               name="email"
               type="email"
             />
+            <Selector label={"Sujet de votre demande"} setter={setSubject} />
 
             <TextArea
               label={"Message"}

@@ -8,7 +8,7 @@ export default function Thematiques({ resStudies }) {
   let singleThemes = [...new Set(arrThemes)];
 
   return (
-    <Layout>
+    <Layout page={"Insight AM - Nos études"}>
       <div className="bg-deep-blue w-screen h-screen">
         <div className="flex flex-col w-screen items-center">
           <AnimatedH1Type

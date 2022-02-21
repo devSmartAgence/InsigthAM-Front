@@ -9,7 +9,7 @@ export default function TextArea({ label, setter, type, required }) {
             ? label.toLowerCase().substring(0, label.length - 1)
             : label.toLowerCase()
         }
-        className="font-sans text-deep-blue h-[220px] rounded-[25px] focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-4 px-[24px]"
+        className="font-sans text-deep-blue h-[140px] rounded-[25px] focus:outline-none focus:border-gray-500 focus:shadow-sm w-full p-4 px-[24px]"
         autoComplete="off"
         placeholder="name@example.com"
         required={required}

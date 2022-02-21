@@ -35,7 +35,7 @@ const Universals = ({ pageData }) => {
       upHandler={(e) => handleScroll("Up")}
       downHandler={(e) => handleScroll("Down")}
     >
-      <Layout page={"Insight AM - À propos"}>
+      <Layout page={"Insight AM - Contact"}>
         <div className="mt-[110px] bg-beige flex flex-col items-center">
           <BreadCrumModule
             modulePosition={modulePosition}

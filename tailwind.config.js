@@ -13,6 +13,8 @@ module.exports = {
       "text-white",
       "text-msg-confirm",
       "text-msg-err",
+      "transform",
+      "translate-y-full,",
     ],
   },
   darkMode: false, // or 'media' or 'class'

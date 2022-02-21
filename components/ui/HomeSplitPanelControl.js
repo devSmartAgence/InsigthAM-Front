@@ -5,7 +5,6 @@ export default function HomeSplitPanelControl({
   panelScrollIndex,
   handleSplitPanelControlClick,
 }) {
-  const itemNumbers = Array.from(Array(studiesNumber).keys());
   //Animation control
   const sliderControl = {
     show: {
@@ -44,19 +43,76 @@ export default function HomeSplitPanelControl({
   return (
     <div className="fixed z-10 top-1/2 right-[30px]">
       <motion.ul variants={sliderControl} animate="show" initial="hidden">
-        {itemNumbers.map((i) => (
-          <motion.li
-            className={
-              "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
-            }
-            variants={
-              panelScrollIndex === i ? bulletPointActive : bulletPointInactive
-            }
-            animate="show"
-            key={i}
-            onClick={() => handleSplitPanelControlClick(i)}
-          ></motion.li>
-        ))}
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 0 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 1 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 2 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 3 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 4 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 5 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
+        <motion.li
+          className={
+            "rounded-full bg-transparent border-[1px] w-[0.7vmax] h-[0.7vmax] mb-[30px]"
+          }
+          variants={
+            panelScrollIndex === 6 ? bulletPointActive : bulletPointInactive
+          }
+          animate="show"
+          onClick={() => handleSplitPanelControlClick(i)}
+        ></motion.li>
       </motion.ul>
     </div>
   );

@@ -38,7 +38,11 @@ const Universals = ({ pageData }) => {
       upHandler={(e) => handleScroll("Up")}
       downHandler={(e) => handleScroll("Down")}
     >
-      <Layout page={"Insight AM - Accueil"}>
+      <Layout
+        page={`Insight AM - Méthode ${themeBeautyfier(
+          pageData.data[0].attributes.theme
+        )}`}
+      >
         <div className="mt-[110px] bg-beige flex flex-col items-center">
           <BreadCrumModule
             modulePosition={modulePosition}

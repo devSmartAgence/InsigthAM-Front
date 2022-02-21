@@ -6,7 +6,7 @@ import HomeSections from "../components/HomeSections.js";
 import Layout from "../components/Layout";
 
 export default function Home({ homeIntro, studies }) {
-  const studiesNumber = studies.data.length;
+  const studiesNumber = 7;
   let [width, height] = useDeviceSize(); // Get window size
   const [panelScrollIndex, setPanelScrollIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(null);
@@ -27,15 +27,13 @@ export default function Home({ homeIntro, studies }) {
 
   const handleScroll = (direction) => {
     setIsScrolling = true;
-    if (direction === "ScrollDown" && panelScrollIndex < studiesNumber - 2) {
+    if (direction === "ScrollDown") {
       setItemPosition(itemPosition - height + 110);
       setPanelScrollIndex((panelScrollIndex += 1));
       // setPosition("End");
-      console.log("ITEM POSITION ====>", itemPosition);
-    } else if (direction === "ScrollUp" && panelScrollIndex > 0) {
+    } else if (direction === "ScrollUp") {
       setItemPosition(itemPosition + height - 110);
       setPanelScrollIndex((panelScrollIndex -= 1));
-      console.log("ITEM POSITION ====>", itemPosition);
 
       // setPosition("Start");
     }
@@ -48,7 +46,7 @@ export default function Home({ homeIntro, studies }) {
         downHandler={(e) => handleScroll("ScrollDown")}
       >
         <Layout page={"Insight AM - Accueil"}>
-          <div className="w-screen h-[calc(100vh-110px)] mt-[110px] overflow-hidden ">
+          <div className="w-screen h-[calc(100vh-110px)] mt-[110px]">
             <HomeSections
               panelScrollIndex={panelScrollIndex}
               studiesNumber={studiesNumber}
@@ -74,9 +72,10 @@ export default function Home({ homeIntro, studies }) {
 export async function getStaticProps() {
   // Get home-intro content from Strapi
   const resHome = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate[blocks][populate]=*&populate[cover]=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
   );
   const homeIntro = await resHome.json();
+  console.log(homeIntro);
 
   // Get studies from Strapi
   const resStudies = await fetch(

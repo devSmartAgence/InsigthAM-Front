@@ -16,9 +16,8 @@ export default function HomeSections({
   height,
   homeIntro,
 }) {
-  console.log("HomeIntro ====>", homeIntro);
   return (
-    <section className="flex w-screen h-[calc(100vh-110px)] ">
+    <section className="flex w-screen h-[calc(100vh-110px)]">
       <HomeSplitPanelControl
         studiesNumber={studiesNumber}
         panelScrollIndex={panelScrollIndex}
@@ -27,7 +26,8 @@ export default function HomeSections({
         handleSplitPanelControlClick={handleSplitPanelControlClick}
       />
 
-      <div className="w-1/2 ">
+      {/* LEFT PANEL */}
+      <motion.div className="w-1/2 " animate={{ y: itemPosition }}>
         <div
           className={`bg-panel1 bg-left background-size-full font-sans flex items-center flex-col h-[calc(100vh-110px)]`}
         >
@@ -35,7 +35,7 @@ export default function HomeSections({
           <div className="absolute h-1/2 flex flex-col justify-center p-[5vmax]">
             <AnimatedH1
               title={homeIntro.data.attributes.title}
-              className="uppercase text-white text-[4vmax] flex h-[6vmax] overflow-hidden "
+              className="uppercase text-white text-[4vmax] flex h-[6vmax] overflow-hidden"
             />
             <motion.div
               className="w-[3vmax] h-[0.5vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"
@@ -62,26 +62,146 @@ export default function HomeSections({
             </motion.p>
           </div>
         </div>
+        <ContentPanel
+          itemHeight={itemHeight}
+          heading={studies.data[0].attributes.heading}
+          theme={studies.data[0].attributes.theme}
+          title={studies.data[0].attributes.title}
+          description={studies.data[0].attributes.description}
+          index={studies.data[0].id}
+          primaryButtonLabel={studies.data[0].attributes.primaryButtonLabel}
+          secondaryButtonLabel={studies.data[0].attributes.secondaryButtonLabel}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          slug={studies.data[0].attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            homeIntro.data.attributes.slide2Cover.data.attributes.formats.large
+              .url
+          }
+          itemPosition={itemPosition}
+        />
+        <ContentPanel
+          itemHeight={itemHeight}
+          theme={homeIntro.data.attributes.slide1Theme.themeList}
+          title={homeIntro.data.attributes.slide2Title}
+          description={homeIntro.data.attributes.slide2Description}
+          index={1}
+          primaryButtonLabel={homeIntro.data.attributes.slide2FirstButton}
+          secondaryButtonLabel={homeIntro.data.attributes.slide2SecondButton}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          // slug={study.attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            homeIntro.data.attributes.slide3Cover.data.attributes.formats.large
+              .url
+          }
+          itemPosition={itemPosition}
+        />
+        <ContentPanel
+          itemHeight={itemHeight}
+          theme={homeIntro.data.attributes.slide4Theme.themeList}
+          title={homeIntro.data.attributes.slide4Title}
+          description={homeIntro.data.attributes.slide4Description}
+          index={1}
+          primaryButtonLabel={homeIntro.data.attributes.slide4FirstButton}
+          secondaryButtonLabel={homeIntro.data.attributes.slide4SecondButton}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          // slug={study.attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            homeIntro.data.attributes.slide5Cover.data.attributes.formats.large
+              .url
+          }
+          itemPosition={itemPosition}
+        />
+      </motion.div>
 
-        {/* LOOP ON STUDIES */}
-        {studies.data.slice(0, 4).map((study, index) => (
-          <ContentPanel
-            itemHeight={itemHeight}
-            key={index + "content"}
-            heading={study.attributes.heading}
-            theme={study.attributes.theme}
-            title={study.attributes.title}
-            description={study.attributes.description}
-            index={study.id}
-            primaryButtonLabel={study.attributes.primaryButtonLabel}
-            secondaryButtonLabel={study.attributes.secondaryButtonLabel}
-            itemsCount={studies.data.length}
-            itemPosition={itemPosition}
-            slug={study.attributes.slug}
-          />
-        ))}
-      </div>
-      <div className="w-1/2">
+      {/* RIGHT PANEL */}
+      <motion.div
+        className="w-1/2 transform translate-y-[calc(-600vh+660px)]"
+        initial={{ y: -300 }}
+        animate={{ y: -itemPosition }}
+      >
+        <ContentPanel
+          itemHeight={itemHeight}
+          theme={homeIntro.data.attributes.slide5Theme.themeList}
+          title={homeIntro.data.attributes.slide5Title}
+          description={homeIntro.data.attributes.slide5Description}
+          index={1}
+          primaryButtonLabel={homeIntro.data.attributes.slide5FirstButton}
+          secondaryButtonLabel={homeIntro.data.attributes.slide5SecondButton}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          // slug={study.attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            homeIntro.data.attributes.slide4Cover.data.attributes.formats.large
+              .url
+          }
+          itemPosition={itemPosition}
+        />
+        <ContentPanel
+          itemHeight={itemHeight}
+          theme={homeIntro.data.attributes.slide3Theme.themeList}
+          title={homeIntro.data.attributes.slide3Title}
+          description={homeIntro.data.attributes.slide3Description}
+          index={1}
+          primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
+          secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          // slug={study.attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            homeIntro.data.attributes.slide2Cover.data.attributes.formats.large
+              .url
+          }
+          itemPosition={itemPosition}
+        />
+        <ContentPanel
+          itemHeight={itemHeight}
+          theme={homeIntro.data.attributes.slide1Theme.themeList}
+          title={homeIntro.data.attributes.slide1Title}
+          description={homeIntro.data.attributes.slide1Description}
+          index={1}
+          primaryButtonLabel={homeIntro.data.attributes.slide1FirstButton}
+          secondaryButtonLabel={homeIntro.data.attributes.slide1SecondButton}
+          itemsCount={7}
+          itemPosition={itemPosition}
+          // slug={study.attributes.slug}
+        />
+        <CoverPanel
+          itemHeight={itemHeight}
+          index={1}
+          itemsCount={7}
+          cover={
+            studies.data[0].attributes.cover.data.attributes.formats.large.url
+          }
+          itemPosition={itemPosition}
+        />
         <div
           className={`bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
@@ -101,42 +221,15 @@ export default function HomeSections({
               </h2>
 
               <ul className="text-white font-serif text-[1vmax] list-disc mb-[2vmax] ml-[17px] leading-[2vmax]">
-                <li>
-                  Accompagner les acteurs du marché dans la compréhension des
-                  attentes des investisseurs et distributeurs,
-                </li>
-                <li>
-                  Identifier les tendances et capter les signaux faibles de la
-                  tiers distribution,
-                </li>
-                <li>
-                  Revisiter le positionnement des gammes de produits à
-                  destination des épargnants,
-                </li>
-                <li>
-                  Valider les choix des producteurs et distributeurs dans le
-                  lancement de nouveaux produits.
-                </li>
+                <li>{homeIntro.data.attributes.goal1}</li>
+                <li>{homeIntro.data.attributes.goal2}</li>
+                <li>{homeIntro.data.attributes.goal3}</li>
+                <li>{homeIntro.data.attributes.goal4}</li>
               </ul>
             </motion.div>
           </div>
         </div>
-
-        {/* LOOP ON STUDIES */}
-        {studies.data
-          .slice(0, 4)
-          .reverse()
-          .map((study, index) => (
-            <CoverPanel
-              itemHeight={itemHeight}
-              key={index + "cover"}
-              index={study.id}
-              itemsCount={studies.data.length}
-              cover={study.attributes.cover.data.attributes.url}
-              itemPosition={itemPosition}
-            />
-          ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
