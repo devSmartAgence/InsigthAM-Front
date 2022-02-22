@@ -8,7 +8,14 @@ export default function StudyPreview({ title, cover, slug, theme }) {
         {title}
       </h2>
       <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
-        <Image src={cover} alt="" layout="fill" objectFit="cover" />
+        <Image
+          src={cover}
+          placeholder="blur"
+          blurDataURL={cover}
+          alt={`Couverture ${title}`}
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <p className="font-serif text[20px] leading-[30px] mb-[30px]">
         Fidelity International a fait confiance à Insight AM pour mener une

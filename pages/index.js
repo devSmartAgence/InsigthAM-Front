@@ -3,7 +3,6 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
 import HomeSections from "../components/HomeSections.js";
-import Layout from "../components/Layout";
 
 export default function Home({ homeIntro, studies }) {
   const studiesNumber = 7;
@@ -45,23 +44,21 @@ export default function Home({ homeIntro, studies }) {
         upHandler={(e) => handleScroll("ScrollUp")}
         downHandler={(e) => handleScroll("ScrollDown")}
       >
-        <Layout page={"Insight AM - Accueil"}>
-          <div className="w-screen h-[calc(100vh-110px)] mt-[110px]">
-            <HomeSections
-              panelScrollIndex={panelScrollIndex}
-              studiesNumber={studiesNumber}
-              height={height}
-              studies={studies}
-              homeIntro={homeIntro}
-              scrollDirection={scrollDirection}
-              isScrolling={isScrolling}
-              setIsScrolling={setIsScrolling}
-              itemPosition={itemPosition}
-              position={position}
-              handleSplitPanelControlClick={handleSplitPanelControlClick}
-            />
-          </div>
-        </Layout>
+        <div className="w-screen h-[calc(100vh-110px)] mt-[110px]">
+          <HomeSections
+            panelScrollIndex={panelScrollIndex}
+            studiesNumber={studiesNumber}
+            height={height}
+            studies={studies}
+            homeIntro={homeIntro}
+            scrollDirection={scrollDirection}
+            isScrolling={isScrolling}
+            setIsScrolling={setIsScrolling}
+            itemPosition={itemPosition}
+            position={position}
+            handleSplitPanelControlClick={handleSplitPanelControlClick}
+          />
+        </div>
       </ReactScrollWheelHandler>
     </>
   ) : (

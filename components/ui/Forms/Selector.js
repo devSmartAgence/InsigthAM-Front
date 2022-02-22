@@ -9,10 +9,10 @@ export default function Selector({ setter, type, required }) {
         type={type}
         required={required}
       >
-        <option value="Demande d'informations" selected>
-          Demande d'informations
+        <option value="Demande d'informations" defaultValue>
+          Demande d&apos;informations
         </option>
-        <option value="Demande d'étude">Demande d'étude</option>
+        <option value="Demande d'étude">Demande d&apos;étude</option>
         <option value="Autre">Autre</option>
       </select>
     </div>

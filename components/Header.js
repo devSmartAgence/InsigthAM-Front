@@ -33,7 +33,7 @@ export default function Header() {
       <Link href="/" passHref>
         <div className="h-16 w-[105px] cursor-pointer relative">
           <Image
-            src="/insightAM.svg"
+            src="https://res.cloudinary.com/smartagence/image/upload/v1645461453/Logo_Insight-AM-Blue_qksdzv.svg"
             alt="Logo Insight AM"
             layout="fill"
             objectFit="contain"

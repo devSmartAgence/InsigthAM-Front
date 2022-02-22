@@ -23,7 +23,7 @@ export function breadcrumbBeautyfier(path) {
       path = "\xa0 \xa0 À propos \xa0 \xa0 ";
       break;
     case "methode":
-      path = "> \xa0 \xa0 Méthode \xa0 \xa0 ";
+      path = "> \xa0 \xa0 Méthodologie \xa0 \xa0 ";
       break;
     case "contact":
       path = " \xa0 \xa0 Contact \xa0 \xa0 ";

@@ -6,6 +6,7 @@ const ImageWide = ({ image }) => {
     <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <Image
         src={myImage}
+        blurDataURL={myImage}
         alt=""
         className="absolute h-full w-full object-cover"
         layout="fill"

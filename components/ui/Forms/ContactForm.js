@@ -112,6 +112,7 @@ export default function ContactForm({ title }) {
         <form
           className="flex-row justify-center w-[80%] place-content-between gap-x-[12%] md:flex md:w-full md:max-w-[1230px]  "
           onSubmit={handleSubmit}
+          id="form"
         >
           <div className="md:w-1/2">
             <TextField

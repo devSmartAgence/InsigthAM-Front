@@ -55,9 +55,9 @@ export default function HomeSections({
                 transition: { duration: 1, delay: 0.4 },
               }}
             >
-              Études de marché et stratégies marketing&nbsp;
+              {homeIntro.data.attributes.descriptionWhite}
               <span className="text-pink">
-                pour les producteurs et intermédiaires en produits financiers.
+                {homeIntro.data.attributes.descriptionPink}
               </span>
             </motion.p>
           </div>
@@ -67,7 +67,7 @@ export default function HomeSections({
           heading={studies.data[0].attributes.heading}
           theme={studies.data[0].attributes.theme}
           title={studies.data[0].attributes.title}
-          description={studies.data[0].attributes.description}
+          link={`/nos-etudes/${studies.data[0].attributes.theme}/${studies.data[0].attributes.slug}`}
           index={studies.data[0].id}
           primaryButtonLabel={studies.data[0].attributes.primaryButtonLabel}
           secondaryButtonLabel={studies.data[0].attributes.secondaryButtonLabel}
@@ -90,6 +90,7 @@ export default function HomeSections({
           theme={homeIntro.data.attributes.slide1Theme.themeList}
           title={homeIntro.data.attributes.slide2Title}
           description={homeIntro.data.attributes.slide2Description}
+          link={homeIntro.data.attributes.slide2Link}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide2FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide2SecondButton}
@@ -112,6 +113,7 @@ export default function HomeSections({
           theme={homeIntro.data.attributes.slide4Theme.themeList}
           title={homeIntro.data.attributes.slide4Title}
           description={homeIntro.data.attributes.slide4Description}
+          link={homeIntro.data.attributes.slide4Link}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide4FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide4SecondButton}
@@ -134,14 +136,14 @@ export default function HomeSections({
       {/* RIGHT PANEL */}
       <motion.div
         className="w-1/2 transform translate-y-[calc(-600vh+660px)]"
-        initial={{ y: -300 }}
-        animate={{ y: -itemPosition }}
+        animate={{ y: -itemPosition, transition: { duration: 1 } }}
       >
         <ContentPanel
           itemHeight={itemHeight}
           theme={homeIntro.data.attributes.slide5Theme.themeList}
           title={homeIntro.data.attributes.slide5Title}
           description={homeIntro.data.attributes.slide5Description}
+          link={homeIntro.data.attributes.slide4Link}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide5FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide5SecondButton}
@@ -164,6 +166,7 @@ export default function HomeSections({
           theme={homeIntro.data.attributes.slide3Theme.themeList}
           title={homeIntro.data.attributes.slide3Title}
           description={homeIntro.data.attributes.slide3Description}
+          link={homeIntro.data.attributes.slide3Link}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
@@ -186,6 +189,7 @@ export default function HomeSections({
           theme={homeIntro.data.attributes.slide1Theme.themeList}
           title={homeIntro.data.attributes.slide1Title}
           description={homeIntro.data.attributes.slide1Description}
+          link={homeIntro.data.attributes.slide1Link}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide1FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide1SecondButton}

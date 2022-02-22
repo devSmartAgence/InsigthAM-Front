@@ -10,7 +10,7 @@ export default function Footer() {
             <Link href="/" passHref>
               <div className="h-16 w-[105px] cursor-pointer relative md:mr-[60px]">
                 <Image
-                  src="/insightAM_white.svg"
+                  src="https://res.cloudinary.com/smartagence/image/upload/v1645461568/Logo_Insight-AM_blanc_zbuvut.svg"
                   alt="Logo Insight AM"
                   layout="fill"
                   objectFit="contain"
@@ -22,7 +22,11 @@ export default function Footer() {
               passHref
             >
               <div className="h-16 relative w-[50px] cursor-pointer mt-[20px] md:ml-8 md:mt-0">
-                <Image src="/Linkedin.svg" alt="Linkedin" layout="fill" />
+                <Image
+                  src="https://res.cloudinary.com/smartagence/image/upload/v1645463647/Picto_Linkedin_uulogv.svg"
+                  alt="Linkedin"
+                  layout="fill"
+                />
               </div>
             </Link>
           </div>

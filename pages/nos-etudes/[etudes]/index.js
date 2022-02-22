@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Layout from "../../../components/Layout";
+import { motion } from "framer-motion";
+import AnimatedH1Type from "../../../components/ui/AnimatedH1Type";
 import PrimaryButton from "../../../components/ui/PrimaryButton";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
@@ -26,34 +27,44 @@ export default function Etudes({ studies }) {
       upHandler={(e) => handleScroll("Up")}
       downHandler={(e) => handleScroll("Down")}
     >
-      <Layout>
-        <div className="flex flex-col items-center bg-deep-blue w-full">
-          <BreadCrumModule
-            modulePosition={modulePosition}
-            style={"dark"}
-            arrPath={arrPath}
+      <div className="flex flex-col items-center bg-deep-blue w-full">
+        <BreadCrumModule
+          modulePosition={modulePosition}
+          style={"dark"}
+          arrPath={arrPath}
+        />
+
+        <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
+          <GridPattern
+            color={"deep-blue"}
+            cover={studies.data[0].attributes.cover.data.attributes.url}
           />
+        </div>
+        <div className="flex flex-col items-center mx-[30px] relative md:items-start">
+          <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
+            <BackButton label={"Retour"} style="dark"></BackButton>
 
-          <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
-            <GridPattern
-              color={"deep-blue"}
-              cover={studies.data[0].attributes.cover.data.attributes.url}
+            <AnimatedH1Type
+              title={themeBeautyfier(theme)}
+              className={
+                "text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left"
+              }
             />
+
+            <PrimaryButton
+              type="primary"
+              label={"Méthodologie déployée"}
+              href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
+            ></PrimaryButton>
           </div>
-          <div className="flex flex-col items-center mx-[30px] relative md:items-start">
-            <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
-              <BackButton label={"Retour"} style="dark"></BackButton>
-
-              <h1 className="text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left">
-                {themeBeautyfier(theme)}
-              </h1>
-
-              <PrimaryButton
-                type="primary"
-                label={"Méthode déployée"}
-                href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
-              ></PrimaryButton>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.2, duration: 1 },
+            }}
+          >
             <div className="relative flex flex-wrap justify-center flex-row gap-8 md:flex-nowrap">
               <div>
                 {studies.data.slice(0, 2).map((study, index) => (
@@ -79,9 +90,9 @@ export default function Etudes({ studies }) {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </Layout>
+      </div>
     </ReactScrollWheelHandler>
   );
 }

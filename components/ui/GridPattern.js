@@ -12,7 +12,13 @@ export default function GridPattern({ color, cover }) {
 
       {color === "deep-blue" && cover && (
         <div className="w-full h-full relative -z-10">
-          <Image src={cover} layout="fill" objectFit="cover" alt="Pattern" />
+          <Image
+            src={cover}
+            blurDataURL={cover}
+            layout="fill"
+            objectFit="cover"
+            alt="Pattern"
+          />
         </div>
       )}
     </>

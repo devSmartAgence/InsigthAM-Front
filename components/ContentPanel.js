@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PrimaryButton from "./ui/PrimaryButton";
 import SecondaryButton from "./ui/SecondaryButton";
 
@@ -14,6 +15,7 @@ export default function ContentPanel({
   secondaryButtonLabel,
   index,
   slug,
+  link,
 }) {
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
@@ -40,9 +42,13 @@ export default function ContentPanel({
                 {description}
               </p>
               <div className="mb-[3vmax]">
-                <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
-                  Mon lien vers un site
-                </a>
+                {link && (
+                  <Link href={link}>
+                    <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
+                      Détail de l&apos;étude
+                    </a>
+                  </Link>
+                )}
               </div>
               <div className="flex ">
                 {primaryButtonLabel && (
@@ -52,7 +58,7 @@ export default function ContentPanel({
                     index={index}
                     slug={slug}
                     theme={theme}
-                    href={`/nos-etudes/${theme}/${slug}`}
+                    href={`/nos-etudes/${theme}/${slug}/#form`}
                   />
                 )}
 
