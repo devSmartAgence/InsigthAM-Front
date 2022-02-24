@@ -21,7 +21,7 @@ export default function HomeSections({
 }) {
   useEffect(() => {
     setItemPosition(0);
-  }, []);
+  }, [setItemPosition]);
   return (
     <section className="flex w-screen h-[calc(100vh-110px)]">
       <HomeSplitPanelControl
