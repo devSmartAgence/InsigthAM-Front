@@ -84,7 +84,7 @@ export default function HomeSections({
           index={1}
           itemsCount={7}
           cover={
-            homeIntro.data.attributes.slide2Cover.data.attributes.formats.large
+            homeIntro.data.attributes.slide1Cover.data.attributes.formats.large
               .url
           }
           itemPosition={itemPosition}
@@ -140,8 +140,10 @@ export default function HomeSections({
       {/* RIGHT PANEL */}
       <motion.div
         className="w-1/2"
-        initial={{ y: "-600vh" }}
-        animate={itemPosition === 0 ? { y: "-600vh" } : { y: -itemPosition }}
+        style={{ marginTop: "calc(-600vh + 660px)" }}
+        animate={
+          itemPosition === 0 ? { y: "-600vh + 660px" } : { y: -itemPosition }
+        }
       >
         <ContentPanel
           itemHeight={itemHeight}
@@ -207,12 +209,12 @@ export default function HomeSections({
           index={1}
           itemsCount={7}
           cover={
-            studies.data[0].attributes.cover.data.attributes.formats.large.url
+            "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_clock_f04988a9e3.jpg"
           }
           itemPosition={itemPosition}
         />
         <div
-          className={`bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
+          className={`bg-panel1 relative bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
           <GridPattern color={"deep-blue"} />
 

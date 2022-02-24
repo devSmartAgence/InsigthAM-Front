@@ -10,7 +10,7 @@ export default function Home({ homeIntro, studies }) {
   const [panelScrollIndex, setPanelScrollIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [itemPosition, setItemPosition] = useState(0);
+  const [itemPosition, setItemPosition] = useState();
   const [position, setPosition] = useState("");
 
   const handleSplitPanelControlClick = (i) => {
@@ -44,7 +44,7 @@ export default function Home({ homeIntro, studies }) {
         upHandler={(e) => handleScroll("ScrollUp")}
         downHandler={(e) => handleScroll("ScrollDown")}
       >
-        <div className="w-screen h-[calc(100vh-110px)] mt-[110px]">
+        <div className="w-screen h-[calc(100vh-110px)] mt-[110px] overflow-hidden">
           <HomeSections
             setItemPosition={setItemPosition}
             panelScrollIndex={panelScrollIndex}
