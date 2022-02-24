@@ -40,6 +40,14 @@ export default function Thematiques({ resStudies }) {
                 theme={theme}
               />
             ))}
+            <SummaryStudy
+              title={themeBeautyfier("EtudesNotorietePositionnement")}
+              theme={"EtudesNotorietePositionnement"}
+            />
+            <SummaryStudy
+              title={themeBeautyfier("EtudesTestingProduit")}
+              theme={"EtudesTestingProduit"}
+            />
           </div>
         </motion.div>
       </div>

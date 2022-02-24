@@ -111,10 +111,12 @@ export default function Etudes({ studies }) {
                 {studies.data.slice(2, 4).map((study, index) => (
                   <StudyPreview
                     title={study.attributes.title}
+                    description={study.attributes.description}
                     key={study.attributes.title + index}
                     slug={study.attributes.slug}
                     theme={study.attributes.theme}
                     cover={study.attributes.cover.data.attributes.url}
+                    introduction={study.attributes.introduction}
                   />
                 ))}
               </div>

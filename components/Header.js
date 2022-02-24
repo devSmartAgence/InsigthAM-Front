@@ -67,7 +67,6 @@ export default function Header() {
             </Link>
             <SecondaryButton
               type={"secondary"}
-              style={"light"}
               label={"Contact"}
               href={`/contact`}
             />

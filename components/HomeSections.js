@@ -5,6 +5,8 @@ import CoverPanel from "./CoverPanel.js";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
 import GridPattern from "./ui/GridPattern";
 import AnimatedH1 from "./ui/AnimatedH1Home";
+import PrimaryButton from "./ui/PrimaryButton.js";
+import SecondaryButton from "./ui/SecondaryButton.js";
 
 export default function HomeSections({
   studies,
@@ -247,6 +249,16 @@ export default function HomeSections({
                 <li>{homeIntro.data.attributes.goal3}</li>
                 <li>{homeIntro.data.attributes.goal4}</li>
               </ul>
+              <div className="flex">
+                <PrimaryButton label={"Nous découvrir"} href={"/a-propos"} />
+                <div className="ml-[15px]">
+                  <SecondaryButton
+                    label={"Nos études"}
+                    style={"light"}
+                    href={"/nos-etudes"}
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
