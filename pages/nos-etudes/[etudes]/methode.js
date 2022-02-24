@@ -20,6 +20,7 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
+  console.log("PAGE DATA ===>", pageData);
   const router = useRouter();
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData.data[0], "attributes.blocks");

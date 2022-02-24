@@ -22,6 +22,37 @@ export default function Etudes({ studies }) {
       setModulePosition(110);
     }
   };
+
+  let setCover = (theme) => {
+    let cover;
+    switch (theme) {
+      case "EtudesReferencementThematique":
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_clock_f04988a9e3.jpg";
+        break;
+      case "BarometresInstitutionnels":
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_counter_76379539c2.jpg";
+        break;
+      case "EtudeCiblesClientele":
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_lighthouse_3d58e85f43.jpg";
+        break;
+      case "EtudesTestingProduit":
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_Data_67fc3db76f.jpg";
+        break;
+      case "EtudesNotorietePositionnement":
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_glass_Ball_497bcd04d2.jpg";
+        break;
+
+      default:
+        cover =
+          "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png";
+    }
+    return cover;
+  };
   return (
     <ReactScrollWheelHandler
       upHandler={(e) => handleScroll("Up")}
@@ -35,10 +66,7 @@ export default function Etudes({ studies }) {
         />
 
         <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
-          <GridPattern
-            color={"deep-blue"}
-            cover={studies.data[0].attributes.cover.data.attributes.url}
-          />
+          <GridPattern color={"deep-blue"} cover={setCover(theme)} />
         </div>
         <div className="flex flex-col items-center mx-[30px] relative md:items-start">
           <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">

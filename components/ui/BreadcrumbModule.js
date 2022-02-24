@@ -17,24 +17,35 @@ export default function BreadCrumModule({ modulePosition, style, arrPath }) {
           <div
             className={
               style === "light"
-                ? "text-deep-blue text-[11px] cursor-pointer"
-                : "text-white text-[11px]"
+                ? "text-deep-blue text-[11px] cursor-pointer hover:underline"
+                : "text-white text-[11px] cursor-pointer hover:underline"
             }
           >
-            Accueil&nbsp; &nbsp; &#x0003E;
+            Accueil
           </div>
         </Link>
+        <span
+          className={
+            style === "light"
+              ? "text-deep-blue text-[11px]"
+              : "text-white text-[11px]"
+          }
+        >
+          &nbsp; &nbsp; &#x0003E;
+        </span>
         {arrPath.map((path, index) => (
-          <div
-            key={index}
-            className={
-              style === "light"
-                ? "text-deep-blue text-[11px] cursor-pointer"
-                : "text-white text-[11px]"
-            }
-          >
-            {breadcrumbBeautyfier(path)}
-          </div>
+          <Link href="/">
+            <div
+              key={index}
+              className={
+                style === "light"
+                  ? "text-deep-blue text-[11px] cursor-pointer hover:underline"
+                  : "text-white text-[11px] cursor-pointer hover:underline"
+              }
+            >
+              {breadcrumbBeautyfier(path)}
+            </div>
+          </Link>
         ))}
       </div>
     </motion.div>

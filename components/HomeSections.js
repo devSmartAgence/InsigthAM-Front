@@ -31,7 +31,14 @@ export default function HomeSections({
       />
 
       {/* LEFT PANEL */}
-      <motion.div className="w-1/2 " animate={{ y: itemPosition }}>
+      <motion.div
+        className="w-1/2 "
+        animate={
+          panelScrollIndex >= 0 && panelScrollIndex <= 6
+            ? { y: itemPosition }
+            : { y: null }
+        }
+      >
         <div
           className={`bg-panel1 bg-left background-size-full font-sans flex items-center flex-col h-[calc(100vh-110px)]`}
         >
@@ -142,7 +149,10 @@ export default function HomeSections({
         className="w-1/2"
         style={{ marginTop: "calc(-600vh + 660px)" }}
         animate={
-          itemPosition === 0 ? { y: "-600vh + 660px" } : { y: -itemPosition }
+          itemPosition === 0
+            ? { y: "-600vh + 660px" }
+            : panelScrollIndex >= 0 &&
+              panelScrollIndex <= 6 && { y: -itemPosition }
         }
       >
         <ContentPanel
