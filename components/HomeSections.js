@@ -140,7 +140,7 @@ export default function HomeSections({
       {/* RIGHT PANEL */}
       <motion.div
         className="w-1/2"
-        style={{'margin-top':'calc(-600vh + 660px)'}}
+        style={{marginTop:'calc(-600vh + 660px)'}}
         animate={itemPosition === 0 ? { y: "-600vh + 660px" } : { y: -itemPosition }}
       >
         <ContentPanel
