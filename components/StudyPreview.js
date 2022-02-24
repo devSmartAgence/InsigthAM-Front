@@ -16,7 +16,11 @@ export default function StudyPreview({
       </h2>
       <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
         <Image
-          src={cover}
+          src={
+            cover
+              ? cover
+              : "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png"
+          }
           placeholder="blur"
           blurDataURL={cover}
           alt={`Couverture ${title}`}

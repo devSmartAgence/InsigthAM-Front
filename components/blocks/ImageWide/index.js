@@ -5,8 +5,16 @@ const ImageWide = ({ image }) => {
   return (
     <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">
       <Image
-        src={myImage}
-        blurDataURL={myImage}
+        src={
+          myImage
+            ? myImage
+            : "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png"
+        }
+        blurDataURL={
+          myImage
+            ? myImage
+            : "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png"
+        }
         alt=""
         className="absolute h-full w-full object-cover"
         layout="fill"

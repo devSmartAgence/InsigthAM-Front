@@ -13,7 +13,11 @@ export default function GridPattern({ color, cover }) {
       {color === "deep-blue" && cover && (
         <div className="w-full h-full relative -z-10">
           <Image
-            src={cover}
+            src={
+              cover
+                ? cover
+                : "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png"
+            }
             blurDataURL={cover}
             layout="fill"
             objectFit="cover"

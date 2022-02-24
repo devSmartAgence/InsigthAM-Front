@@ -9,7 +9,15 @@ const TextImage = ({ text, image, position }) => {
             : "ml-15 md:float-right md:w-[51.7%] md:ml-15"
         }`}
       >
-        <img src={myImage} alt="" className="mb-[35px]" />
+        <img
+          src={
+            myImage
+              ? myImage
+              : "https://res.cloudinary.com/smartagence/image/upload/v1645710269/iniight_placeholder_qne20w.png"
+          }
+          alt=""
+          className="mb-[35px]"
+        />
       </div>
       <div className={`font-serif leading-[30px]`}>{text}</div>
     </div>
