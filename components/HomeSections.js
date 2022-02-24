@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import ContentPanel from "./ContentPanel.js";
 import CoverPanel from "./CoverPanel.js";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
@@ -8,6 +8,7 @@ import AnimatedH1 from "./ui/AnimatedH1Home";
 
 export default function HomeSections({
   studies,
+  setItemPosition,
   itemPosition,
   itemHeight,
   studiesNumber,
@@ -16,6 +17,9 @@ export default function HomeSections({
   height,
   homeIntro,
 }) {
+  useEffect(() => {
+    setItemPosition(0);
+  }, []);
   return (
     <section className="flex w-screen h-[calc(100vh-110px)]">
       <HomeSplitPanelControl
@@ -87,7 +91,7 @@ export default function HomeSections({
         />
         <ContentPanel
           itemHeight={itemHeight}
-          theme={homeIntro.data.attributes.slide1Theme.themeList}
+          theme={homeIntro.data.attributes.slide2Theme.theme}
           title={homeIntro.data.attributes.slide2Title}
           description={homeIntro.data.attributes.slide2Description}
           link={homeIntro.data.attributes.slide2Link}
@@ -110,7 +114,7 @@ export default function HomeSections({
         />
         <ContentPanel
           itemHeight={itemHeight}
-          theme={homeIntro.data.attributes.slide4Theme.themeList}
+          theme={homeIntro.data.attributes.slide4Theme.theme}
           title={homeIntro.data.attributes.slide4Title}
           description={homeIntro.data.attributes.slide4Description}
           link={homeIntro.data.attributes.slide4Link}
@@ -135,12 +139,13 @@ export default function HomeSections({
 
       {/* RIGHT PANEL */}
       <motion.div
-        className="w-1/2 transform translate-y-[calc(-600vh+660px)]"
-        animate={{ y: -itemPosition, transition: { duration: 1 } }}
+        className="w-1/2"
+        initial={{ y: "-600vh" }}
+        animate={itemPosition === 0 ? { y: "-600vh" } : { y: -itemPosition }}
       >
         <ContentPanel
           itemHeight={itemHeight}
-          theme={homeIntro.data.attributes.slide5Theme.themeList}
+          theme={homeIntro.data.attributes.slide5Theme.theme}
           title={homeIntro.data.attributes.slide5Title}
           description={homeIntro.data.attributes.slide5Description}
           link={homeIntro.data.attributes.slide4Link}
@@ -163,7 +168,7 @@ export default function HomeSections({
         />
         <ContentPanel
           itemHeight={itemHeight}
-          theme={homeIntro.data.attributes.slide3Theme.themeList}
+          theme={homeIntro.data.attributes.slide3Theme.theme}
           title={homeIntro.data.attributes.slide3Title}
           description={homeIntro.data.attributes.slide3Description}
           link={homeIntro.data.attributes.slide3Link}
@@ -186,7 +191,7 @@ export default function HomeSections({
         />
         <ContentPanel
           itemHeight={itemHeight}
-          theme={homeIntro.data.attributes.slide1Theme.themeList}
+          theme={homeIntro.data.attributes.slide1Theme.theme}
           title={homeIntro.data.attributes.slide1Title}
           description={homeIntro.data.attributes.slide1Description}
           link={homeIntro.data.attributes.slide1Link}

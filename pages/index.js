@@ -46,6 +46,7 @@ export default function Home({ homeIntro, studies }) {
       >
         <div className="w-screen h-[calc(100vh-110px)] mt-[110px]">
           <HomeSections
+            setItemPosition={setItemPosition}
             panelScrollIndex={panelScrollIndex}
             studiesNumber={studiesNumber}
             height={height}
