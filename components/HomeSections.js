@@ -140,8 +140,8 @@ export default function HomeSections({
       {/* RIGHT PANEL */}
       <motion.div
         className="w-1/2"
-        initial={{ y: "-600vh" }}
-        animate={itemPosition === 0 ? { y: "-600vh" } : { y: -itemPosition }}
+        style={{'margin-top':'calc(-600vh + 660px)'}}
+        animate={itemPosition === 0 ? { y: "-600vh + 660px" } : { y: -itemPosition }}
       >
         <ContentPanel
           itemHeight={itemHeight}
@@ -212,7 +212,7 @@ export default function HomeSections({
           itemPosition={itemPosition}
         />
         <div
-          className={`bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
+          className={`relative bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
           <GridPattern color={"deep-blue"} />
 
