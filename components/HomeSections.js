@@ -214,7 +214,7 @@ export default function HomeSections({
           itemPosition={itemPosition}
         />
         <div
-          className={`bg-panel1 relative bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
+          className={`relative bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
         >
           <GridPattern color={"deep-blue"} />
 
