@@ -47,7 +47,7 @@ export default function Footer() {
                   CGV/CGU
                 </li>
               </Link>
-              <Link href="/cgv-cgu" passHref>
+              <Link href="/mentions-legales" passHref>
                 <li className="text-[12px] text-white cursor-pointer uppercase text-center mb-[20px] md:text-left md:mb-0 md:mr-[5vw]">
                   MENTIONS LÉGALES
                 </li>

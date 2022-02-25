@@ -29,9 +29,9 @@ export default function Header() {
     },
   };
   return (
-    <header className="flex h-[110px] w-screen bg-white justify-between items-center pl-[70px] pr-[70px] fixed z-50 top-0">
+    <header className="flex h-[75px] w-screen bg-white justify-between items-center px-8  fixed z-50 top-0 md:h-[110px]">
       <Link href="/" passHref>
-        <div className="h-16 w-[105px] cursor-pointer relative">
+        <div className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]">
           <Image
             src="https://res.cloudinary.com/smartagence/image/upload/v1645461453/Logo_Insight-AM-Blue_qksdzv.svg"
             alt="Logo Insight AM"

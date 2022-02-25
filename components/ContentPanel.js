@@ -66,7 +66,7 @@ export default function ContentPanel({
                   <div className="ml-[15px]">
                     <SecondaryButton
                       label={secondaryButtonLabel}
-                      style={"light"}
+                      style={"dark"}
                       href={`/nos-etudes/${theme}/${slug}`}
                     />
                   </div>

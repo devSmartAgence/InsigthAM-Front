@@ -87,6 +87,7 @@ export default function HomeSections({
           itemsCount={7}
           itemPosition={itemPosition}
           slug={studies.data[0].attributes.slug}
+          description={studies.data[0].attributes.description}
         />
         <CoverPanel
           itemHeight={itemHeight}
@@ -239,15 +240,23 @@ export default function HomeSections({
                 transition: { delay: 1, duration: 1 },
               }}
             >
-              <h2 className="text-white font-serif text-[1.2vmax] mb-[1vmax]">
+              <h2 className="text-white font-serif text-md mb-[1vmax] md:text-xl">
                 Nos objectifs
               </h2>
 
-              <ul className="text-white font-serif text-[1vmax] list-disc mb-[2vmax] ml-[17px] leading-[2vmax]">
-                <li>{homeIntro.data.attributes.goal1}</li>
-                <li>{homeIntro.data.attributes.goal2}</li>
-                <li>{homeIntro.data.attributes.goal3}</li>
-                <li>{homeIntro.data.attributes.goal4}</li>
+              <ul className="text-white font-serif list-disc mb-[2vmax] ml-[17px] leading-[2vmax]">
+                <li className="text-xs md:text-base">
+                  {homeIntro.data.attributes.goal1}
+                </li>
+                <li className="text-xs md:text-base">
+                  {homeIntro.data.attributes.goal2}
+                </li>
+                <li className="text-xs md:text-base">
+                  {homeIntro.data.attributes.goal3}
+                </li>
+                <li className="text-xs md:text-base">
+                  {homeIntro.data.attributes.goal4}
+                </li>
               </ul>
               <div className="flex">
                 <PrimaryButton label={"Nous découvrir"} href={"/a-propos"} />

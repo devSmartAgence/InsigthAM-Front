@@ -6,7 +6,7 @@ import PrimaryButton from "../../../components/ui/PrimaryButton";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
 import GridPattern from "../../../components/ui/GridPattern";
-import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
+import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
@@ -60,32 +60,34 @@ export default function Etudes({ studies }) {
       downHandler={(e) => handleScroll("Down")}
     >
       <div className="flex flex-col items-center bg-deep-blue w-full">
-        <BreadCrumModule
+        {/* <BreadCrumbModule
           modulePosition={modulePosition}
           style={"dark"}
           arrPath={arrPath}
-        />
+        /> */}
 
         <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
           <GridPattern color={"deep-blue"} cover={setCover(theme)} />
         </div>
         <div className="flex flex-col items-center mx-[30px] relative md:items-start">
           <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
-            <BackButton label={"Retour"} style="dark"></BackButton>
+            <BackButton label={"Retour"} style="light"></BackButton>
             <div>
               <AnimatedH1Type
                 title={themeBeautyfier(theme)}
                 className={
-                  "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mt-10 mb-6  md:text-4xl  "
+                  "flex flex-wrap  justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mt-10 mb-6  md:text-4xl md:justify-start md:flex-nowrap  "
                 }
               />
             </div>
-
-            <PrimaryButton
-              type="primary"
-              label={"Méthodologie déployée"}
-              href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
-            ></PrimaryButton>
+            {router.asPath !== "/nos-etudes/BarometresInstitutionnels" ||
+              ("/nos-etudes/EtudeCiblesClientele" && (
+                <PrimaryButton
+                  type="primary"
+                  label={"Méthodologie déployée"}
+                  href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
+                ></PrimaryButton>
+              ))}
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

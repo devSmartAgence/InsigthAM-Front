@@ -17,7 +17,7 @@ import { getLocalizedParams } from "../../../utils/localize";
 import BlockManager from "../../../components/shared/BlockManager";
 
 import ContactForm from "../../../components/ui/Forms/ContactForm";
-import BreadCrumModule from "../../../components/ui/BreadcrumbModule";
+import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
   console.log("PAGE DATA ===>", pageData);
@@ -39,7 +39,7 @@ const Universals = ({ pageData }) => {
       downHandler={(e) => handleScroll("Down")}
     >
       <div className="mt-[110px] bg-beige flex flex-col items-center">
-        <BreadCrumModule
+        <BreadCrumbModule
           modulePosition={modulePosition}
           style={"light"}
           arrPath={arrPath}
@@ -47,7 +47,7 @@ const Universals = ({ pageData }) => {
 
         <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
           <div className="absolute left-0">
-            <BackButton label={"Retour"} style="light" />
+            <BackButton label={"Retour"} style="dark" />
           </div>
           <div className="flex flex-col items-center ">
             <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">

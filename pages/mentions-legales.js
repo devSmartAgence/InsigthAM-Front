@@ -13,7 +13,7 @@ import { getLocalizedParams } from "../utils/localize";
 import BlockManager from "../components/shared/BlockManager";
 
 import ContactForm from "../components/ui/Forms/ContactForm";
-import BreadCrumModule from "../components/ui/BreadcrumbModule";
+import BreadCrumbModule from "../components/ui/BreadcrumbModule";
 import AnimatedH1Type from "../components/ui/AnimatedH1Type";
 
 const Universals = ({ pageData }) => {
@@ -34,7 +34,7 @@ const Universals = ({ pageData }) => {
       downHandler={(e) => handleScroll("Down")}
     >
       <div className="mt-[110px] bg-beige flex flex-col items-center">
-        <BreadCrumModule
+        <BreadCrumbModule
           modulePosition={modulePosition}
           style={"light"}
           arrPath={arrPath}

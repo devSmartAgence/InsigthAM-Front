@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import BackButton from "./BackButton";
 import { breadcrumbBeautyfier } from "../../utils/breadcrumbBeautyfier";
-export default function BreadCrumModule({ modulePosition, style, arrPath }) {
+export default function BreadCrumbModule({ modulePosition, style, arrPath }) {
   return (
     <motion.div
-      className={`w-full fixed flex items-center max-w-[1230px] h-[60px] ${
-        style == "light" ? "bg-beige" : "bg-deep-blue"
-      } z-10 top-0`}
+      className={`hidden md:z-10 md:top-0 md:bg-beige md:w-full md:fixed md:flex md:items-center md:max-w-[1230px] md:h-[60px] md:mt-10px${
+        style == "light" ? "md:bg-beige" : "md:bg-deep-blue"
+      }`}
       animate={{ top: modulePosition }}
       transition={{ duration: 0.3, type: "ease" }}
     >

@@ -16,8 +16,8 @@ const ImageWide = ({ image }) => {
         src={myImage}
         blurDataURL={myImage}
         alt=""
-        className="absolute h-full w-full object-cover"
         layout="fill"
+        objectFit="contain"
       />
     </div>
   );
