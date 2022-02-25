@@ -9,17 +9,18 @@ export default function Thematiques({ resStudies }) {
   let singleThemes = [...new Set(arrThemes)];
 
   return (
-    <div className="bg-deep-blue w-screen h-screen">
-      <div className="flex flex-col w-screen items-center">
+    <div className="bg-deep-blue w-screen">
+      <div className="flex justify-center flex-col w-screen items-center pt-40 md:pt-56">
         <AnimatedH1Type
           title={"Nos études"}
           className={
-            "flex overflow-hidden text-white text-[2vmax] mt-[calc(5vmax+110px)]"
+            "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight  md:text-4xl  "
           }
         />
 
         <div className="w-[2.3vmax] h-[0.3vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"></div>
         <motion.div
+          className="flex flex-col items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{
             opacity: 1,
@@ -27,10 +28,9 @@ export default function Thematiques({ resStudies }) {
             transition: { delay: 0.2, duration: 1 },
           }}
         >
-          <p className="font-serif text-[1vmax] text-white mb-[1vmax] w-[60vw] text-center">
+          <p className="font-serif leading-7 mb-[5%] text-white text-center w-[60vw]">
             Chapô lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            pharetra semper metus fermentum lobortis. Pellentesque semper risus
-            vel erat posuere.
+            pharetra semper metus.
           </p>
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
             {singleThemes.map((theme, index) => (

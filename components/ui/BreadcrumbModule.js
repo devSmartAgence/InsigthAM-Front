@@ -34,7 +34,7 @@ export default function BreadCrumModule({ modulePosition, style, arrPath }) {
           &nbsp; &nbsp; &#x0003E;
         </span>
         {arrPath.map((path, index) => (
-          <Link href="/" key={index}>
+          <Link href="/" key={index} passHref>
             <div
               className={
                 style === "light"

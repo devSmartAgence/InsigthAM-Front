@@ -66,7 +66,7 @@ export default function Footer() {
         <div className="flex justify-center xl:justify-end">
           <div> site est une création du Groupe</div>{" "}
           <div className="ml-[6px] cursor-pointer">
-            <Link href="https://www.smartagence.com/">
+            <Link href="https://www.smartagence.com/" passHref>
               <Image
                 src="https://res.cloudinary.com/smartagence/image/upload/v1645784593/Logotype_smartagence_qvhjw2.svg"
                 width="102px"

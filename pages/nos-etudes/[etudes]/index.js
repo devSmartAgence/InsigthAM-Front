@@ -72,13 +72,14 @@ export default function Etudes({ studies }) {
         <div className="flex flex-col items-center mx-[30px] relative md:items-start">
           <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
             <BackButton label={"Retour"} style="dark"></BackButton>
-
-            <AnimatedH1Type
-              title={themeBeautyfier(theme)}
-              className={
-                "text-white font-sans text-[40px] text-center mb-[15px] mt-[30px] md:text-left"
-              }
-            />
+            <div>
+              <AnimatedH1Type
+                title={themeBeautyfier(theme)}
+                className={
+                  "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mt-10 mb-6  md:text-4xl  "
+                }
+              />
+            </div>
 
             <PrimaryButton
               type="primary"

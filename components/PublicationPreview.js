@@ -21,7 +21,7 @@ export default function PublicationPreview({
       </h2>
       <p className="font-serif text-[1vmax] text-black mb-[1vmax]">{excerpt}</p>
       <div className="mb-[3vmax]">
-        <Link href="/">
+        <Link href="/" passHref>
           <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
             {link}
           </a>

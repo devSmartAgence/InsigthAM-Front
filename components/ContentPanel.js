@@ -43,7 +43,7 @@ export default function ContentPanel({
               </p>
               <div className="mb-[3vmax]">
                 {link && (
-                  <Link href={link}>
+                  <Link href={link} passHref>
                     <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
                       Détail de l&apos;étude
                     </a>
