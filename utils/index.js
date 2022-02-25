@@ -85,3 +85,14 @@ export function getDataContact() {
     slug: slugToReturn,
   };
 }
+
+// This function will build the url to fetch on the Strapi API
+export function getDataLegal() {
+  const slugToReturn = `legal`;
+  const apiUrl = `/legal?populate[blocks][populate]=*&populate[cover]=*`;
+
+  return {
+    data: getStrapiURL(apiUrl),
+    slug: slugToReturn,
+  };
+}
