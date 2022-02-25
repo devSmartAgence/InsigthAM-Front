@@ -12,6 +12,7 @@ import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 export default function Etudes({ studies }) {
   const router = useRouter();
+  console.log("ROUTER ===>", router.asPath);
   let arrPath = router.asPath.split("/");
   let theme = studies.data[0].attributes.theme;
   const [modulePosition, setModulePosition] = useState(0);
@@ -97,6 +98,7 @@ export default function Etudes({ studies }) {
               <div>
                 {studies.data.slice(0, 2).map((study, index) => (
                   <StudyPreview
+                    router={router.asPath}
                     title={study.attributes.title}
                     description={study.attributes.description}
                     key={study.attributes.title + index}
@@ -110,6 +112,7 @@ export default function Etudes({ studies }) {
               <div className="mt-[-30px] md:mt-[280px]">
                 {studies.data.slice(2, 4).map((study, index) => (
                   <StudyPreview
+                    router={router.asPath}
                     title={study.attributes.title}
                     description={study.attributes.description}
                     key={study.attributes.title + index}
