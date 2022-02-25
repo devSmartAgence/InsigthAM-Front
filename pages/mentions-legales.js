@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 //Strapi tools for dynamics zones
 import { getDataLegalDependencies } from "../components/services/api";
-import { redirectToHomepage, getDataLEgal } from "../utils";
+import { redirectToHomepage, getDataLegal } from "../utils";
 import { getLocalizedParams } from "../utils/localize";
 import BlockManager from "../components/shared/BlockManager";
 
