@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 const FaqItem = ({ question, answer }) => {
   const [isBlockOpen, setIsBlockOpen] = useState(false);
@@ -33,14 +34,14 @@ const FaqItem = ({ question, answer }) => {
             isBlockOpen && "font-bold"
           } leading-[30px] mb-[14px] cursor-pointer`}
         >
-          {question}
+          <ReactMarkdown>{question}</ReactMarkdown>
         </p>
         <p
           className={`font-serif text-deep-blue leading-[30px] mb-[30px] ${
             !isBlockOpen && "hidden"
           }`}
         >
-          {answer}
+          <ReactMarkdown>{answer}</ReactMarkdown>
         </p>
       </div>
     </div>

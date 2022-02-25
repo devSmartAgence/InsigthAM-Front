@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PrimaryButton from "./ui/PrimaryButton";
 import SecondaryButton from "./ui/SecondaryButton";
-
+import ReactMarkdown from "react-markdown";
 import GridPattern from "./ui/GridPattern";
 
 import { themeBeautyfier } from "../utils/themeBeautyfier";
@@ -39,7 +39,7 @@ export default function ContentPanel({
                 {title}
               </h2>
               <p className="font-serif text-[1vmax] text-black mb-[1vmax]">
-                {description}
+                <ReactMarkdown>{description}</ReactMarkdown>
               </p>
               <div className="mb-[3vmax]">
                 {link && (
