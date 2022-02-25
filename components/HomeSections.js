@@ -80,7 +80,9 @@ export default function HomeSections({
           heading={studies.data[0].attributes.heading}
           theme={studies.data[0].attributes.theme}
           title={studies.data[0].attributes.title}
-          link={`/nos-etudes/${studies.data[0].attributes.theme}/${studies.data[0].attributes.slug}`}
+          href={
+            "/nos-etudes/EtudesReferencementThematique/per-quelle-place-demain-dans-l-epargne-des-francais"
+          }
           index={studies.data[0].id}
           primaryButtonLabel={studies.data[0].attributes.primaryButtonLabel}
           secondaryButtonLabel={studies.data[0].attributes.secondaryButtonLabel}
@@ -105,6 +107,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide2Title}
           description={homeIntro.data.attributes.slide2Description}
           link={homeIntro.data.attributes.slide2Link}
+          href={"/nos-etudes/EtudesNotorietePositionnement/methode"}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide2FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide2SecondButton}
@@ -128,6 +131,9 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide4Title}
           description={homeIntro.data.attributes.slide4Description}
           link={homeIntro.data.attributes.slide4Link}
+          href={
+            "nos-etudes/BarometresInstitutionnels/le-dernier-climat-des-affaires-des-sgp"
+          }
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide4FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide4SecondButton}
@@ -164,6 +170,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide5Title}
           description={homeIntro.data.attributes.slide5Description}
           link={homeIntro.data.attributes.slide4Link}
+          href={"/nos-etudes/EtudesNotorietePositionnement/methode"}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide5FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide5SecondButton}
@@ -187,6 +194,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide3Title}
           description={homeIntro.data.attributes.slide3Description}
           link={homeIntro.data.attributes.slide3Link}
+          href={"/nos-etudes/EtudeCiblesClientele"}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
@@ -210,6 +218,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide1Title}
           description={homeIntro.data.attributes.slide1Description}
           link={homeIntro.data.attributes.slide1Link}
+          href={"/nos-etudes/EtudesNotorietePositionnement/methode"}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide1FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide1SecondButton}

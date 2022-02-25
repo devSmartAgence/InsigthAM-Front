@@ -16,6 +16,7 @@ export default function ContentPanel({
   index,
   slug,
   link,
+  href,
 }) {
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
@@ -43,22 +44,22 @@ export default function ContentPanel({
               </p>
               <div className="mb-[3vmax]">
                 {link && (
-                  <Link href={link} passHref>
+                  <Link href={href} passHref>
                     <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
-                      Détail de l&apos;étude
+                      {link}
                     </a>
                   </Link>
                 )}
               </div>
               <div className="flex ">
                 {primaryButtonLabel && (
-                  <PrimaryButton
+                  <SecondaryButton
                     label={primaryButtonLabel}
                     type={"primary"}
                     index={index}
                     slug={slug}
                     theme={theme}
-                    href={`/nos-etudes/${theme}/${slug}/#form`}
+                    href={href}
                   />
                 )}
 
