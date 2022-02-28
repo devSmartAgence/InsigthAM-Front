@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function GridPattern({ color, cover }) {
   return (
     <>
-      <div className="z-1 absolute w-[50vw] h-[calc(100vh-110px)] grid grid-cols-2 grid-rows-2 overflow-hidden">
+      <div className="z-1 absolute w-full lg:w-[50vw] h-[calc(100vh-110px)] grid grid-cols-2 grid-rows-2 overflow-hidden">
         <Pattern color={color} />
         <Pattern color={color} />
         <Pattern color={color} />

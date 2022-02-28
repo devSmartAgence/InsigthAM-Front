@@ -24,7 +24,7 @@ export default function HomeSections({
   }, [setItemPosition]);
   console.log(panelScrollIndex);
   return (
-    <section className="flex relative w-screen h-[calc(100vh-110px)]">
+    <section className="flex flex-col relative w-screen h-[calc(100vh-110px)] lg:flex-row">
       <HomeSplitPanelControl
         studiesNumber={studiesNumber}
         panelScrollIndex={panelScrollIndex}
@@ -35,7 +35,7 @@ export default function HomeSections({
 
       {/* LEFT PANEL */}
       <motion.div
-        className="w-1/2 "
+        className="w-full lg:w-1/2"
         animate={
           panelScrollIndex >= 0 && panelScrollIndex <= 6
             ? { y: itemPosition }

@@ -23,7 +23,7 @@ export default function ContentPanel({
       <div className={`flex flex-row h-[calc(100vh-110px)]`}>
         {/* CONTENTPANEL     */}
         <div
-          className={`bg-beige w-1/2 font-sans flex items-center flex-col justify-center`}
+          className={`bg-beige w-screen lg:w-1/2 font-sans flex items-center flex-col justify-center`}
         >
           <GridPattern color={"white"} />
           <div className="z-20 pr-[7vmax] pl-[7vmax]">

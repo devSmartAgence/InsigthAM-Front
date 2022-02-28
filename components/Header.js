@@ -29,7 +29,7 @@ export default function Header() {
     },
   };
   return (
-    <header className="flex h-[75px] w-screen bg-white justify-between items-center px-8  fixed z-50 top-0 md:h-[110px]">
+    <header className="flex h-[110px] w-screen bg-white justify-between items-center px-8  fixed z-50 top-0 md:h-[110px]">
       <Link href="/" passHref>
         <div className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]">
           <Image
