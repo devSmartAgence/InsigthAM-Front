@@ -7,8 +7,12 @@ export default function HomeSplitPanelControl({
 }) {
   //Animation control
   const sliderControl = {
+    hidden: { x: 80 },
     show: {
+      x: 0,
       transition: {
+        delay: 1.5,
+        duration: 0.5,
         staggerChildren: 0.1,
       },
     },
@@ -41,7 +45,7 @@ export default function HomeSplitPanelControl({
   };
 
   return (
-    <div className="fixed z-10 top-1/2 right-[30px]">
+    <div className="fixed z-10 top-[calc(50vh-77px)] right-[30px]">
       <motion.ul variants={sliderControl} animate="show" initial="hidden">
         <motion.li
           className={
