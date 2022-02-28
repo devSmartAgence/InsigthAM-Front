@@ -22,6 +22,7 @@ export default function HomeSections({
   useEffect(() => {
     setItemPosition(0);
   }, [setItemPosition]);
+  console.log(panelScrollIndex);
   return (
     <section className="flex relative w-screen h-[calc(100vh-110px)]">
       <HomeSplitPanelControl
@@ -157,11 +158,9 @@ export default function HomeSections({
       <motion.div
         className="w-1/2"
         style={{ marginTop: "calc(-600vh + 660px)" }}
+        initial={{ y: "-600vh + 660px" }}
         animate={
-          itemPosition === 0
-            ? { y: "-600vh + 660px" }
-            : panelScrollIndex > 0 &&
-              panelScrollIndex < 6 && { y: -itemPosition }
+          panelScrollIndex > 0 && panelScrollIndex < 6 && { y: -itemPosition }
         }
       >
         <ContentPanel
