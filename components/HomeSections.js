@@ -160,8 +160,8 @@ export default function HomeSections({
         animate={
           itemPosition === 0
             ? { y: "-600vh + 660px" }
-            : panelScrollIndex >= 0 &&
-              panelScrollIndex <= 6 && { y: -itemPosition }
+            : panelScrollIndex > 0 &&
+              panelScrollIndex < 6 && { y: -itemPosition }
         }
       >
         <ContentPanel
