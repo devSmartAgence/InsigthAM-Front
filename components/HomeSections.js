@@ -82,8 +82,11 @@ export default function HomeSections({
           heading={studies.data[0].attributes.heading}
           theme={studies.data[0].attributes.theme}
           title={studies.data[0].attributes.title}
-          href={
-            "/nos-etudes/EtudesReferencementThematique/per-quelle-place-demain-dans-l-epargne-des-francais"
+          hrefFirstButton={
+            "/nos-etudes/EtudesReferencementThematique/les-epargnants-et-l-investissement-responsable"
+          }
+          hrefSecondButton={
+            "/nos-etudes/EtudesReferencementThematique/les-epargnants-et-l-investissement-responsable/#form"
           }
           index={studies.data[0].id}
           primaryButtonLabel={studies.data[0].attributes.primaryButtonLabel}

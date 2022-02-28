@@ -87,7 +87,10 @@ export default function ContactForm({ title }) {
   ////////
 
   return (
-    <div className="py-[85px] flex flex-col items-center relative w-full bg-dark-beige">
+    <div
+      className="py-[85px] flex flex-col items-center relative w-full bg-dark-beige"
+      id="form"
+    >
       <div className="absolute top-[-14px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +115,6 @@ export default function ContactForm({ title }) {
         <form
           className="flex-row justify-center w-[80%] place-content-between gap-x-[12%] md:flex md:w-full md:max-w-[1230px]  "
           onSubmit={handleSubmit}
-          id="form"
         >
           <div className="md:w-1/2">
             <TextField

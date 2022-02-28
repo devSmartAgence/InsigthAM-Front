@@ -45,7 +45,7 @@ export default function ContentPanel({
                 {description}
               </ReactMarkdown>
 
-              <div className="mb-[3vmax]">
+              {/* <div className="mb-[3vmax]">
                 {link && (
                   <Link href={href} passHref>
                     <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
@@ -53,7 +53,7 @@ export default function ContentPanel({
                     </a>
                   </Link>
                 )}
-              </div>
+              </div> */}
               <div className="flex ">
                 {primaryButtonLabel && (
                   <SecondaryButton
