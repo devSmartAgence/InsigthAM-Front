@@ -240,7 +240,7 @@ export default function HomeSections({
         >
           <GridPattern color={"deep-blue"} />
 
-          <div className="absolute bg-deep-blue bg-opacity-85 h-[calc(50%-46px)] flex flex-col justify-center pr-[7vmax] pl-[7vmax]">
+          <div className="absolute bg-deep-blue bg-opacity-85 h-1/2 flex flex-col justify-center pr-[7vmax] pl-[7vmax]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{

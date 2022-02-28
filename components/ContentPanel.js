@@ -39,9 +39,11 @@ export default function ContentPanel({
               <h2 className="text-deep-blue font-serif text-[3vmax] mb-[1vmax] leading-[3.7vmax]">
                 {title}
               </h2>
-              <p className="font-serif text-[1vmax] text-black mb-[1vmax]">
-                <ReactMarkdown>{description}</ReactMarkdown>
-              </p>
+
+              <ReactMarkdown className="font-serif text-[1vmax] text-black mb-[1vmax]">
+                {description}
+              </ReactMarkdown>
+
               <div className="mb-[3vmax]">
                 {link && (
                   <Link href={href} passHref>
