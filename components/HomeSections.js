@@ -23,6 +23,7 @@ export default function HomeSections({
     setItemPosition(0);
   }, [setItemPosition]);
   console.log(panelScrollIndex);
+  console.log("ICI ===>", studies.data[0]);
   return (
     <section className="flex flex-col relative w-screen h-[calc(100vh-110px)] lg:flex-row">
       <HomeSplitPanelControl
@@ -108,7 +109,8 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide2Title}
           description={homeIntro.data.attributes.slide2Description}
           link={homeIntro.data.attributes.slide2Link}
-          href={"/nos-etudes/EtudesNotorietePositionnement/methode"}
+          hrefFirstButton={"/nos-etudes/EtudesNotorietePositionnement"}
+          hrefSecondButton={"/nos-etudes/EtudesNotorietePositionnement/methode"}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide2FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide2SecondButton}

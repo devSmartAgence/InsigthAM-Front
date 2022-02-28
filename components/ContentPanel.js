@@ -16,7 +16,8 @@ export default function ContentPanel({
   index,
   slug,
   link,
-  href,
+  hrefFirstButton,
+  hrefSecondButton,
 }) {
   return (
     <div className="w-screen h-[calc(100vh-110px)] w-screen">
@@ -61,7 +62,7 @@ export default function ContentPanel({
                     index={index}
                     slug={slug}
                     theme={theme}
-                    href={href}
+                    href={hrefFirstButton}
                   />
                 )}
 
@@ -70,7 +71,7 @@ export default function ContentPanel({
                     <SecondaryButton
                       label={secondaryButtonLabel}
                       style={"dark"}
-                      href={`/nos-etudes/${theme}/${slug}`}
+                      href={hrefSecondButton}
                     />
                   </div>
                 )}
