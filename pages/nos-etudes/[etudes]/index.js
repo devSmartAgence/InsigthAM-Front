@@ -12,7 +12,7 @@ import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 export default function Etudes({ studies }) {
   const router = useRouter();
-  console.log("ROUTER ===>", router.asPath);
+  console.log("ROUTER.ASPATH ===>", router.asPath);
   let arrPath = router.asPath.split("/");
   let theme = studies.data[0].attributes.theme;
   const [modulePosition, setModulePosition] = useState(0);
@@ -80,14 +80,15 @@ export default function Etudes({ studies }) {
                 }
               />
             </div>
-            {router.asPath !== "/nos-etudes/BarometresInstitutionnels" ||
-              ("/nos-etudes/EtudeCiblesClientele" && (
-                <PrimaryButton
-                  type="primary"
-                  label={"Méthodologie déployée"}
-                  href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
-                ></PrimaryButton>
-              ))}
+            {/* {router.asPath !== "/nos-etudes/BarometresInstitutionnels" ||
+              router.asPath !==
+                ("/nos-etudes/EtudeCiblesClientele" ? ( */}
+            <PrimaryButton
+              type="primary"
+              label={"Méthodologie déployée"}
+              href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
+            ></PrimaryButton>
+            {/* ) : null)} */}
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -10,7 +10,7 @@ const PartnerLogo = ({ image }) => {
   }
 
   return (
-    <div className="relative w-1/3 h-[40px] ">
+    <div className="relative w-1/3 h-[55px] mb-[5%]">
       <Image src={myImage} alt="" objectFit="contain" layout="fill" />
     </div>
   );

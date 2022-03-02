@@ -29,8 +29,8 @@ export default function Thematiques({ resStudies }) {
           }}
         >
           <p className="font-serif leading-7 mb-[5%] text-white text-center w-[60vw]">
-            Chapô lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            pharetra semper metus.
+            La collection de nos publications disponibles et le détail de nos
+            savoir-faire
           </p>
           <div className="flex flex-wrap justify-center bg-deep-blue max-w-[1050px] gap-y-4 gap-x-4 lg:gap-8">
             {singleThemes.map((theme, index) => (
