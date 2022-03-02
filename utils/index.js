@@ -31,7 +31,7 @@ export function redirectToHomepage() {
 // This function will build the url to fetch on the Strapi API
 export function getDataStudy(slug) {
   const slugToReturn = `studies/${slug}`;
-  const apiUrl = `/studies?populate[blocks][populate]=*&populate[cover]=*&filters[slug][$eq]=${slug}`;
+  const apiUrl = `/studies?populate[0]=blocks&populate[1]=blocks.image&populate[2]=blocks.partnerLogo.image&filters[slug][$eq]=${slug}`;
 
   return {
     data: getStrapiURL(apiUrl),
