@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
-import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 export default function Layout({ children, page }) {
+  const router = useRouter();
+  console.log("ROUTER ===>", router.route);
   return (
     <>
       <Head>
@@ -11,7 +13,7 @@ export default function Layout({ children, page }) {
       </Head>
       <Header />
       <main>{children}</main>
-      <Footer />
+      {router.route !== "/" && <Footer />}
     </>
   );
 }

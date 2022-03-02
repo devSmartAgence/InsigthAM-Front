@@ -7,7 +7,7 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //UI components
 import BackButton from "../../../components/ui/BackButton";
-import BottomNavigation from "../../../components/ui/BottomNavigation";
+// import BottomNavigation from "../../../components/ui/BottomNavigation";
 
 import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
@@ -71,7 +71,7 @@ const Universals = ({ pageData }) => {
           </div>
           <div>{blocks && <BlockManager blocks={blocks} />}</div>
         </div>
-        <BottomNavigation />
+        {/* <BottomNavigation /> */}
         <ContactForm title={"Demander l'étude complète"} />
       </div>
     </ReactScrollWheelHandler>

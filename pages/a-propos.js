@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import BackButton from "../components/ui/BackButton";
-import BottomNavigation from "../components/ui/BottomNavigation";
+// import BottomNavigation from "../components/ui/BottomNavigation";
 import { useRouter } from "next/router";
 
 //Strapi tools for dynamics zones
@@ -73,7 +73,7 @@ const Universals = ({ pageData }) => {
             <div>{blocks && <BlockManager blocks={blocks} />}</div>
           </motion.div>
         </div>
-        <BottomNavigation />
+        {/* <BottomNavigation /> */}
 
         <ContactForm title={"Nous contacter"} />
       </div>

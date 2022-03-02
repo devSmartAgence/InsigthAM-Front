@@ -71,7 +71,7 @@ const Universals = ({ pageData }) => {
           </div>
           <div>{blocks && <BlockManager blocks={blocks} />}</div>
         </div>
-        <BottomNavigation />
+        {/* <BottomNavigation /> */}
         <ContactForm title={"Demander l'étude complète"} />
       </div>
     </ReactScrollWheelHandler>
