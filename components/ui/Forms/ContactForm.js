@@ -27,23 +27,25 @@ export default function ContactForm({ title }) {
       lastName: lastName,
       position: position,
       company: company,
-      // html: `<p>${message}<p>`,
+      html: `<h1>Nouvelle demande d'information<h1>
+      <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
     },
   };
 
   const emailData = {
     from: process.env.INSIGHT_ADMIN_EMAIL,
-    to: email,
+    to: process.env.INSIGHT_ADMIN_EMAIL,
     replyTo: process.env.INSIGHT_ADMIN_EMAIL,
-    subject: "Nouvelle demande d'étude",
-    html: `<p>{${message}</p>`,
+    subject: subject,
+    html: `<h1>Nouvelle demande d'information<h1>
+    <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
   };
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
 
   //   try {
-  //     axios.post(`http://localhost:1337/api/forms`, formData);
+  //     axios.post(`${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`, formData);
   //   } catch (error) {
   //     console.log(error);
   //   }

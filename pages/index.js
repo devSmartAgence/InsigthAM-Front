@@ -81,7 +81,7 @@ export async function getStaticProps() {
 
   // Get studies from Strapi
   const resStudies = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*&filters[slug][$eq]=les-epargnants-et-l-investissement-responsable`
   );
   const studies = await resStudies.json();
 
