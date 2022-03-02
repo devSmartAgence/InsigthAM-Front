@@ -64,7 +64,7 @@ export function getDataMethode(slug) {
 // This function will build the url to fetch on the Strapi API
 export function getDataCGV() {
   const slugToReturn = `cgv-cgu`;
-  const apiUrl = `/cgv?populate[blocks][populate]=*&populate[cover]=*`;
+  const apiUrl = `/cgv?populate[0]=blocks&populate[1]=blocks.image&populate[2]=blocks.partnerLogo.image`;
 
   return {
     data: getStrapiURL(apiUrl),
@@ -75,7 +75,7 @@ export function getDataCGV() {
 // This function will build the url to fetch on the Strapi API
 export function getDataContact() {
   const slugToReturn = `contact`;
-  const apiUrl = `/contact?populate[blocks][populate]=*&populate[cover]=*`;
+  const apiUrl = `/contact?populate[0]=blocks&populate[1]=blocks.image&populate[2]=blocks.partnerLogo.image`;
 
   return {
     data: getStrapiURL(apiUrl),
@@ -86,7 +86,7 @@ export function getDataContact() {
 // This function will build the url to fetch on the Strapi API
 export function getDataLegal() {
   const slugToReturn = `legal`;
-  const apiUrl = `/legal?populate[blocks][populate]=*&populate[cover]=*`;
+  const apiUrl = `/legal?populate[0]=blocks&populate[1]=blocks.image&populate[2]=blocks.partnerLogo.image`;
 
   return {
     data: getStrapiURL(apiUrl),
