@@ -42,7 +42,7 @@ export function getDataStudy(slug) {
 // This function will build the url to fetch on the Strapi API
 export function getDataAbout() {
   const slugToReturn = `about`;
-  const apiUrl = `/about?populate[blocks][populate]=*&populate[cover]=*`;
+  const apiUrl = `/about?populate[0]=blocks&populate[1]=blocks.image&populate[2]=blocks.partnerLogo.image`;
 
   return {
     data: getStrapiURL(apiUrl),

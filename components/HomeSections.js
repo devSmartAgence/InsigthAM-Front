@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ContentPanel from "./ContentPanel.js";
 import CoverPanel from "./CoverPanel.js";
 import HomeSplitPanelControl from "./ui/HomeSplitPanelControl";
@@ -19,11 +19,23 @@ export default function HomeSections({
   height,
   homeIntro,
 }) {
+  const [width, setWidth] = useState(0);
+
+  if (width > 500) {
+    console.log("OK");
+  } else {
+    console.log("KO");
+  }
+
   useEffect(() => {
+    setWidth(window.innerWidth);
     setItemPosition(0);
-  }, [setItemPosition]);
+  }, [setItemPosition, setWidth]);
   console.log(panelScrollIndex);
-  console.log("ICI ===>", studies.data[0]);
+
+  if (width > 992) {
+  }
+
   return (
     <section className="flex flex-col relative w-screen h-[calc(100vh-110px)] lg:flex-row">
       <HomeSplitPanelControl
