@@ -114,7 +114,7 @@ export default function Etudes({ studies }) {
                 ))}
               </div>
               <div className="mt-[-30px] md:mt-[280px]">
-                {studies.data.slice(2, 4).map((study, index) => (
+                {studies.data.slice(2, 5).map((study, index) => (
                   <StudyPreview
                     router={router.asPath}
                     title={study.attributes.title}
@@ -157,7 +157,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   // params contains the study `theme`.
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=${params.etudes}`
+    `${process.env.NEXT_PUBLIC_DB_HOST}/api/studies?populate[blocks][populate]=*&populate[cover]=*&filters[theme][$eq]=${params.etudes}&sort[1]=updatedAt%3Adesc`
   );
   const studies = await res.json();
 

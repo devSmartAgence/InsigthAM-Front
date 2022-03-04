@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const PartnerLogo = ({ image }) => {
+const PartnerLogo = ({ image, link }) => {
   let myImage;
   if (image) {
     myImage = image.data.attributes.url;
@@ -10,8 +10,10 @@ const PartnerLogo = ({ image }) => {
   }
 
   return (
-    <div className="relative w-1/3 h-[55px] mb-[5%]">
-      <Image src={myImage} alt="" objectFit="contain" layout="fill" />
+    <div className="relative w-1/3 h-[55px] mb-[5%] pointer">
+      <a href={link} target="_blank" rel="noreferrer">
+        <Image src={myImage} alt="" objectFit="contain" layout="fill" />
+      </a>
     </div>
   );
 };

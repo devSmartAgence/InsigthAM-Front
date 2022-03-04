@@ -6,7 +6,11 @@ const Partners = ({ partnerLogo }) => {
     <div className="flex mb-[5%] flex-wrap self-start">
       {partnerLogo &&
         partnerLogo.map((item, index) => (
-          <PartnerLogo key={index} image={delve(item, "image")} />
+          <PartnerLogo
+            key={index}
+            image={delve(item, "image")}
+            link={delve(item, "link")}
+          />
         ))}
     </div>
   );
