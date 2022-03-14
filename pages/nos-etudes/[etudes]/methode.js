@@ -6,8 +6,7 @@ import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //UI components
 import BackButton from "../../../components/ui/BackButton";
-import BottomNavigation from "../../../components/ui/BottomNavigation";
-
+import PrimaryButton from "../../../components/ui/PrimaryButton";
 import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 //Strapi tools for dynamics zones
@@ -20,8 +19,9 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
-  console.log("PAGE DATA ===>", pageData);
   const router = useRouter();
+  console.log("ROUTER", router.asPath.slice(0, -8));
+
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData.data[0], "attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
@@ -70,6 +70,13 @@ const Universals = ({ pageData }) => {
             </p>
           </div>
           <div>{blocks && <BlockManager blocks={blocks} />}</div>
+          <div className="mb-[40px]">
+            <PrimaryButton
+              style={"dark"}
+              label={"Consulter toutes les études"}
+              href={router.asPath.slice(0, -8)}
+            />
+          </div>
         </div>
         {/* <BottomNavigation /> */}
         <ContactForm title={"Contactez-nous"} />

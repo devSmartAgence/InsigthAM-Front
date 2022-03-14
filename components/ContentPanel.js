@@ -77,7 +77,7 @@ export default function ContentPanel({
                 </div>
               )}
 
-              <div className="flex">
+              <div className="flex mt-6">
                 {primaryButtonLabel && (
                   <SecondaryButton
                     label={primaryButtonLabel}

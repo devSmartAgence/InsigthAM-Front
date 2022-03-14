@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
 import { AnimatePresence } from "framer-motion";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 function MyApp({ Component, pageProps }) {
   const variants = {
@@ -15,15 +16,17 @@ function MyApp({ Component, pageProps }) {
       onExitComplete={() => window.scrollTo(0, 0)}
     >
       <Layout page={`Insight AM`}>
-        <Component
-          {...pageProps}
-          key={pageProps}
-          variants={variants} // Pass the variant object into Framer Motion
-          initial="hidden" // Set the initial state to variants.hidden
-          animate="enter" // Animated state to variants.enter
-          exit="exit" // Exit state (used later) to variants.exit
-          transition={{ type: "linear" }}
-        />
+        <SimpleReactLightbox>
+          <Component
+            {...pageProps}
+            key={pageProps}
+            variants={variants} // Pass the variant object into Framer Motion
+            initial="hidden" // Set the initial state to variants.hidden
+            animate="enter" // Animated state to variants.enter
+            exit="exit" // Exit state (used later) to variants.exit
+            transition={{ type: "linear" }}
+          />
+        </SimpleReactLightbox>
       </Layout>
     </AnimatePresence>
   );

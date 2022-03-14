@@ -51,7 +51,10 @@ export default function HomeSections({
         className="w-full lg:w-1/2"
         animate={
           panelScrollIndex >= 0 && panelScrollIndex <= 6
-            ? { y: itemPosition }
+            ? {
+                y: itemPosition,
+                transition: { duration: 0.5, ease: "easeOut" },
+              }
             : { y: null }
         }
       >
@@ -124,7 +127,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide2Title}
           description={homeIntro.data.attributes.slide2Description}
           link={homeIntro.data.attributes.slide2Link}
-          linkLink={"/nos-etudes/EtudesNotorietePositionnement/methode"}
+          linkLink={`/nos-etudes/${homeIntro.data.attributes.slide2Theme.theme}/methode`}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide2FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide2SecondButton}
@@ -148,10 +151,8 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide4Title}
           description={homeIntro.data.attributes.slide4Description}
           link={homeIntro.data.attributes.slide4Link}
-          hrefFirstButton={"/nos-etudes/BarometresInstitutionnels"}
-          hrefSecondButton={
-            "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
-          }
+          hrefFirstButton={`/nos-etudes/${homeIntro.data.attributes.slide1Theme.theme}`}
+          hrefSecondButton={`/nos-etudes/${homeIntro.data.attributes.slide4Theme.theme}/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine`}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide4FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide4SecondButton}
@@ -177,7 +178,11 @@ export default function HomeSections({
         style={{ marginTop: "calc(-600vh + 660px)" }}
         initial={{ y: "-600vh + 660px" }}
         animate={
-          panelScrollIndex > 0 && panelScrollIndex < 6 && { y: -itemPosition }
+          panelScrollIndex > 0 &&
+          panelScrollIndex < 6 && {
+            y: -itemPosition,
+            transition: { duration: 0.5, ease: "easeOut" },
+          }
         }
       >
         <ContentPanel
@@ -186,7 +191,7 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide5Title}
           description={homeIntro.data.attributes.slide5Description}
           link={homeIntro.data.attributes.slide5Link}
-          linkLink={"/nos-etudes/EtudesTestingProduit/methode"}
+          linkLink={`/nos-etudes/${homeIntro.data.attributes.slide5Theme.theme}/methode`}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide5FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide5SecondButton}
@@ -209,7 +214,8 @@ export default function HomeSections({
           theme={homeIntro.data.attributes.slide3Theme.theme}
           title={homeIntro.data.attributes.slide3Title}
           description={homeIntro.data.attributes.slide3Description}
-          hrefFirstButton={"/nos-etudes/EtudeCiblesClientele"}
+          hrefFirstButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}`}
+          hrefSecondButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}/methode`}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
@@ -233,9 +239,9 @@ export default function HomeSections({
           title={homeIntro.data.attributes.slide1Title}
           description={homeIntro.data.attributes.slide1Description}
           link={homeIntro.data.attributes.slide1Link}
-          linkLink={"/nos-etudes/EtudesReferencementThematique/methode"}
-          hrefFirstButton={"/nos-etudes/EtudesReferencementThematique"}
-          href={"/nos-etudes/EtudesReferencementThematique/methode"}
+          linkLink={`/nos-etudes/${homeIntro.data.attributes.slide1Theme.theme}/methode`}
+          hrefFirstButton={`/nos-etudes/${homeIntro.data.attributes.slide1Theme.theme}`}
+          href={`/nos-etudes/${homeIntro.data.attributes.slide1Theme.theme}/methode`}
           index={1}
           primaryButtonLabel={homeIntro.data.attributes.slide1FirstButton}
           secondaryButtonLabel={homeIntro.data.attributes.slide1SecondButton}

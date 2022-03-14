@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SRLWrapper } from "simple-react-lightbox";
 
 const ImageWide = ({ image }) => {
   console.log("IMAGE ===>", image.data);
@@ -11,14 +12,16 @@ const ImageWide = ({ image }) => {
   }
 
   return (
-    <div className="relative overflow-hidden pb-[56.25%] mb-[5%]">
-      <Image
-        src={myImage}
-        blurDataURL={myImage}
-        alt=""
-        layout="fill"
-        objectFit="contain"
-      />
+    <div className="relative overflow-hidden h-[400px] w-full mb-[5%]">
+      <SRLWrapper>
+        <Image
+          src={myImage}
+          blurDataURL={myImage}
+          alt=""
+          layout="fill"
+          objectFit="contain"
+        />
+      </SRLWrapper>
     </div>
   );
 };
