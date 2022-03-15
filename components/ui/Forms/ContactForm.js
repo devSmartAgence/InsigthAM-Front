@@ -33,12 +33,14 @@ export default function ContactForm({ title }) {
   };
 
   const emailData = {
-    from: process.env.INSIGHT_ADMIN_EMAIL,
-    to: process.env.INSIGHT_ADMIN_EMAIL,
-    replyTo: process.env.INSIGHT_ADMIN_EMAIL,
-    subject: subject,
-    html: `<h1>Nouvelle demande d'information<h1>
-    <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
+    data: {
+      from: process.env.INSIGHT_ADMIN_EMAIL,
+      to: process.env.INSIGHT_ADMIN_EMAIL,
+      replyTo: process.env.INSIGHT_ADMIN_EMAIL,
+      subject: subject,
+      html: `<h1>Nouvelle demande d'information<h1>
+      <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
+    },
   };
 
   // const handleSubmit = (e) => {
@@ -53,19 +55,26 @@ export default function ContactForm({ title }) {
 
   // Form submit
   const handleSubmit = (e) => {
+    let headers = {
+      "Content-Type": "application/json",
+      Origin: "http://localhost:3000",
+      Authorization: "",
+      Accept: "",
+    };
     e.preventDefault();
     if (!isLoading) {
       setIsLoading(true);
       try {
         const response = axios.post(
-          `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
-          formData
+          `https://cors-anywhere.herokuapp.com/${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
+          formData,
+          { headers: { origin: "http://localhost:3000" } }
         );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
           const response = axios.post(
-            `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
+            `https://cors-anywhere.herokuapp.com/${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
             emailData
           );
           console.log(response, "E-mail sent");

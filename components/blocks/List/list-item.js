@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown";
 
 const ListItem = ({ item }) => {
   return (
-    <li>
+    <li className="mb-4">
       <ReactMarkdown>{item}</ReactMarkdown>
     </li>
   );

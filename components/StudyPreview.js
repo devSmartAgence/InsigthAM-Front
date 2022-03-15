@@ -9,14 +9,13 @@ export default function StudyPreview({
   theme,
   introduction,
 }) {
-  console.log("COVER ===>", cover);
   return (
-    <div className="max-w-[580px] bg-white p-[45px] mb-[35px]">
-      <h2 className="font-serif text-[24px] text-deep-blue mb-[25px]">
+    <div className="max-w-[580px] bg-white md:p-[45px] p-[25px] mb-[35px]">
+      <h2 className="font-serif md:text-2xl text-md text-deep-blue mb-[25px]">
         {title}
       </h2>
       {router !== "/nos-etudes/BarometresInstitutionnels" && (
-        <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative h-[315px]">
+        <div className="bg-beige flex items-center justify-center content-center p-[6%] mb-[30px] relative md:h-[315px] h-[200px]">
           <Image
             src={
               cover
@@ -31,7 +30,7 @@ export default function StudyPreview({
           />
         </div>
       )}
-      <p className="font-serif text[20px] leading-[30px] mb-[30px]">
+      <p className="font-serif md:text-base text-sm md:leading-[30px] leading-[24px] mb-[30px]">
         {introduction}
       </p>
       <SecondaryButton

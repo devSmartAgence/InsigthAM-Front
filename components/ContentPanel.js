@@ -7,6 +7,7 @@ import GridPattern from "./ui/GridPattern";
 import { themeBeautyfier } from "../utils/themeBeautyfier";
 
 export default function ContentPanel({
+  viewportWidth,
   heading,
   theme,
   title,
@@ -20,21 +21,36 @@ export default function ContentPanel({
   hrefFirstButton,
   hrefSecondButton,
 }) {
+  console.log("VPPP===>", viewportWidth);
   return (
-    <div className="w-screen h-[calc(100vh-110px)] w-screen">
-      <div className={`flex flex-row h-[calc(100vh-110px)]`}>
+    <div
+      className={`w-screen ${
+        viewportWidth === undefined
+          ? "h-[calc(100vh-110px)]"
+          : "h-full bg-beige"
+      } w-screen`}
+    >
+      <div
+        className={`flex flex-row ${
+          viewportWidth === undefined
+            ? "h-[calc(100vh-110px)]"
+            : "h-full items-center"
+        }`}
+      >
         {/* CONTENTPANEL     */}
         <div
-          className={`bg-beige w-screen lg:w-1/2 font-sans flex items-center flex-col justify-center`}
+          className={`bg-beige w-screen lg:w-1/2 font-sans flex items-center flex-col ${
+            viewportWidth === undefined && "justify-center"
+          } `}
         >
-          <GridPattern color={"white"} />
+          {viewportWidth > 992 && <GridPattern color={"white"} />}
           <div className="z-20 pr-[7vmax] pl-[7vmax]">
             <div className="z-20 flex flex-col">
-              <p className="text-deep-blue font-sans text-[1.2vmax] mb-[1vmax] uppercase ">
+              <p className="text-deep-blue font-sans md:text-md text-xs mb-6 uppercase ">
                 {heading}
               </p>
 
-              <p className="uppercase text-pink text-[0.7vmax]">
+              <p className="uppercase text-pink md:text-sm text-[10px]">
                 {themeBeautyfier(theme)}
               </p>
               <div className="w-[2.5vmax] h-[0.4vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"></div>
@@ -42,15 +58,15 @@ export default function ContentPanel({
                 {title}
               </h2>
 
-              <ReactMarkdown className="font-serif text-[1vmax] text-black mb-[1vmax]">
+              <ReactMarkdown className="font-serif md:text-lg text-xs text-black mb-[1vmax]">
                 {description}
               </ReactMarkdown>
               {heading && (
-                <div className="h-[55px] w-full mb-24">
+                <div className="h-[55px] w-full sm:mb-24 mb-14">
                   <div className="flex items-end h-[30px]">
                     <div className="flex-grow h-px bg-black"></div>
 
-                    <p className="flex-grow text-center text-sm font-bold font-serif w-min transform translate-y-1.5">
+                    <p className="flex-grow text-center md:text-sm text-xs font-bold font-serif w-min transform translate-y-1.5">
                       Ils nous font confiance
                     </p>
 
@@ -70,7 +86,7 @@ export default function ContentPanel({
               {link && linkLink && (
                 <div className="mb-[3vmax]">
                   <Link href={linkLink} passHref>
-                    <a className="font-serif text-[0.9vmax] underline mt-[2vmax] mb-[2vmax]">
+                    <a className="font-serif md:text-base text-xs underline mt-[2vmax] mb-[2vmax]">
                       {link}
                     </a>
                   </Link>

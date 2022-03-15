@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import useDeviceSize from "../components/hooks/useDevicesize";
 
@@ -13,6 +13,12 @@ export default function Home({ homeIntro, studies }) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [itemPosition, setItemPosition] = useState();
   const [position, setPosition] = useState("");
+
+  const [viewportWidth, viewportHeight] = useDeviceSize();
+
+  useEffect(() => {
+    setItemPosition(0);
+  }, [setItemPosition]);
 
   const handleSplitPanelControlClick = (i) => {
     if (i === panelScrollIndex) {
@@ -48,7 +54,11 @@ export default function Home({ homeIntro, studies }) {
         upHandler={(e) => handleScroll("ScrollUp")}
         downHandler={(e) => handleScroll("ScrollDown")}
       >
-        <div className="w-screen h-[calc(100vh-110px)] mt-[110px] overflow-hidden">
+        <div
+          className={`w-screen h-[calc(100vh-110px)] mt-[110px] ${
+            viewportWidth > 992 && "overflow-hidden"
+          }`}
+        >
           <HomeSections
             setItemPosition={setItemPosition}
             panelScrollIndex={panelScrollIndex}
