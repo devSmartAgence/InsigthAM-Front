@@ -2,6 +2,7 @@ import delve from "dlv";
 
 import { useState } from "react";
 import { useRouter } from "next/router";
+import useDeviceSize from "../../../components/hooks/useDevicesize";
 
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
@@ -21,6 +22,7 @@ import ContactForm from "../../../components/ui/Forms/ContactForm";
 import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 
 const Universals = ({ pageData }) => {
+  const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData.data[0], "attributes.blocks");
@@ -38,7 +40,11 @@ const Universals = ({ pageData }) => {
       upHandler={(e) => handleScroll("Up")}
       downHandler={(e) => handleScroll("Down")}
     >
-      <div className="mt-[110px] bg-beige flex flex-col items-center">
+      <div
+        className={`mt-[${
+          viewportWidth > 992 ? "110px" : "75px"
+        }] bg-beige flex flex-col items-center`}
+      >
         <BreadCrumbModule
           modulePosition={modulePosition}
           style={"light"}

@@ -3,11 +3,10 @@ import Image from "next/image";
 import SecondaryButton from "./ui/SecondaryButton";
 import ReactMarkdown from "react-markdown";
 import GridPattern from "./ui/GridPattern";
-
+import useDeviceSize from "./hooks/useDevicesize";
 import { themeBeautyfier } from "../utils/themeBeautyfier";
 
 export default function ContentPanel({
-  viewportWidth,
   heading,
   theme,
   title,
@@ -21,26 +20,27 @@ export default function ContentPanel({
   hrefFirstButton,
   hrefSecondButton,
 }) {
+  const [viewportWidth, viewportHeight] = useDeviceSize();
   console.log("VPPP===>", viewportWidth);
   return (
     <div
       className={`w-screen ${
-        viewportWidth === undefined
-          ? "h-[calc(100vh-110px)]"
+        viewportWidth > 992
+          ? `h-[calc(100vh-${viewportWidth > 992 ? "110px" : "75px"})]`
           : "h-full bg-beige"
       } w-screen`}
     >
       <div
         className={`flex flex-row ${
-          viewportWidth === undefined
-            ? "h-[calc(100vh-110px)]"
+          viewportWidth > 992
+            ? `h-[calc(100vh-${viewportWidth > 992 ? "110px" : "75px"})]`
             : "h-full items-center"
         }`}
       >
         {/* CONTENTPANEL     */}
         <div
           className={`bg-beige w-screen lg:w-1/2 font-sans flex items-center flex-col ${
-            viewportWidth === undefined && "justify-center"
+            viewportWidth > 992 && "justify-center"
           } `}
         >
           {viewportWidth > 992 && <GridPattern color={"white"} />}

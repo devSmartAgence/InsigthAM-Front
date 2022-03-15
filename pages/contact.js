@@ -2,7 +2,7 @@ import delve from "dlv";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/router";
-
+import useDeviceSize from "../components/hooks/useDevicesize";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 //Strapi tools for dynamics zones
@@ -16,7 +16,7 @@ import BreadCrumbModule from "../components/ui/BreadcrumbModule";
 import AnimatedH1Type from "../components/ui/AnimatedH1Type";
 
 const Universals = ({ pageData }) => {
-  console.log("PAGE DATA CONTACT ===>", pageData);
+  const [viewportWidth, viewporteHeight] = useDeviceSize();
   const router = useRouter();
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData, "data.attributes.blocks");
@@ -33,7 +33,11 @@ const Universals = ({ pageData }) => {
       upHandler={(e) => handleScroll("Up")}
       downHandler={(e) => handleScroll("Down")}
     >
-      <div className="mt-[110px] bg-beige flex flex-col items-center">
+      <div
+        className={`mt-[${
+          viewportWidth > 992 ? "110px" : "75px"
+        }] bg-beige flex flex-col items-center`}
+      >
         <BreadCrumbModule
           modulePosition={modulePosition}
           style={"light"}

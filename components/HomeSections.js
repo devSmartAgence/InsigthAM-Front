@@ -23,7 +23,11 @@ export default function HomeSections({
   const [viewportWidth, viewportHeight] = useDeviceSize();
   if (viewportWidth > 992) {
     return (
-      <section className="flex flex-col relative w-screen h-[calc(100vh-110px)] lg:flex-row">
+      <section
+        className={`flex flex-col relative w-screen h-[calc(100vh-${
+          viewportWidth > 992 ? "110px" : "75px"
+        })] lg:flex-row`}
+      >
         <HomeSplitPanelControl
           studiesNumber={studiesNumber}
           panelScrollIndex={panelScrollIndex}
@@ -45,7 +49,9 @@ export default function HomeSections({
           }
         >
           <div
-            className={`bg-panel1 bg-left background-size-full font-sans flex items-center flex-col h-[calc(100vh-110px)]`}
+            className={`bg-panel1 bg-left background-size-full font-sans flex items-center flex-col h-[calc(100vh-${
+              viewportWidth > 992 ? "110px" : "75px"
+            })]`}
           >
             <GridPattern color={"deep-blue"} />
             <div className="absolute h-1/2 flex flex-col justify-center px-[5vmax]">
@@ -247,7 +253,9 @@ export default function HomeSections({
             itemPosition={itemPosition}
           />
           <div
-            className={`relative bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-110px)]`}
+            className={`relative bg-panel1 bg-right background-size-full flex flex-col justify-end bg-deep-blue flex h-[calc(100vh-${
+              viewportWidth > 992 ? "110px" : "75px"
+            })]`}
           >
             <GridPattern color={"deep-blue"} />
 
@@ -299,7 +307,11 @@ export default function HomeSections({
   } else {
     return (
       <section className="flex flex-col">
-        <div className="relative flex flex-col h-[calc(100vh-110px)] bg-panel1 bg-top bg-cover w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] bg-panel1 bg-top bg-cover w-full`}
+        >
           {/* /////////////////////// SLIDE 1 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`font-sans flex flex-col h-2/5 w-full items-center`}>
             <GridPattern color={"deep-blue"} />
@@ -379,7 +391,11 @@ export default function HomeSections({
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 2 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image
@@ -417,7 +433,11 @@ export default function HomeSections({
           </div>
         </div>
 
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 3 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image
@@ -454,7 +474,11 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 4 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image
@@ -489,7 +513,11 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 5 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image
@@ -524,7 +552,11 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 6 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image
@@ -560,7 +592,11 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div
+          className={`relative flex flex-col h-[calc(100vh-${
+            viewportWidth > 992 ? "110px" : "75px"
+          })] w-full`}
+        >
           {/* /////////////////////// SLIDE 7 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`relative h-1/5 w-full`}>
             <Image

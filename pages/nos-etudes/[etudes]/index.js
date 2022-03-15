@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import useDeviceSize from "../../../components/hooks/useDevicesize";
 import { motion } from "framer-motion";
 import AnimatedH1Type from "../../../components/ui/AnimatedH1Type";
 import PrimaryButton from "../../../components/ui/PrimaryButton";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
 import GridPattern from "../../../components/ui/GridPattern";
-import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 
 export default function Etudes({ studies }) {
+  const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
   console.log("ROUTER.ASPATH ===>", router.asPath);
   let arrPath = router.asPath.split("/");
@@ -66,7 +67,11 @@ export default function Etudes({ studies }) {
           arrPath={arrPath}
         /> */}
 
-        <div className="fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[110px]">
+        <div
+          className={`fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[${
+            viewportWidth > 992 ? "110px" : "75px"
+          }]`}
+        >
           <GridPattern color={"deep-blue"} cover={setCover(theme)} />
         </div>
         <div className="flex flex-col items-center mx-[30px] relative md:items-start">

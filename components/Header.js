@@ -8,7 +8,7 @@ import useDeviceSize from "../components/hooks/useDevicesize";
 import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const router = useRouter();
-  const [width, height] = useDeviceSize();
+  const [viewportWidth, height] = useDeviceSize();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = {
@@ -29,7 +29,11 @@ export default function Header() {
     },
   };
   return (
-    <header className="flex h-[110px] w-screen bg-white justify-between items-center px-8  fixed z-50 top-0 md:h-[110px]">
+    <header
+      className={`flex ${
+        viewportWidth > 992 ? "h-[110px]" : "h-[75px]"
+      } w-screen bg-white justify-between items-center px-8  fixed z-50 top-0`}
+    >
       <Link href="/" passHref>
         <div className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]">
           <Image
@@ -40,7 +44,7 @@ export default function Header() {
           />
         </div>
       </Link>
-      {width > 720 ? (
+      {viewportWidth > 720 ? (
         <nav className="">
           <ul className="flex items-center">
             <Link href="/a-propos" passHref>
@@ -100,7 +104,9 @@ export default function Header() {
               <nav>
                 <motion.ul
                   key="1"
-                  className="flex flex-col items-center w-full bg-deep-blue fixed top-[110px] right-0 p-[60px]"
+                  className={`flex flex-col items-center w-full bg-deep-blue fixed top-[${
+                    viewportWidth > 992 ? "110px" : "75px"
+                  }] right-0 p-[60px]`}
                   variants={menu}
                   initial="initial"
                   animate="animate"
