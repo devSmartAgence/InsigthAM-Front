@@ -67,7 +67,7 @@ export default function ContactForm({ title }) {
         /// If form submit OK, then send email
         try {
           const response = axios.post(
-            `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
+            `${process.env.NEXT_PUBLIC_DB_HOST}/api/emails`,
             emailData
           );
           console.log(response, "E-mail sent");
