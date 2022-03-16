@@ -64,7 +64,7 @@ export default function Footer() {
       </div>
       <div className="text-white uppercase text-center text-[12px] xl:text-right">
         <div className="flex justify-center xl:justify-end">
-          <div> site est une création du Groupe</div>{" "}
+          <div>Ce site est une création du Groupe</div>
           <div className="ml-[6px] cursor-pointer">
             <Link href="https://www.smartagence.com/" passHref>
               <Image

@@ -33,14 +33,20 @@ export default function ContactForm({ title }) {
   };
 
   const emailData = {
-    data: {
-      from: process.env.INSIGHT_ADMIN_EMAIL,
-      to: process.env.INSIGHT_ADMIN_EMAIL,
-      replyTo: process.env.INSIGHT_ADMIN_EMAIL,
-      subject: subject,
-      html: `<h1>Nouvelle demande d'information<h1>
-      <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
-    },
+    from: process.env.insight_email,
+    to: process.env.insight_email,
+    subject: `Nouvelle demande d'étude`,
+    email: email,
+    message: message,
+    firstName: firstName,
+    lastName: lastName,
+    position: position,
+    company: company,
+    html: `<p>${message}<p>`,
+    to: email,
+    replyTo: "dev@smartagence.com",
+    subject: "Nouvelle demande d'étude ",
+    html: `<p>{${message}</p>`,
   };
 
   // const handleSubmit = (e) => {
@@ -67,7 +73,7 @@ export default function ContactForm({ title }) {
         /// If form submit OK, then send email
         try {
           const response = axios.post(
-            `${process.env.NEXT_PUBLIC_DB_HOST}/api/emails`,
+            `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
             emailData
           );
           console.log(response, "E-mail sent");
