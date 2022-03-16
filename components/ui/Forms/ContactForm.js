@@ -55,26 +55,19 @@ export default function ContactForm({ title }) {
 
   // Form submit
   const handleSubmit = (e) => {
-    let headers = {
-      "Content-Type": "application/json",
-      Origin: "http://localhost:3000",
-      Authorization: "",
-      Accept: "",
-    };
     e.preventDefault();
     if (!isLoading) {
       setIsLoading(true);
       try {
         const response = axios.post(
-          `https://cors-anywhere.herokuapp.com/${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
-          formData,
-          { headers: { origin: "http://localhost:3000" } }
+          `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
+          formData
         );
         console.log(response, "Form sent");
         /// If form submit OK, then send email
         try {
           const response = axios.post(
-            `https://cors-anywhere.herokuapp.com/${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
+            `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
             emailData
           );
           console.log(response, "E-mail sent");
