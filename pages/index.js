@@ -55,9 +55,7 @@ export default function Home({ homeIntro, studies }) {
         downHandler={(e) => handleScroll("ScrollDown")}
       >
         <div
-          className={`w-screen h-[calc(100vh-${
-            viewportWidth > 992 ? "110px" : "75px"
-          })] mt-[${viewportWidth > 992 ? "110px" : "75px"}] ${
+          className={`w-screen h-[calc(100vh-110px)] mt-[110px] ${
             viewportWidth > 992 && "overflow-hidden"
           }`}
         >
