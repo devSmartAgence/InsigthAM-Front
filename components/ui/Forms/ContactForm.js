@@ -114,7 +114,13 @@ export default function ContactForm({ title }) {
       try {
         const response = await axios.post(
           `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
-          emailData
+          emailData,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+          }
         );
         console.log(response);
       } catch (error) {

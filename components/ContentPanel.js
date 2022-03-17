@@ -67,7 +67,7 @@ export default function ContentPanel({
                     <div className="flex-grow h-px bg-black"></div>
 
                     <p className="flex-grow text-center md:text-sm text-xs font-bold font-serif w-min transform translate-y-1.5">
-                      En partenariat avec
+                      À l'initiative de
                     </p>
 
                     <div className="flex-grow h-px bg-black"></div>
