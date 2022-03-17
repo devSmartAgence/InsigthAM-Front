@@ -7,7 +7,7 @@ export function themeBeautyfier(theme) {
     case "EtudeCiblesClientele":
       theme = "Études Cibles Clientèles";
       break;
-    case "EtudesNotorietePositionnement":
+    case "EtudesNotorietePositionnement ":
       theme = "Études Notoriété et/ou Positionnement";
       break;
     case "EtudesTestingProduit":
