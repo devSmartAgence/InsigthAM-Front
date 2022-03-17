@@ -25,6 +25,7 @@ const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
   let arrPath = router.asPath.split("/");
+  console.log("ROUTER =ici ===>", router.asPath);
   const blocks = delve(pageData.data[0], "attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 
@@ -78,7 +79,14 @@ const Universals = ({ pageData }) => {
           <div>{blocks && <BlockManager blocks={blocks} />}</div>
         </div>
         {/* <BottomNavigation /> */}
-        <ContactForm title={"Demander l'étude complète"} />
+        <ContactForm
+          title={
+            router.asPath !==
+            "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
+              ? "Demander l'étude complète"
+              : "Commander l'étude"
+          }
+        />
       </div>
     </ReactScrollWheelHandler>
   );

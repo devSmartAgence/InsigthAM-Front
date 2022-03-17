@@ -22,7 +22,7 @@ import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
-  console.log("ROUTER", router.asPath.slice(0, -8));
+  console.log("ROUTER666", router.asPath);
 
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData.data[0], "attributes.blocks");
@@ -76,13 +76,16 @@ const Universals = ({ pageData }) => {
             </p>
           </div>
           <div>{blocks && <BlockManager blocks={blocks} />}</div>
-          <div className="mb-[40px]">
-            <PrimaryButton
-              style={"dark"}
-              label={"Consulter toutes les études"}
-              href={router.asPath.slice(0, -8)}
-            />
-          </div>
+          {router.asPath ===
+            "/nos-etudes/EtudesReferencementThematique/methode" && (
+            <div className="mb-[40px]">
+              <PrimaryButton
+                style={"dark"}
+                label={"Consulter toutes les études"}
+                href={router.asPath.slice(0, -8)}
+              />
+            </div>
+          )}
         </div>
         {/* <BottomNavigation /> */}
         <ContactForm title={"Contactez-nous"} />
