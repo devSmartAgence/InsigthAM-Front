@@ -34,7 +34,11 @@ export default function StudyPreview({
         {introduction}
       </p>
       <SecondaryButton
-        label={"Résultat et téléchargement de l'étude"}
+        label={
+          router !== "/nos-etudes/BarometresInstitutionnels"
+            ? "Résultat et téléchargement de l'étude"
+            : "Résultat et commande de l'étude"
+        }
         href={`/nos-etudes/${theme}/${slug}`}
       ></SecondaryButton>
     </div>
