@@ -110,23 +110,16 @@ export default function ContactForm({ title }) {
         formData
       );
       console.log(response);
-      /// If form submit is OK, then send email
-      try {
-        const response = await axios.post(
-          `${process.env.NEXT_PUBLIC_DB_HOST}/api/email`,
-          emailData
-
-          // {
-          //   headers: {
-          //     "Access-Control-Allow-Origin": "*",
-          //     "Content-Type": "application/json",
-          //   },
-          // }
-        );
-        console.log(response);
-      } catch (error) {
-        console.log("An error occured, e-mail not sent");
-      }
+      // /// If form submit is OK, then send email
+      // try {
+      //   const response = await axios.post(
+      //     `${process.env.NEXT_PUBLIC_DB_HOST}/api/studyEmail`,
+      //     emailData
+      //   );
+      //   console.log(response);
+      // } catch (error) {
+      //   console.log("An error occured, e-mail not sent");
+      // }
     } catch (error) {
       console.log("An error occured, something went wrong");
     }
