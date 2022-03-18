@@ -145,9 +145,12 @@ export default function ContactForm({ title, router }) {
                     id="disclaimer"
                     name="disclaimer"
                     required
-                    class="form-checkbox h-5 w-5 transform translate-y-1"
+                    className="form-checkbox h-5 w-5 transform translate-y-1"
                   />
-                  <label for="disclaimer" className="ml-2 text-sm leading-2">
+                  <label
+                    htmlFor="disclaimer"
+                    className="ml-2 text-sm leading-2"
+                  >
                     J’accepte que mes données personnelles soient utilisées par
                     Insight AM selon les principes définies dans les règles de
                     confidentialité du site
