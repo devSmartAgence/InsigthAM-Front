@@ -5,7 +5,7 @@ import TitleH2 from "../TitleH2";
 import axios from "axios";
 import Selector from "./Selector";
 
-export default function ContactForm({ title }) {
+export default function ContactForm({ title, router }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -18,110 +18,46 @@ export default function ContactForm({ title }) {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  // const formData = {
-  //   data: {
-  //     subject: `Nouvelle demande d'étude`,
-  //     email: email,
-  //     message: message,
-  //     firstName: firstName,
-  //     lastName: lastName,
-  //     position: position,
-  //     company: company,
-  //     html: `<h1>Nouvelle demande d'information<h1>
-  //     <p>De la part de ${firstName} ${lastName}, occupant le poste de ${position} dans l'entreprise ${company} et dont voici le message :<br/> ${message}.<br/> Adresse e-mail de contact : ${email}<p>`,
-  //   },
-  // };
-
-  // const emailData = {
-  //   from: "dev@smartagence.com",
-  //   to: "dev@smartagence.com",
-  //   replyTo: "dev@smartagence.com",
-  //   subject: "Nouvelle demande d'étude ",
-  //   html: `<p>{${message}</p>`,
-  // };
-
-  // // Form submit
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!isLoading) {
-  //     setIsLoading(true);
-  //     try {
-  //       const response = axios.post(
-  //         `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
-  //         formData
-  //       );
-  //       console.log(response, "Form sent");
-  //       /// If form submit OK, then send email
-  //       try {
-  //         const response = axios.post(
-  //           `http://localhost:1337/api/email`,
-  //           emailData
-  //         );
-  //         console.log(response, "E-mail sent");
-  //         setIsLoading(false);
-  //         setIsConfirmed(true);
-  //         setIsConfirmationVisible(true);
-  //       } catch (error) {
-  //         console.log(error, "An error occured, e-mail not sent");
-  //         setIsLoading(false);
-  //         setIsConfirmed(false);
-  //         setIsConfirmationVisible(true);
-  //       }
-  //     } catch (error) {
-  //       setIsLoading(false);
-  //       setIsConfirmed(false);
-  //       setIsConfirmationVisible(true);
-  //       console.log("An error occured, something went wrong");
-  //     }
-  //   }
-  // };
-  // ////////
-
   const formData = {
     data: {
-      // from: process.env.insight_email,
-      // to: process.env.insight_email,
-      subject: `Nouvelle demande d'étude`,
+      subject: subject,
       email: email,
       message: message,
       firstName: firstName,
       lastName: lastName,
       position: position,
       company: company,
-      // html: `<p>${message}<p>`,
     },
-  };
-
-  const emailData = {
-    from: process.env.insight_email,
-    to: email,
-    replyTo: "dev@smartagence.com",
-    subject: "Nouvelle demande d'étude ",
-    html: `<p>{${message}</p>`,
   };
 
   // Form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isLoading) {
+      setIsLoading(true);
+    }
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
+        `http://localhost:1337/api/forms`,
         formData
       );
-      console.log(response);
-      // /// If form submit is OK, then send email
-      // try {
-      //   const response = await axios.post(
-      //     `${process.env.NEXT_PUBLIC_DB_HOST}/api/studyEmail`,
-      //     emailData
-      //   );
-      //   console.log(response);
-      // } catch (error) {
-      //   console.log("An error occured, e-mail not sent");
-      // }
+      if (response && response.status === 200) {
+        setIsLoading(false);
+        setIsConfirmed(true);
+        setIsConfirmationVisible(true);
+        setFirstName("");
+        setLastName("");
+        setPosition("");
+        setCompany("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
     } catch (error) {
-      console.log("An error occured, something went wrong");
+      setIsLoading(false);
+      setIsConfirmed(false);
+      setIsConfirmationVisible(true);
     }
   };
   //////////
@@ -200,6 +136,24 @@ export default function ContactForm({ title }) {
               required={false}
               type="text"
             />
+            {router &&
+              router ===
+                "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine" && (
+                <div>
+                  <input
+                    type="checkbox"
+                    id="disclaimer"
+                    name="disclaimer"
+                    required
+                    class="form-checkbox h-5 w-5 transform translate-y-1"
+                  />
+                  <label for="disclaimer" className="ml-2 text-sm leading-2">
+                    J’accepte que mes données personnelles soient utilisées par
+                    Insight AM selon les principes définies dans les règles de
+                    confidentialité du site
+                  </label>
+                </div>
+              )}
 
             {!isLoading ? (
               <div className="w-full flex-row mt-[30px] items-center md:flex">
@@ -216,7 +170,7 @@ export default function ContactForm({ title }) {
                   >
                     {isConfirmed
                       ? `Votre message a bien été envoyé, vous allez recevoir un e-mail de confirmation à l'adresse renseignée.`
-                      : `Une erreur est survenue, si le problème persiste, veuillez écrire directement à contact@insigtham.com`}
+                      : `Une erreur est survenue, si le problème persiste, faite votre demande dictement à pkoenig@insightam.fr`}
                   </p>
                 )}
               </div>

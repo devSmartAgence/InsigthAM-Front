@@ -80,6 +80,7 @@ const Universals = ({ pageData }) => {
         </div>
         {/* <BottomNavigation /> */}
         <ContactForm
+          router={router.asPath}
           title={
             router.asPath !==
             "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
