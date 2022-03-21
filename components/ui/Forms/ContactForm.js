@@ -39,7 +39,7 @@ export default function ContactForm({ title, router }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:1337/api/forms`,
+        `${NEXT_PUBLIC_DB_HOST}/api/forms`,
         formData
       );
       if (response && response.status === 200) {
