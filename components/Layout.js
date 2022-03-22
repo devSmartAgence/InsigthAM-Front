@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Layout({ children, page }) {
@@ -36,17 +36,18 @@ export default function Layout({ children, page }) {
       </Head>
       <motion.div
         key="loadingScreen"
-        className="flex flex-col items-center justify-center w-full h-full fixed z-[9999] bg-deep-blue"
-        initial={{ width: 0 }}
+        className="flex flex-col items-center justify-center w-full h-[calc(100vh-110px)] fixed z-[9999] bg-deep-blue top-[110px]"
+        initial={{ width: 0, originY: 1 }}
         animate={
           isAnimating === true
             ? {
                 width: "100%",
-                transition: { duration: 0.5, ease: "easeIn" },
+                originX: 1,
+                transition: { duration: 0.4, ease: "easeIn" },
               }
             : {
                 width: 0,
-                transition: { duration: 0.5, ease: "easeOut", delay: 0.7 },
+                transition: { duration: 0.4, ease: "easeOut", delay: 0.5 },
               }
         }
         exit={{ width: 0 }}
@@ -59,12 +60,12 @@ export default function Layout({ children, page }) {
               ? {
                   opacity: 1,
                   x: 0,
-                  transition: { delay: 0.5, duration: 0.7, ease: "easeOut" },
+                  transition: { delay: 0.5, duration: 0.5, ease: "easeOut" },
                 }
               : {
                   opacity: 0,
                   x: -50,
-                  transition: { duration: 0.5, ease: "easeIn" },
+                  transition: { duration: 0.3, ease: "easeIn" },
                 }
           }
         >

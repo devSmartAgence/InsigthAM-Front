@@ -11,18 +11,6 @@ export default function Thematiques({ resStudies }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   return (
     <div className="bg-deep-blue w-screen">
-      <div
-        className={`fixed right-0 -z-10 w-1/2 h-4/5 top-[${
-          viewportWidth > 992 ? "110px" : "75px"
-        }]`}
-      >
-        <GridPattern
-          color={"deep-blue"}
-          cover={
-            "https://res.cloudinary.com/smartagence/image/upload/v1647780247/etudes_header_kcsvko.jpg"
-          }
-        />
-      </div>
       <div className="flex z-10 justify-center flex-col w-screen items-center pt-40 md:pt-56">
         <AnimatedH1Type
           title={"Nos études"}
