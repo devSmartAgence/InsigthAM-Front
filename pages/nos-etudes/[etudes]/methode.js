@@ -22,7 +22,6 @@ import BreadCrumbModule from "../../../components/ui/BreadcrumbModule";
 const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
-  console.log("ROUTER666", router.asPath);
 
   let arrPath = router.asPath.split("/");
   const blocks = delve(pageData.data[0], "attributes.blocks");

@@ -8,7 +8,6 @@ export default function Home({ homeIntro, studies }) {
   const studiesNumber = 7;
   let [width, height] = useDeviceSize(); // Get window size
   const [panelScrollIndex, setPanelScrollIndex] = useState(0);
-  console.log(panelScrollIndex);
   const [scrollDirection, setScrollDirection] = useState(null);
   const [isScrolling, setIsScrolling] = useState(false);
   const [itemPosition, setItemPosition] = useState();
@@ -34,13 +33,10 @@ export default function Home({ homeIntro, studies }) {
   const handleScroll = (direction) => {
     setIsScrolling = true;
     if (direction === "ScrollDown") {
-      console.log(panelScrollIndex);
       setItemPosition(itemPosition - height + 110);
       setPanelScrollIndex((panelScrollIndex += 1));
       // setPosition("End");
     } else if (direction === "ScrollUp") {
-      console.log(panelScrollIndex);
-
       setItemPosition(itemPosition + height - 110);
       setPanelScrollIndex((panelScrollIndex -= 1));
 
@@ -87,7 +83,6 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_DB_HOST}/api/home-introduction?populate=*`
   );
   const homeIntro = await resHome.json();
-  console.log(homeIntro);
 
   // Get studies from Strapi
   const resStudies = await fetch(

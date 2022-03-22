@@ -13,7 +13,6 @@ import { themeBeautyfier } from "../../../utils/themeBeautyfier";
 export default function Etudes({ studies }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
-  console.log("ROUTER.ASPATH ===>", router.asPath);
   let arrPath = router.asPath.split("/");
   let theme = studies.data[0].attributes.theme;
   const [modulePosition, setModulePosition] = useState(0);

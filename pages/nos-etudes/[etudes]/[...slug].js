@@ -25,7 +25,6 @@ const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const router = useRouter();
   let arrPath = router.asPath.split("/");
-  console.log("ROUTER =ici ===>", router.asPath);
   const blocks = delve(pageData.data[0], "attributes.blocks");
   const [modulePosition, setModulePosition] = useState(0);
 

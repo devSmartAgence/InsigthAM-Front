@@ -2,7 +2,6 @@ import Image from "next/image";
 import { SRLWrapper } from "simple-react-lightbox";
 
 const ImageWide = ({ image }) => {
-  console.log("IMAGE ===>", image.data);
   let myImage;
   if (image.data) {
     myImage = image.data.attributes.url;

@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Layout({ children, page }) {
   const router = useRouter();
@@ -35,7 +36,7 @@ export default function Layout({ children, page }) {
       </Head>
       <motion.div
         key="loadingScreen"
-        className="flex flex-col items-center justify-center w-full h-full fixed z-[8888] bg-deep-blue"
+        className="flex flex-col items-center justify-center w-full h-full fixed z-[9999] bg-deep-blue"
         initial={{ width: 0 }}
         animate={
           isAnimating === true
@@ -51,7 +52,7 @@ export default function Layout({ children, page }) {
         exit={{ width: 0 }}
       >
         <motion.div
-          className="w-[3vmax] flex flex-col items-center"
+          className="w-[125px] flex flex-col items-center "
           initial={{ opacity: 0, x: -50 }}
           animate={
             isAnimating === true
@@ -67,35 +68,65 @@ export default function Layout({ children, page }) {
                 }
           }
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 28.296 28.569"
-          >
-            <path
-              id="Tracé_44"
-              data-name="Tracé 44"
-              d="M85.389,15.553l1.857-1.935,5.843,8.132h4.631l5.843-8.132,1.857,1.935v6.2h4.132V2.634h-4.132v7.731L95.405,0,85.389,10.364V2.634H81.257V21.751h4.132ZM95.405,5.274l5.309,5.469L95.405,18.31,90.1,10.742Z"
-              transform="translate(-81.257)"
-              fill="#fff"
+          <div>
+            <Image
+              src="https://res.cloudinary.com/smartagence/image/upload/v1645461568/Logo_Insight-AM_blanc_zbuvut.svg"
+              alt="Logo Insight AM"
+              layout="fill"
+              objectFit="contain"
             />
-            <rect
-              id="Rectangle_3"
-              data-name="Rectangle 3"
-              width="28.296"
-              height="4.002"
-              transform="translate(0 24.566)"
-              fill="#fff"
-            />
-            <path
-              id="Tracé_45"
-              data-name="Tracé 45"
-              d="M111.264,21.149l-1.947-2-1.946,2,1.946,2.731Z"
-              transform="translate(-95.169 -10.199)"
-              fill="#fff"
-            />
-          </svg>
+          </div>
+          <div className="mt-[170px]">
+            <svg
+              width="38"
+              height="38"
+              viewBox="0 0 38 38"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  x1="8.042%"
+                  y1="0%"
+                  x2="65.682%"
+                  y2="23.865%"
+                  id="a"
+                >
+                  <stop stopColor="#fff" stopOpacity="0" offset="0%" />
+                  <stop stopColor="#fff" stopOpacity=".631" offset="63.146%" />
+                  <stop stopColor="#fff" offset="100%" />
+                </linearGradient>
+              </defs>
+              <g fill="none" fillRule="evenodd">
+                <g transform="translate(1 1)">
+                  <path
+                    d="M36 18c0-9.94-8.06-18-18-18"
+                    id="Oval-2"
+                    stroke="url(#a)"
+                    strokeWidth="2"
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 18 18"
+                      to="360 18 18"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                  </path>
+                  <circle fill="#fff" cx="36" cy="18" r="1">
+                    <animateTransform
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 18 18"
+                      to="360 18 18"
+                      dur="0.9s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                </g>
+              </g>
+            </svg>
+          </div>
         </motion.div>
       </motion.div>
       <Header />

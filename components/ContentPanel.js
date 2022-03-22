@@ -21,7 +21,6 @@ export default function ContentPanel({
   hrefSecondButton,
 }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
-  console.log("VPPP===>", viewportWidth);
   return (
     <div
       className={`w-screen ${

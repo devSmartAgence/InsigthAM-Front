@@ -4,12 +4,12 @@ import TextArea from "./TextArea";
 import TitleH2 from "../TitleH2";
 import axios from "axios";
 import Selector from "./Selector";
-
-export default function ContactForm({ title, router }) {
+import { useRouter } from "next/router";
+export default function ContactForm({ title }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
-
+  const router = useRouter();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [position, setPosition] = useState("");
@@ -17,7 +17,6 @@ export default function ContactForm({ title, router }) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-
   const formData = {
     data: {
       subject: subject,
@@ -61,7 +60,6 @@ export default function ContactForm({ title, router }) {
     }
   };
   //////////
-
   return (
     <div
       className="py-[85px] flex flex-col items-center relative w-full bg-dark-beige"
@@ -85,6 +83,15 @@ export default function ContactForm({ title, router }) {
       </div>
       <TitleH2 title={title} />
       <div className="flex flex-col w-full items-center">
+        {router.asPath ===
+          "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine" && (
+          <p className="font-serif text-deep-blue text-[14px] max-w-[1230px] w-[80%] md:w-full">
+            Si vous êtes intéressé par l’étude « Les Sociétés de Gestion vues
+            par les Conseillers en Gestion de Patrimoine » et si vous souhaitez
+            en connaître le prix , nous vous invitons à remplir le bulletin de
+            commande ci- dessous.
+          </p>
+        )}
         <p className="font-serif text-deep-blue text-[14px] mb-[30px] mt-[30px] max-w-[1230px] w-[80%] md:w-full">
           * Tous les champs précédés d’une astérisque sont obligatoires.
         </p>
@@ -127,7 +134,11 @@ export default function ContactForm({ title, router }) {
               name="email"
               type="email"
             />
-            <Selector label={"Sujet de votre demande"} setter={setSubject} />
+            <Selector
+              label={"Sujet de votre demande"}
+              setter={setSubject}
+              router={router.asPath}
+            />
 
             <TextArea
               label={"Message"}
@@ -136,27 +147,23 @@ export default function ContactForm({ title, router }) {
               required={false}
               type="text"
             />
-            {router &&
-              router ===
-                "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine" && (
-                <div>
-                  <input
-                    type="checkbox"
-                    id="disclaimer"
-                    name="disclaimer"
-                    required
-                    className="form-checkbox h-5 w-5 transform translate-y-1"
-                  />
-                  <label
-                    htmlFor="disclaimer"
-                    className="ml-2 text-sm leading-2"
-                  >
-                    J’accepte que mes données personnelles soient utilisées par
-                    Insight AM selon les principes définies dans les règles de
-                    confidentialité du site
-                  </label>
-                </div>
-              )}
+            {router.asPath ===
+              "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine" && (
+              <div>
+                <input
+                  type="checkbox"
+                  id="disclaimer"
+                  name="disclaimer"
+                  required
+                  className="form-checkbox h-5 w-5 transform translate-y-1"
+                />
+                <label htmlFor="disclaimer" className="ml-2 text-sm leading-2">
+                  J’accepte que mes données personnelles soient utilisées par
+                  Insight AM selon les principes définies dans les règles de
+                  confidentialité du site
+                </label>
+              </div>
+            )}
 
             {!isLoading ? (
               <div className="w-full flex-row mt-[30px] items-center md:flex">
