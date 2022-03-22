@@ -12,31 +12,46 @@ export default function Home({ homeIntro, studies }) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [itemPosition, setItemPosition] = useState();
   const [position, setPosition] = useState("");
-
   const [viewportWidth, viewportHeight] = useDeviceSize();
-
+  console.log("PANEL SCROLL INDEX ===>", panelScrollIndex);
   useEffect(() => {
     setItemPosition(0);
   }, [setItemPosition]);
 
   const handleSplitPanelControlClick = (i) => {
     if (i === panelScrollIndex) {
+      null;
     } else if (i > panelScrollIndex) {
+      setPanelScrollIndex(i);
+
+      console.log("PANEL SCROLL INDEX ===>", panelScrollIndex);
+      console.log("I ===>", i);
+      console.log("OPERATION ===>", i - panelScrollIndex);
       setItemPosition((itemPosition - height + 110) * (i - panelScrollIndex));
-      setPanelScrollIndex((panelScrollIndex = i));
     } else if (i < panelScrollIndex) {
-      setItemPosition((itemPosition + height - 110) * (panelScrollIndex - i));
-      setPanelScrollIndex((panelScrollIndex = i));
+      setPanelScrollIndex(i);
+
+      setItemPosition(
+        (itemPosition + height - 110) * Math.abs(panelScrollIndex - i)
+      );
     }
   };
 
   const handleScroll = (direction) => {
     setIsScrolling = true;
-    if (direction === "ScrollDown") {
+    if (
+      direction === "ScrollDown" &&
+      panelScrollIndex >= 0 &&
+      panelScrollIndex < 6
+    ) {
       setItemPosition(itemPosition - height + 110);
       setPanelScrollIndex((panelScrollIndex += 1));
       // setPosition("End");
-    } else if (direction === "ScrollUp") {
+    } else if (
+      direction === "ScrollUp" &&
+      panelScrollIndex > 0 &&
+      panelScrollIndex <= 6
+    ) {
       setItemPosition(itemPosition + height - 110);
       setPanelScrollIndex((panelScrollIndex -= 1));
 
@@ -51,7 +66,11 @@ export default function Home({ homeIntro, studies }) {
         downHandler={(e) => handleScroll("ScrollDown")}
       >
         <div
-          className={`w-screen h-[calc(100vh-110px)] mt-[110px] ${
+          className={`w-screen ${
+            viewportWidth > 992
+              ? "h-[calc(100vh-110px)]"
+              : "h-[calc(100vh-75px)]"
+          } ${viewportWidth > 992 ? "mt-[110px]" : "mt-[75px]"} ${
             viewportWidth > 992 && "overflow-hidden"
           }`}
         >

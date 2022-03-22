@@ -34,7 +34,7 @@ export default function Header() {
         viewportWidth > 992 ? "h-[110px]" : "h-[75px]"
       } w-screen bg-white justify-between items-center px-8  fixed z-50 top-0`}
     >
-      <Link href="/" passHref>
+      <Link href="/">
         <div className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]">
           <Image
             src="https://res.cloudinary.com/smartagence/image/upload/v1645461453/Logo_Insight-AM-Blue_qksdzv.svg"
@@ -47,7 +47,7 @@ export default function Header() {
       {viewportWidth > 720 ? (
         <nav className="">
           <ul className="flex items-center">
-            <Link href="/a-propos" passHref>
+            <Link href="/a-propos">
               <li
                 className={
                   router.pathname === "/a-propos"
@@ -58,7 +58,7 @@ export default function Header() {
                 À propos
               </li>
             </Link>
-            <Link href="/nos-etudes" passHref>
+            <Link href="/nos-etudes">
               <li
                 className={
                   router.pathname === "/nos-etudes"
@@ -105,14 +105,14 @@ export default function Header() {
                 <motion.ul
                   key="1"
                   className={`flex flex-col items-center w-full bg-deep-blue fixed top-[${
-                    viewportWidth > 992 ? "110px" : "75px"
+                    viewportWidth > 992 ? "110px" : "0"
                   }] right-0 p-[60px]`}
                   variants={menu}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                 >
-                  <Link href="/a-propos" passHref>
+                  <Link href="/a-propos">
                     <motion.li
                       className={
                         router.pathname === "/a-propos"
@@ -124,7 +124,7 @@ export default function Header() {
                       À propos
                     </motion.li>
                   </Link>
-                  <Link href="/nos-etudes" passHref>
+                  <Link href="/nos-etudes">
                     <motion.li
                       key="2"
                       className={

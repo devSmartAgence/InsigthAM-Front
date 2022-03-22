@@ -23,7 +23,11 @@ export default function HomeSections({
   const [viewportWidth, viewportHeight] = useDeviceSize();
   if (viewportWidth > 992) {
     return (
-      <section className="flex flex-col relative w-screen h-[calc(100vh-110px)] lg:flex-row">
+      <section
+        className={`flex flex-col relative w-screen ${
+          viewportWidth > 992 ? "h-[calc(100vh-110px)]" : "h-[calc(100vh-75px)]"
+        } lg:flex-row`}
+      >
         <HomeSplitPanelControl
           studiesNumber={studiesNumber}
           panelScrollIndex={panelScrollIndex}

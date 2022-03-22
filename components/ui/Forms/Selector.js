@@ -14,12 +14,12 @@ export default function Selector({ setter, type, required, router }) {
       >
         <option
           value="Demande d'informations"
-          selected={router.split("/").length <= 2 && true}
+          defaultValue={router.split("/").length <= 2 && true}
         >
           Demande d&apos;informations
         </option>
         <option
-          selected={
+          defaultValue={
             router ===
             "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
               ? "true"
