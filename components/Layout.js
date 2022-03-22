@@ -76,7 +76,7 @@ export default function Layout({ children, page }) {
               height="200px"
             />
           </div>
-          <div className="mt-[10px]">
+          <div>
             <svg
               width="38"
               height="38"
