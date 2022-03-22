@@ -3,12 +3,12 @@ export function mailSubjectGenerator(subject, router) {
   console.log("router ===>", router.split("/")[router.split("/").length - 1]);
   switch (subject) {
     case "Demande d'informations":
-      subject = `Demande d'informations : ${
-        router.split("/")[router.split("/").length]
-      }`;
+      subject = `Demande d'informations `;
       break;
     case "Demande d'étude":
-      subject = "Demande d'étude : ";
+      subject = `Demande d'étude : ${
+        router.split("/")[router.split("/").length - 1]
+      }`;
       break;
     case "Commander l'étude":
       subject =
