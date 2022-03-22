@@ -72,11 +72,11 @@ export default function Layout({ children, page }) {
             <Image
               src="https://res.cloudinary.com/smartagence/image/upload/v1645461568/Logo_Insight-AM_blanc_zbuvut.svg"
               alt="Logo Insight AM"
-              layout="fill"
-              objectFit="contain"
+              width="200px"
+              height="200px"
             />
           </div>
-          <div className="mt-[170px]">
+          <div className="mt-[10px]">
             <svg
               width="38"
               height="38"

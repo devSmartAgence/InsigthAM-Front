@@ -209,7 +209,7 @@ export default function HomeSections({
             hrefFirstButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}`}
             hrefSecondButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}/methode`}
             index={1}
-            // primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
+            primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
             secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
             itemsCount={7}
             itemPosition={itemPosition}
@@ -383,9 +383,9 @@ export default function HomeSections({
             </div>
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 2 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-200px w-full`}>
             <Image
               src="https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_clock_f04988a9e3.jpg"
               layout="fill"
@@ -395,7 +395,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 2 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px] py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
@@ -421,9 +423,9 @@ export default function HomeSections({
           </div>
         </div>
 
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 3 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide1Cover.data.attributes.formats
@@ -436,7 +438,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 3 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
@@ -458,9 +462,9 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 4 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide2Cover.data.attributes.formats
@@ -473,7 +477,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 4 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
@@ -493,9 +499,9 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 5 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide3Cover.data.attributes.formats
@@ -508,7 +514,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 5 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
@@ -528,9 +536,9 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 6 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide4Cover.data.attributes.formats
@@ -543,7 +551,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 6 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
@@ -564,9 +574,9 @@ export default function HomeSections({
             />
           </div>
         </div>
-        <div className="relative flex flex-col h-[calc(100vh-110px)] w-full">
+        <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 7 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-1/5 w-full`}>
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide5Cover.data.attributes.formats
@@ -579,7 +589,9 @@ export default function HomeSections({
 
           {/* /////////////////////// SLIDE 7 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
 
-          <div className={`font-sans flex flex-col h-4/5 w-full items-center`}>
+          <div
+            className={`font-sans flex flex-col h-4/5 w-full items-center py-[30px]`}
+          >
             <ContentPanel
               viewportWidth={viewportWidth}
               itemHeight={itemHeight}
