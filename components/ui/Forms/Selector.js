@@ -1,7 +1,7 @@
 import { mailSubjectGenerator } from "../../../utils/mailSubjectGenerator";
 
 export default function Selector({ setter, type, required, router }) {
-  console.log("ROUTER SELECTOR ===>", router.split("/"));
+  console.log("ROUTER SELECTOR ===>", router.split("/").length);
   return (
     <div className="floating-input mb-5 relative ">
       <select
@@ -14,7 +14,7 @@ export default function Selector({ setter, type, required, router }) {
       >
         <option
           value="Demande d'informations"
-          selected={router.split("/").length <= 2 && "true"}
+          selected={router.split("/").length <= 2 && true}
         >
           Demande d&apos;informations
         </option>
@@ -22,8 +22,8 @@ export default function Selector({ setter, type, required, router }) {
           selected={
             router ===
             "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
-              ? "Commande de l'étude"
-              : "Demande d'étude"
+              ? "true"
+              : "false"
           }
           value={
             router ===

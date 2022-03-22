@@ -205,7 +205,7 @@ export default function HomeSections({
             hrefFirstButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}`}
             hrefSecondButton={`/nos-etudes/${homeIntro.data.attributes.slide3Theme.theme}/methode`}
             index={1}
-            primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
+            // primaryButtonLabel={homeIntro.data.attributes.slide3FirstButton}
             secondaryButtonLabel={homeIntro.data.attributes.slide3SecondButton}
             itemsCount={7}
             itemPosition={itemPosition}
