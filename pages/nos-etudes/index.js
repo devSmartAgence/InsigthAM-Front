@@ -4,7 +4,6 @@ import AnimatedH1Type from "../../components/ui/AnimatedH1Type.js";
 import SummaryStudy from "../../components/ui/SummaryStudy.js";
 import { themeBeautyfier } from "../../utils/themeBeautyfier.js";
 import useDeviceSize from "../../components/hooks/useDevicesize.js";
-import GridPattern from "../../components/ui/GridPattern.js";
 export default function Thematiques({ resStudies }) {
   let arrThemes = resStudies.data.map((x) => x.attributes.theme);
   let singleThemes = [...new Set(arrThemes)];

@@ -29,6 +29,7 @@ export default function Layout({ children, page }) {
     router.events.on("routeChangeComplete", handleComplete);
     router.events.on("routeChangeError", handleComplete);
   }, [router]);
+
   return (
     <>
       <Head>
@@ -37,12 +38,11 @@ export default function Layout({ children, page }) {
       <motion.div
         key="loadingScreen"
         className="flex flex-col items-center justify-center w-full h-[calc(100vh-110px)] fixed z-[9999] bg-deep-blue top-[110px]"
-        initial={{ width: 0, originY: 1 }}
+        initial={{ width: 0 }}
         animate={
           isAnimating === true
             ? {
                 width: "100%",
-                originX: 1,
                 transition: { duration: 0.4, ease: "easeIn" },
               }
             : {
@@ -130,7 +130,7 @@ export default function Layout({ children, page }) {
           </div>
         </motion.div>
       </motion.div>
-      <Header />
+      <Header router={router} />
       <main>{children}</main>
       {router.route !== "/" && <Footer />}
     </>

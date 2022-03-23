@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import useDeviceSize from "../components/hooks/useDevicesize";
 import { motion, AnimatePresence } from "framer-motion";
+
 export default function Header() {
   const router = useRouter();
   const [viewportWidth, height] = useDeviceSize();
@@ -28,6 +29,12 @@ export default function Header() {
       transition: { duration: 0.7, staggerChildren: 0.2, delay: 0.4 },
     },
   };
+
+  let handleLogoClick = () => {
+    if (router.asPath === "/") {
+      router.reload(window.location.pathname);
+    }
+  };
   return (
     <header
       className={`flex ${
@@ -35,7 +42,10 @@ export default function Header() {
       } w-screen bg-white justify-between items-center px-8  fixed z-50 top-0`}
     >
       <Link href="/">
-        <div className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]">
+        <div
+          className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]"
+          onClick={() => handleLogoClick()}
+        >
           <Image
             src="https://res.cloudinary.com/smartagence/image/upload/v1645461453/Logo_Insight-AM-Blue_qksdzv.svg"
             alt="Logo Insight AM"
