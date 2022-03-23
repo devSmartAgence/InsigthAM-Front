@@ -10,7 +10,7 @@ const PartnerLogo = ({ image, link }) => {
   }
 
   return (
-    <div className="relative w-1/3 h-[55px] mb-[5%] pointer">
+    <div className="relative w-1/3 h-[55px] mb-[5%] pointer mr-6">
       {link ? (
         <a href={link} target="_blank" rel="noreferrer">
           <Image src={myImage} alt="" objectFit="contain" layout="fill" />

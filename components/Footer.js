@@ -49,18 +49,20 @@ export default function Footer() {
                   MENTIONS LÉGALES
                 </li>
               </Link>
-              <PrimaryButton
-                type={"secondary"}
-                style={"dark"}
-                label={"Contact"}
-                href={"/contact"}
-              />
+              <li>
+                <PrimaryButton
+                  type={"secondary"}
+                  style={"dark"}
+                  label={"Contact"}
+                  href={"/contact"}
+                />
+              </li>
             </ul>
           </nav>
         </div>
       </div>
       <div className="text-white uppercase text-center text-[12px] xl:text-right">
-        <div className="flex justify-center xl:justify-end">
+        <div className="sm:flex-row flex flex-col  justify-center xl:justify-end">
           <div>Ce site est une création du Groupe</div>
           <div className="ml-[6px] cursor-pointer">
             <Link href="https://www.smartagence.com/">
