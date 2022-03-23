@@ -51,7 +51,7 @@ const Universals = ({ pageData }) => {
         />
 
         <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
-          <div className="absolute left-0">
+          <div className="absolute left-[30px]">
             <BackButton label={"Retour"} style="dark" />
           </div>
           <div className="flex flex-col items-center ">

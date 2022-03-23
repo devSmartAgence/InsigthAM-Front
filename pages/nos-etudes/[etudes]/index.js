@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import useDeviceSize from "../../../components/hooks/useDevicesize";
 import { motion } from "framer-motion";
-import AnimatedH1Type from "../../../components/ui/AnimatedH1Type";
 import PrimaryButton from "../../../components/ui/PrimaryButton";
 import BackButton from "../../../components/ui/BackButton";
 import StudyPreview from "../../../components/StudyPreview";
@@ -77,12 +76,13 @@ export default function Etudes({ studies }) {
           <div className="mt-[155px] items-center flex flex-col max-w-[580px] mb-[60px] md:items-start">
             <BackButton label={"Retour"} style="light"></BackButton>
             <div>
-              <AnimatedH1Type
-                title={themeBeautyfier(theme)}
+              <h1
                 className={
-                  "flex flex-wrap  justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mt-10 mb-6  md:text-4xl md:justify-start md:flex-nowrap  "
+                  "flex justify-center overflow-hidden text-3xl font-sans text-white mt-8 text-center md:text-left leading-tight mb-8 md:text-4xl mb-16 "
                 }
-              />
+              >
+                {themeBeautyfier(theme)}
+              </h1>
             </div>
             {/* {router.asPath !== "/nos-etudes/BarometresInstitutionnels" ||
               router.asPath !==

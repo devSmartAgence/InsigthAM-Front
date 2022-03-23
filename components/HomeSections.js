@@ -53,6 +53,14 @@ export default function HomeSections({
           >
             <GridPattern color={"deep-blue"} />
             <div className="absolute h-1/2 flex flex-col justify-center px-[5vmax]">
+              <h1
+                className={
+                  "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
+                }
+              >
+                {homeIntro.data.attributes.title}
+              </h1>
+
               <AnimatedH1
                 title={homeIntro.data.attributes.title}
                 className="uppercase text-white text-[4vmax] flex h-[6vmax] overflow-hidden"

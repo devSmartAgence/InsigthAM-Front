@@ -16,7 +16,6 @@ import BlockManager from "../components/shared/BlockManager";
 
 import ContactForm from "../components/ui/Forms/ContactForm";
 import BreadCrumbModule from "../components/ui/BreadcrumbModule";
-import AnimatedH1Type from "../components/ui/AnimatedH1Type";
 
 const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
@@ -48,7 +47,7 @@ const Universals = ({ pageData }) => {
         />
 
         <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
-          <div className="absolute left-0">
+          <div className="absolute left-[30px] ">
             <BackButton label={"Retour"} style="dark" />
           </div>
           <div className="flex flex-col items-center"></div>
@@ -58,12 +57,14 @@ const Universals = ({ pageData }) => {
           className="flex flex-col max-w-[1230px] px-[10%] bg-white pt-8 md:pt-16
           "
         >
-          <AnimatedH1Type
-            title={pageData.data.attributes.title}
+          <h1
             className={
               "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
             }
-          />
+          >
+            {pageData.data.attributes.title}
+          </h1>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{

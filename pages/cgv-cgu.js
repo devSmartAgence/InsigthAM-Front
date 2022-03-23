@@ -14,7 +14,6 @@ import BlockManager from "../components/shared/BlockManager";
 
 import ContactForm from "../components/ui/Forms/ContactForm";
 import BreadCrumbModule from "../components/ui/BreadcrumbModule";
-import AnimatedH1Type from "../components/ui/AnimatedH1Type";
 
 const Universals = ({ pageData }) => {
   const [viewportWidth, viewportHeight] = useDeviceSize();
@@ -50,12 +49,13 @@ const Universals = ({ pageData }) => {
           "
         >
           <div>
-            <AnimatedH1Type
-              title={pageData.data.attributes.title}
+            <h1
               className={
-                "flex overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
+                "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
               }
-            />
+            >
+              {pageData.data.attributes.title}
+            </h1>
 
             <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
               {pageData.data.attributes.introduction}

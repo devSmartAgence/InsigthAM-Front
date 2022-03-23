@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-import AnimatedH1Type from "../../components/ui/AnimatedH1Type.js";
 import SummaryStudy from "../../components/ui/SummaryStudy.js";
 import { themeBeautyfier } from "../../utils/themeBeautyfier.js";
 import useDeviceSize from "../../components/hooks/useDevicesize.js";
@@ -11,12 +10,13 @@ export default function Thematiques({ resStudies }) {
   return (
     <div className="bg-deep-blue w-screen">
       <div className="flex z-10 justify-center flex-col w-screen items-center pt-40 md:pt-56">
-        <AnimatedH1Type
-          title={"Nos études"}
+        <h1
           className={
-            "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight  md:text-4xl  "
+            "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mb-[6%] md:text-4xl mb-16 "
           }
-        />
+        >
+          Nos études
+        </h1>
 
         <div className="w-[2.3vmax] h-[0.3vmax] bg-pink mb-[2vmax] mt-[0.5vmax]"></div>
         <motion.div

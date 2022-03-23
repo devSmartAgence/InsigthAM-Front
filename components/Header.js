@@ -121,9 +121,9 @@ export default function Header() {
               <nav>
                 <motion.ul
                   key="1"
-                  className={`flex flex-col items-center w-full bg-deep-blue fixed top-[${
-                    viewportWidth > 992 ? "110px" : "75px"
-                  }] right-0 p-[60px]`}
+                  className={`flex flex-col items-center w-full bg-deep-blue fixed ${
+                    viewportWidth > 992 ? "top-[110px]" : "top-[75px]"
+                  } right-0 p-[60px]`}
                   variants={menu}
                   initial="initial"
                   animate="animate"
