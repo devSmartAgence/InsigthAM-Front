@@ -38,7 +38,7 @@ export default function ContactForm({ title }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:1337/api/forms`,
+        `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
         formData
       );
       if (response && response.status === 200) {
@@ -96,7 +96,7 @@ export default function ContactForm({ title }) {
           * Tous les champs précédés d’une astérisque sont obligatoires.
         </p>
         <form
-          className="flex-row justify-center w-[80%] place-content-between gap-x-[12%] md:flex md:w-full md:max-w-[1230px]  "
+          className="flex-row justify-center w-[80%] place-content-between gap-x-[12%] md:flex md:w-[90%] md:max-w-[1230px]  "
           onSubmit={handleSubmit}
         >
           <div className="md:w-1/2">
