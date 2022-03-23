@@ -74,9 +74,7 @@ module.exports = {
         "2xl": "1440px",
       },
       backgroundImage: {
-        panel1: "url('/img/panel-1.png')",
-        panel2: "url('/img/panel-2.png')",
-        panel3: "url('/img/panel-3.png')",
+        panel1: "url('/img/panel-1.jpg')",
       },
       backgroundOpacity: {
         85: "0.85",
