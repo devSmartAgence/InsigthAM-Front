@@ -5,10 +5,11 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import useDeviceSize from "./hooks/useDevicesize";
 
 export default function Layout({ children, page }) {
   const router = useRouter();
-
+  const [viewportWidth, viewportHeight] = useDeviceSize();
   const [pageLoading, setPageLoading] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -37,7 +38,9 @@ export default function Layout({ children, page }) {
       </Head>
       <motion.div
         key="loadingScreen"
-        className="flex flex-col items-center justify-center w-full h-[calc(100vh-110px)] fixed z-[9999] bg-deep-blue top-[110px]"
+        className={`flex flex-col items-center justify-center w-full h-[calc(100vh-110px)] fixed z-[9999] bg-deep-blue top-[${
+          viewportWidth > 992 ? "110px" : "75px"
+        }]`}
         initial={{ width: 0 }}
         animate={
           isAnimating === true

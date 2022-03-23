@@ -13,7 +13,6 @@ export default function Home({ homeIntro, studies }) {
   const [itemPosition, setItemPosition] = useState();
   const [position, setPosition] = useState("");
   const [viewportWidth, viewportHeight] = useDeviceSize();
-  console.log("PANEL SCROLL INDEX ===>", panelScrollIndex);
   useEffect(() => {
     setItemPosition(0);
   }, [setItemPosition]);
@@ -23,15 +22,11 @@ export default function Home({ homeIntro, studies }) {
       null;
     } else if (i > panelScrollIndex) {
       setPanelScrollIndex(i);
-      console.log("PANEL SCROLL INDEX ===>", panelScrollIndex);
-      console.log("I ===>", i);
-      console.log("OPERATION ===>", i - panelScrollIndex);
+
       // setItemPosition((itemPosition - height + 110) * (i - panelScrollIndex));
     } else if (i < panelScrollIndex) {
       setPanelScrollIndex(i);
-      console.log("PANEL SCROLL INDEX ===>", panelScrollIndex);
-      console.log("I ===>", i);
-      console.log("OPERATION ===>", Math.abs(panelScrollIndex - i));
+
       // setItemPosition(
       //   (itemPosition + height - 110) * Math.abs(panelScrollIndex - i)
       // );

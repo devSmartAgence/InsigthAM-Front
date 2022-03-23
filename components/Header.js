@@ -9,24 +9,30 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const router = useRouter();
+  console.log(router.asPath.split("/")[1]);
   const [viewportWidth, height] = useDeviceSize();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = {
     initial: { opacity: 0, translateX: -50 },
     animate: { opacity: 1, translateX: 0 },
-    exit: { opacity: 0, translateX: 50 },
+    exit: { opacity: 0, translateX: 100, transition: { duration: 0.3 } },
   };
 
   const menu = {
     initial: { height: 0 },
     animate: {
       height: "100vh",
-      transition: { duration: 0.7, staggerChildren: 0.2, delayChildren: 0.4 },
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.2,
+        delayChildren: 0.4,
+        ease: "circOut",
+      },
     },
     exit: {
       height: 0,
-      transition: { duration: 0.7, staggerChildren: 0.2, delay: 0.4 },
+      transition: { duration: 0.7, staggerChildren: -0.2, delay: 0.4 },
     },
   };
 
@@ -51,13 +57,14 @@ export default function Header() {
             alt="Logo Insight AM"
             layout="fill"
             objectFit="contain"
+            priority="true"
           />
         </div>
       </Link>
       {viewportWidth > 720 ? (
         <nav className="">
           <ul className="flex items-center">
-            <Link href="/a-propos" passHref>
+            <Link href="/a-propos">
               <li
                 className={
                   router.pathname === "/a-propos"
@@ -68,7 +75,7 @@ export default function Header() {
                 À propos
               </li>
             </Link>
-            <Link href="/nos-etudes" passHref>
+            <Link href="/nos-etudes">
               <li
                 className={
                   router.pathname === "/nos-etudes"
@@ -115,45 +122,51 @@ export default function Header() {
                 <motion.ul
                   key="1"
                   className={`flex flex-col items-center w-full bg-deep-blue fixed top-[${
-                    viewportWidth > 992 ? "110px" : "0"
+                    viewportWidth > 992 ? "110px" : "75px"
                   }] right-0 p-[60px]`}
                   variants={menu}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                 >
-                  <Link href="/a-propos" passHref>
+                  <Link href="/">
                     <motion.li
                       className={
-                        router.pathname === "/a-propos"
-                          ? "text-[36px] cursor-pointer uppercase text-pink mb-[30px]"
-                          : "text-[36px] cursor-pointer uppercase text-white mb-[30px]"
+                        router.pathname === "/"
+                          ? "text-[28px] cursor-pointer uppercase text-pink mb-[30px]"
+                          : "text-[28px] cursor-pointer uppercase text-white mb-[30px]"
+                      }
+                      variants={menuItems}
+                    >
+                      Accueil
+                    </motion.li>
+                  </Link>
+                  <Link href="/a-propos">
+                    <motion.li
+                      className={
+                        router.asPath.split("/")[1] === "a-propos"
+                          ? "text-[28px] cursor-pointer uppercase text-pink mb-[30px]"
+                          : "text-[28px] cursor-pointer uppercase text-white mb-[30px]"
                       }
                       variants={menuItems}
                     >
                       À propos
                     </motion.li>
                   </Link>
-                  <Link href="/nos-etudes" passHref>
+                  <Link href="/nos-etudes">
                     <motion.li
                       key="2"
                       className={
-                        router.pathname === "/thematiques"
-                          ? "text-[36px] cursor-pointer uppercase text-pink mb-[30px]"
-                          : "text-[36px] cursor-pointer uppercase text-white mb-[30px]"
+                        router.asPath.split("/")[1] === "nos-etudes"
+                          ? "text-[28px] cursor-pointer uppercase text-pink mb-[30px]"
+                          : "text-[28px] cursor-pointer uppercase text-white mb-[30px]"
                       }
                       variants={menuItems}
                     >
                       Nos études
                     </motion.li>
                   </Link>
-                  <motion.div
-                    key="3"
-                    variants={menuItems}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
+                  <motion.div key="3" variants={menuItems}>
                     <PrimaryButton
                       type={"secondary"}
                       style={"dark"}

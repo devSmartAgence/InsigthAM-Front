@@ -1,9 +1,10 @@
 import { mailSubjectGenerator } from "../../../utils/mailSubjectGenerator";
 import { useRouter } from "next/router";
+import { useEffect } from "react/cjs/react.production.min";
 
 export default function Selector({ setter, type, required }) {
   const router = useRouter();
-  console.log("ROUTER ICICICI ===>", router.asPath);
+
   return (
     <div className="floating-input mb-5 relative">
       <select
@@ -16,6 +17,8 @@ export default function Selector({ setter, type, required }) {
         type={type}
         required={required}
       >
+        <option value="">-- Sélectionnez un sujet --</option>
+
         <option value="Demande d'informations">
           Demande d&apos;informations
         </option>

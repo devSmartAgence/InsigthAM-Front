@@ -5,18 +5,35 @@ import TitleH2 from "../TitleH2";
 import axios from "axios";
 import Selector from "./Selector";
 import { useRouter } from "next/router";
+import { mailSubjectGenerator } from "../../../utils/mailSubjectGenerator";
 export default function ContactForm({ title }) {
+  const router = useRouter();
+
+  let setDefaultSubject = () => {
+    if (
+      router.asPath ===
+      "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
+    ) {
+      let defaultSubject = mailSubjectGenerator(
+        "Commande de l'étude",
+        router.asPath
+      );
+      return defaultSubject;
+    } else {
+      return "";
+    }
+  };
   const [isLoading, setIsLoading] = useState(false);
   const [isConfirmationVisible, setIsConfirmationVisible] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
-  const router = useRouter();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  const [subject, setSubject] = useState(setDefaultSubject());
   const [message, setMessage] = useState("");
+
   const formData = {
     data: {
       subject: subject,
@@ -28,7 +45,6 @@ export default function ContactForm({ title }) {
       company: company,
     },
   };
-
   // Form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,20 +54,20 @@ export default function ContactForm({ title }) {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
+        `http://localhost:1337/api/forms`,
         formData
       );
       if (response && response.status === 200) {
         setIsLoading(false);
         setIsConfirmed(true);
         setIsConfirmationVisible(true);
-        setFirstName("");
-        setLastName("");
-        setPosition("");
-        setCompany("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+        // setFirstName("");
+        // setLastName("");
+        // setPosition("");
+        // setCompany("");
+        // setEmail("");
+        // setSubject("");
+        // setMessage("");
       }
     } catch (error) {
       setIsLoading(false);
@@ -138,6 +154,7 @@ export default function ContactForm({ title }) {
               label={"Sujet de votre demande"}
               setter={setSubject}
               router={router.asPath}
+              required={"true"}
             />
 
             <TextArea
