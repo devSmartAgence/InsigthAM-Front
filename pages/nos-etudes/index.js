@@ -9,10 +9,10 @@ export default function Thematiques({ resStudies }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   return (
     <div className="bg-deep-blue w-screen">
-      <div className="flex z-10 justify-center flex-col w-screen items-center pt-40 md:pt-56">
+      <div className="flex z-10 justify-center flex-col w-screen items-center pt-36 md:pt-48">
         <h1
           className={
-            "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight mb-[6%] md:text-4xl mb-16 "
+            "flex justify-center overflow-hidden text-3xl font-sans text-white text-center leading-tight md:text-4xl md:mb-6 mb-6 "
           }
         >
           Nos études

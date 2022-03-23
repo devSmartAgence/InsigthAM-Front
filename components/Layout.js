@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import useDeviceSize from "./hooks/useDevicesize";
 
@@ -12,12 +12,6 @@ export default function Layout({ children, page }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
   const [pageLoading, setPageLoading] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-
-  const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -100 },
-  };
 
   useEffect(() => {
     const handleStart = () => {
@@ -29,7 +23,7 @@ export default function Layout({ children, page }) {
       setTimeout(() => {
         setIsAnimating(false);
         setPageLoading(false);
-      }, 1000);
+      }, 1500);
     };
 
     router.events.on("routeChangeStart", handleStart);
@@ -44,7 +38,7 @@ export default function Layout({ children, page }) {
       </Head>
       <motion.div
         key="loadingScreen"
-        className={`flex flex-col items-center justify-center w-full h-[100vh] fixed z-[9999] bg-deep-blue top-[${
+        className={`flex flex-col items-center justify-center w-screen h-screen fixed z-[9999] bg-deep-blue top-[${
           viewportWidth > 992 ? "110px" : "75px"
         }]`}
         initial={{ width: 0 }}
@@ -139,18 +133,42 @@ export default function Layout({ children, page }) {
           </div>
         </motion.div>
       </motion.div>
+      {/* <motion.div
+        key="loadingScreen"
+        className={`flex flex-col items-center justify-center w-screen h-screen fixed z-[9998] bg-white top-[${
+          viewportWidth > 992 ? "110px" : "75px"
+        }]`}
+        initial={{ opacity: 0 }}
+        animate={
+          isAnimating === true
+            ? {
+                opacity: 1,
+                transition: { duration: 0.2, ease: "easeIn" },
+              }
+            : {
+                opacity: 0,
+                transition: { duration: 0.4, ease: "easeOut", delay: 0.5 },
+              }
+        }
+        exit={{ width: 0 }}
+      ></motion.div> */}
       <Header router={router} />
-      <AnimatePresence exitBeforeEnter>
-        <motion.main
-          variants={variants} // Pass the variant object into Framer Motion
-          initial="hidden" // Set the initial state to variants.hidden
-          animate="enter" // Animated state to variants.enter
-          exit="exit" // Exit state (used later) to variants.exit
-          transition={{ type: "linear" }} // Set the transition to linear
-        >
-          {children}
-        </motion.main>
-      </AnimatePresence>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={
+          isAnimating === true
+            ? {
+                opacity: 0,
+                transition: { duration: 0.2, ease: "easeIn" },
+              }
+            : {
+                opacity: 1,
+                transition: { duration: 0.4, ease: "easeOut", delay: 0.5 },
+              }
+        }
+      >
+        {children}
+      </motion.main>
 
       {router.route !== "/" && <Footer />}
     </>

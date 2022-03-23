@@ -22,7 +22,7 @@ export default function SummaryStudy({ title, theme }) {
   };
   return (
     <Link href={linkManager(theme)} passHref>
-      <div className="cursor-pointer flex flex-col text-center justify-center h-[10vmax] w-4/5 bg-white text-deep-blue font-serif text-sm font-bold px-16 md:text-2xl lg:w-1/2 lg:max-w-[508px]">
+      <div className="cursor-pointer flex flex-col text-center justify-center h-[10vmax] w-4/5 bg-white text-deep-blue font-serif text-md font-bold px-16 md:text-2xl lg:w-1/2 lg:max-w-[508px]">
         <p>{title}</p>
       </div>
     </Link>
