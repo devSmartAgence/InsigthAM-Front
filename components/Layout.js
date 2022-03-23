@@ -56,7 +56,7 @@ export default function Layout({ children, page }) {
         exit={{ width: 0 }}
       >
         <motion.div
-          className="w-[125px] flex flex-col items-center "
+          className="w-[125px] flex flex-col items-center -mt-28 "
           initial={{ opacity: 0, x: -50 }}
           animate={
             isAnimating === true

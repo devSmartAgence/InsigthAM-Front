@@ -51,11 +51,11 @@ const Universals = ({ pageData }) => {
           arrPath={arrPath}
         />
 
-        <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px]">
-          <div className="absolute left-[30px]">
+        <div className="flex items-center justify-center h-[134px] relative w-full max-w-[1230px] mb-4 sm:mb-8">
+          <div className="absolute md:left-[30px] top-8 md:top-auto">
             <BackButton label={"Retour"} style="dark" />
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mt-10 sm:mt-0">
             <div className="font-sans text-deep-blue text-[13px] uppercase mb-[13px]">
               {themeBeautyfier(pageData.data[0].attributes.theme)}
             </div>
