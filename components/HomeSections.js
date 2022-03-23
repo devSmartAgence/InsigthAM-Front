@@ -390,6 +390,7 @@ export default function HomeSections({
               src="https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_clock_f04988a9e3.jpg"
               layout="fill"
               objectFit="cover"
+              alt="Dernière publication - Horloge"
             ></Image>
           </div>
 
@@ -433,6 +434,7 @@ export default function HomeSections({
               }
               layout="fill"
               objectFit="cover"
+              alt="Introduction"
             ></Image>
           </div>
 
@@ -472,6 +474,7 @@ export default function HomeSections({
               }
               layout="fill"
               objectFit="cover"
+              alt="Études notoriété et / ou positionnement"
             ></Image>
           </div>
 
@@ -509,6 +512,7 @@ export default function HomeSections({
               }
               layout="fill"
               objectFit="cover"
+              alt="Études cibles clientèles"
             ></Image>
           </div>
 
@@ -546,6 +550,7 @@ export default function HomeSections({
               }
               layout="fill"
               objectFit="cover"
+              alt="Baromêtres institutionnels"
             ></Image>
           </div>
 
@@ -584,6 +589,7 @@ export default function HomeSections({
               }
               layout="fill"
               objectFit="cover"
+              alt="Études testing produit"
             ></Image>
           </div>
 

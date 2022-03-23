@@ -57,7 +57,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 0 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(0)}
+          // onClick={() => handleSplitPanelControlClick(0)}
         ></motion.li>
         <motion.li
           className={
@@ -67,7 +67,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 1 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(1)}
+          // onClick={() => handleSplitPanelControlClick(1)}
         ></motion.li>
         <motion.li
           className={
@@ -77,7 +77,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 2 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(2)}
+          // onClick={() => handleSplitPanelControlClick(2)}
         ></motion.li>
         <motion.li
           className={
@@ -87,7 +87,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 3 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(3)}
+          // onClick={() => handleSplitPanelControlClick(3)}
         ></motion.li>
         <motion.li
           className={
@@ -97,7 +97,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 4 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(4)}
+          // onClick={() => handleSplitPanelControlClick(4)}
         ></motion.li>
         <motion.li
           className={
@@ -107,7 +107,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 5 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(5)}
+          // onClick={() => handleSplitPanelControlClick(5)}
         ></motion.li>
         <motion.li
           className={
@@ -117,7 +117,7 @@ export default function HomeSplitPanelControl({
             panelScrollIndex === 6 ? bulletPointActive : bulletPointInactive
           }
           animate="show"
-          onClick={() => handleSplitPanelControlClick(6)}
+          // onClick={() => handleSplitPanelControlClick(6)}
         ></motion.li>
       </motion.ul>
     </div>

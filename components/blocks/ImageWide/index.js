@@ -9,7 +9,7 @@ const ImageWide = ({ image }) => {
 
   return (
     <div className="relative overflow-hidden w-full mb-[5%]">
-      <img className="w-full h-auto" src={myImage} />
+      <img className="w-full h-auto" src={myImage} alt="Image pleine largeur" />
     </div>
   );
 };

@@ -41,7 +41,7 @@ export default function Header() {
         viewportWidth > 992 ? "h-[110px]" : "h-[75px]"
       } w-screen bg-white justify-between items-center px-8  fixed z-50 top-0`}
     >
-      <Link href="/">
+      <Link href="/" passHref>
         <div
           className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]"
           onClick={() => handleLogoClick()}
@@ -57,7 +57,7 @@ export default function Header() {
       {viewportWidth > 720 ? (
         <nav className="">
           <ul className="flex items-center">
-            <Link href="/a-propos">
+            <Link href="/a-propos" passHref>
               <li
                 className={
                   router.pathname === "/a-propos"
@@ -68,7 +68,7 @@ export default function Header() {
                 À propos
               </li>
             </Link>
-            <Link href="/nos-etudes">
+            <Link href="/nos-etudes" passHref>
               <li
                 className={
                   router.pathname === "/nos-etudes"
@@ -122,7 +122,7 @@ export default function Header() {
                   animate="animate"
                   exit="exit"
                 >
-                  <Link href="/a-propos">
+                  <Link href="/a-propos" passHref>
                     <motion.li
                       className={
                         router.pathname === "/a-propos"
@@ -134,7 +134,7 @@ export default function Header() {
                       À propos
                     </motion.li>
                   </Link>
-                  <Link href="/nos-etudes">
+                  <Link href="/nos-etudes" passHref>
                     <motion.li
                       key="2"
                       className={

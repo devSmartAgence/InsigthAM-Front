@@ -38,7 +38,7 @@ export default function ContactForm({ title }) {
 
     try {
       const response = await axios.post(
-        `https://insightam.herokuapp.com/api/forms`,
+        `http://localhost:1337/api/forms`,
         formData
       );
       if (response && response.status === 200) {
