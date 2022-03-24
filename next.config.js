@@ -32,7 +32,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/((?!_next)[^/]+?)nous-contacter",
+        source: "/((?!_next)[^/]+?)/nous-contacter",
         destination: "/contact",
         permanent: true,
       },
