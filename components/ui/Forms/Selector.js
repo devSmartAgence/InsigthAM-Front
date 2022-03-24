@@ -29,7 +29,7 @@ export default function Selector({ setter, type, required }) {
               ? "Commande de l'étude"
               : "Demande d'étude"
           }
-          selected={
+          defaultValue={
             router.asPath ===
             "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
               ? true

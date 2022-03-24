@@ -61,13 +61,13 @@ export default function ContactForm({ title }) {
         setIsLoading(false);
         setIsConfirmed(true);
         setIsConfirmationVisible(true);
-        setFirstName("");
-        setLastName("");
-        setPosition("");
-        setCompany("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+        // setFirstName("");
+        // setLastName("");
+        // setPosition("");
+        // setCompany("");
+        // setEmail("");
+        // setSubject("");
+        // setMessage("");
       }
     } catch (error) {
       setIsLoading(false);
@@ -154,7 +154,7 @@ export default function ContactForm({ title }) {
               label={"Sujet de votre demande"}
               setter={setSubject}
               router={router.asPath}
-              required={"true"}
+              required={true}
             />
 
             <TextArea
