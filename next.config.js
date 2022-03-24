@@ -27,8 +27,7 @@ module.exports = {
     ];
   },
 };
-//insightam.fr/etudes/etudes-tendancielles/
-https: module.exports = {
+module.exports = {
   async redirects() {
     return [
       {
