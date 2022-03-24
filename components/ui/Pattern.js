@@ -1,4 +1,7 @@
+import useDeviceSize from "../hooks/useDevicesize";
+
 export default function Pattern({ color }) {
+  const [viewportWidth, viewportHeight] = useDeviceSize();
   return (
     <div className="relative flex flex-col">
       <svg

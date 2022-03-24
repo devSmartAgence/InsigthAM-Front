@@ -314,7 +314,7 @@ export default function HomeSections({
         <div className="relative flex flex-col h-[calc(100vh-110px)] bg-panel1 bg-top bg-cover w-full">
           {/* /////////////////////// SLIDE 1 TOP ////////////////////////////////////////////////////////////////////////////// */}
           <div className={`font-sans flex flex-col h-2/5 w-full items-center`}>
-            <GridPattern color={"deep-blue"} />
+            <GridPattern color={"deep-blue"} className="h-[10px]" />
             <div className="absolute h-1/2 flex flex-col justify-center px-[5vmax]">
               <AnimatedH1
                 title={homeIntro.data.attributes.title}
@@ -393,13 +393,14 @@ export default function HomeSections({
         </div>
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 2 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-200px w-full`}>
+
+          <div className={`relative h-[175px] w-full`}>
             <Image
               src="https://res.cloudinary.com/smartagence/image/upload/v1645540632/large_insight_clock_f04988a9e3.jpg"
               layout="fill"
               objectFit="cover"
               alt="Dernière publication - Horloge"
-            ></Image>
+            ></Image>{" "}
           </div>
 
           {/* /////////////////////// SLIDE 2 BOTTOM ////////////////////////////////////////////////////////////////////////////// */}
@@ -434,7 +435,11 @@ export default function HomeSections({
 
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 3 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-[175px] w-full`}>
+
+          <div className={`relative h-[200px] w-full`}>
+            <div>
+              <GridPattern color={"deep-blue"} />
+            </div>
             <Image
               src={
                 homeIntro.data.attributes.slide1Cover.data.attributes.formats
@@ -474,7 +479,7 @@ export default function HomeSections({
         </div>
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 4 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-[175px] w-full`}>
+          <div className={`relative h-[200px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide2Cover.data.attributes.formats
@@ -512,7 +517,7 @@ export default function HomeSections({
         </div>
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 5 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-[175px] w-full`}>
+          <div className={`relative h-[200px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide3Cover.data.attributes.formats
@@ -550,7 +555,7 @@ export default function HomeSections({
         </div>
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 6 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-[175px] w-full`}>
+          <div className={`relative h-[200px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide4Cover.data.attributes.formats
@@ -589,7 +594,7 @@ export default function HomeSections({
         </div>
         <div className="relative flex flex-col w-full">
           {/* /////////////////////// SLIDE 7 TOP ////////////////////////////////////////////////////////////////////////////// */}
-          <div className={`relative h-[175px] w-full`}>
+          <div className={`relative h-[200px] w-full`}>
             <Image
               src={
                 homeIntro.data.attributes.slide5Cover.data.attributes.formats

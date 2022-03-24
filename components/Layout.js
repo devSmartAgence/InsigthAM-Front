@@ -23,7 +23,7 @@ export default function Layout({ children, page }) {
       setTimeout(() => {
         setIsAnimating(false);
         setPageLoading(false);
-      }, 1500);
+      }, 700);
     };
 
     router.events.on("routeChangeStart", handleStart);

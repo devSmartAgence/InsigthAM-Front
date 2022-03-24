@@ -90,7 +90,11 @@ export default function Etudes({ studies }) {
             {router.asPath !== "/nos-etudes/BarometresInstitutionnels" && (
               <PrimaryButton
                 type="primary"
-                label={"Méthodologie déployée"}
+                label={
+                  router.asPath === "/nos-etudes/EtudeCiblesClientele"
+                    ? `Objectifs des études`
+                    : `Méthodologie déployée`
+                }
                 href={`/nos-etudes/${studies.data[0].attributes.theme}/methode`}
               ></PrimaryButton>
             )}
