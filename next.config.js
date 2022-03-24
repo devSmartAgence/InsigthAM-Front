@@ -37,30 +37,29 @@ https: module.exports = {
         permanent: true,
       },
       {
-        source: "/etudes/",
+        source: "/etudes",
         destination: "/nos-etudes",
         permanent: true,
       },
       {
-        source: "/etudes/etudes-tendancielles/",
+        source: "/etudes/etudes-tendancielles",
         destination: "/nos-etudes/BarometresInstitutionnels",
         permanent: true,
       },
       {
-        source: "/etudes/les-etudes-partenaires/",
+        source: "/etudes/les-etudes-partenaires",
         destination: "/nos-etudes/EtudesReferencementThematique",
         permanent: true,
       },
       {
-        source:
-          "/fonds-en-euros-quelle-place-demain-dans-epargne-des-francais/",
+        source: "/fonds-en-euros-quelle-place-demain-dans-epargne-des-francais",
         destination:
           "/nos-etudes/EtudesReferencementThematique/fonds-en-euros-quelle-place-demain-dans-l-epargne-des-francais-juin-2020",
         permanent: true,
       },
       {
-        source: "/les-grandes-voix-de-lam/",
-        destination: "/a-propos/",
+        source: "/les-grandes-voix-de-lam",
+        destination: "/a-propos",
         permanent: true,
       },
     ];
