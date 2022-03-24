@@ -35,11 +35,11 @@ module.exports = {
         destination: "/contact",
         permanent: true,
       },
-      {
-        source: "/etudes/",
-        destination: "/nos-etudes",
-        permanent: true,
-      },
+      // {
+      //   source: "/etudes/",
+      //   destination: "/nos-etudes",
+      //   permanent: true,
+      // },
       // {
       //   source: "/etudes/etudes-tendancielles",
       //   destination: "/nos-etudes/BarometresInstitutionnels",
