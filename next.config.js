@@ -27,3 +27,15 @@ module.exports = {
     ];
   },
 };
+
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/nous-contacter",
+        destination: "/contact",
+        permanent: true,
+      },
+    ];
+  },
+};
