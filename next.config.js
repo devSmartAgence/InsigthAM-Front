@@ -28,16 +28,6 @@ module.exports = {
   },
 };
 
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: "/nous-contacter",
-        destination: "/contact",
-      },
-    ];
-  },
-};
 // module.exports = {
 //   async redirects() {
 //     return [
