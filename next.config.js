@@ -36,7 +36,7 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/etudes",
+        source: "/etudes/",
         destination: "/nos-etudes",
         permanent: true,
       },
