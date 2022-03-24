@@ -17,7 +17,11 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <Link href="https://www.linkedin.com/in/pascalskoenig/?originalSubdomain=fr#experience">
+            <a
+              href="https://www.linkedin.com/in/pascalskoenig/?originalSubdomain=fr#experience"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div className="h-16 relative w-[50px] cursor-pointer mt-[20px] md:ml-8 md:mt-0">
                 <Image
                   src="https://res.cloudinary.com/smartagence/image/upload/v1645463647/Picto_Linkedin_uulogv.svg"
@@ -25,7 +29,7 @@ export default function Footer() {
                   layout="fill"
                 />
               </div>
-            </Link>
+            </a>
           </div>
           <nav className="mt-[30px] xl:mt-0">
             <ul className="flex-col md:flex items-center text-deep-blue md:flex-row">
@@ -65,13 +69,17 @@ export default function Footer() {
         <div className="sm:flex-row flex flex-col  justify-center xl:justify-end">
           <div>Ce site est une création du Groupe</div>
           <div className="ml-[6px] cursor-pointer">
-            <Link href="https://www.smartagence.com/">
+            <a
+              href="https://www.smartagence.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image
                 src="https://res.cloudinary.com/smartagence/image/upload/v1645784593/Logotype_smartagence_qvhjw2.svg"
                 width="102px"
                 height="16px"
               />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
