@@ -8,6 +8,12 @@ export default function Selector({ setter, type, required }) {
   return (
     <div className="floating-input mb-5 relative">
       <select
+        defaultValue={
+          router.asPath ===
+          "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
+            ? "Commande de l'étude"
+            : "-- Sélectionnez un sujet --"
+        }
         name="demande"
         id="demande"
         className="font-sans text-deep-blue text-[13px] focus:outline-none rounded-full focus:border-gray-500 focus:shadow-sm w-full py-4 h-[60px] px-[30px] pl-[27px] "
@@ -28,12 +34,6 @@ export default function Selector({ setter, type, required }) {
             "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
               ? "Commande de l'étude"
               : "Demande d'étude"
-          }
-          defaultValue={
-            router.asPath ===
-            "/nos-etudes/BarometresInstitutionnels/les-societes-de-gestion-vues-par-les-conseillers-en-gestion-de-patrimoine"
-              ? true
-              : false
           }
         >
           {router.asPath ===
