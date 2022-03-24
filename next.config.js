@@ -31,7 +31,7 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "https://insightam.fr/nous-contacter/",
+        source: "/nous-contacter/",
         destination: "/contact",
         permanent: true,
       },
