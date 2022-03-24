@@ -28,14 +28,14 @@ module.exports = {
   },
 };
 
-module.exports = {
-  async redirects() {
-    return [
-      {
-        source: "/((?!_next)[^/]+?)/nous-contacter",
-        destination: "/contact",
-        permanent: true,
-      },
+// module.exports = {
+//   async redirects() {
+//     return [
+//       {
+//         source: "/((?!_next)[^/]+?)/nous-contacter",
+//         destination: "/contact",
+//         permanent: true,
+//       },
       // {
       //   source: "/etudes/",
       //   destination: "/nos-etudes",
