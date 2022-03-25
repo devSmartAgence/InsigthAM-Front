@@ -72,7 +72,7 @@ export default function ContentPanel({
                     <div className="flex-grow h-px bg-black"></div>
                   </div>
 
-                  <div className="relative md:h-32 h-18 w-full mt-4">
+                  <div className="relative md:h-32 h-20 w-full mt-4">
                     <Image
                       src="https://res.cloudinary.com/smartagence/image/upload/v1647446779/insight_cpr_new_eud6fl.png"
                       alt=""
