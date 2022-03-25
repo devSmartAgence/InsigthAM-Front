@@ -33,7 +33,6 @@ export default function ContactForm({ title }) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState(setDefaultSubject());
   const [message, setMessage] = useState("");
-
   const formData = {
     data: {
       subject: subject,
@@ -54,7 +53,7 @@ export default function ContactForm({ title }) {
 
     try {
       const response = await axios.post(
-        `https://insightam.herokuapp.com/api/forms`,
+        `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
         formData
       );
       if (response && response.status === 200) {
