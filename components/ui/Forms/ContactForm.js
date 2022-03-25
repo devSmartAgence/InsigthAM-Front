@@ -54,7 +54,7 @@ export default function ContactForm({ title }) {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_DB_HOST}/api/forms`,
+        `https://insightam.herokuapp.com/api/forms`,
         formData
       );
       if (response && response.status === 200) {
