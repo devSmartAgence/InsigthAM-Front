@@ -71,14 +71,23 @@ export default function ContentPanel({
 
                     <div className="flex-grow h-px bg-black"></div>
                   </div>
-
-                  <div className="relative md:h-32 h-20 w-full mt-4">
-                    <Image
-                      src="https://res.cloudinary.com/smartagence/image/upload/v1647446779/insight_cpr_new_eud6fl.png"
-                      alt=""
-                      layout="fill"
-                      objectFit="contain"
-                    />
+                  <div className="flex w-full justify-center">
+                    <div className="relative md:h-32 h-20 w-1/4 mt-4">
+                      <Image
+                        src="https://res.cloudinary.com/smartagence/image/upload/v1646226583/medium_insight_fidelity_08df8ef5e9.png"
+                        alt=""
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
+                    <div className="relative md:h-32 h-20 w-1/2 mt-4 ml-8">
+                      <Image
+                        src="https://res.cloudinary.com/smartagence/image/upload/v1666097779/SG_Assurances_irncut.png"
+                        alt=""
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </div>
                   </div>
                 </div>
               )}
