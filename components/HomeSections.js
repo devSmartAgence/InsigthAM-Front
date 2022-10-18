@@ -93,26 +93,25 @@ export default function HomeSections({
           </div>
           <ContentPanel
             itemHeight={itemHeight}
-            heading="Quel rôle
-            aujourd’hui de l’épargne retraite et salariale au
+            heading="Notre dernière publication"
+            theme="EtudeCiblesClientele"
+            title="Quel rôle aujourd’hui de l’épargne retraite et salariale au
             sein de l’entreprise ?"
-            theme={studies.data[0].attributes.theme}
-            title={studies.data[0].attributes.title}
             hrefFirstButton={
-              "/nos-etudes/EtudeCiblesClientele/etudes-cibles-de-clientele/#form"
+              "/nos-etudes/EtudeCiblesClientele/etudes-cibles-de-clientele#form"
             }
             hrefSecondButton={
-              "/nos-etudes/EtudesReferencementThematique/les-epargnants-et-l-investissement-responsable"
+              "/nos-etudes/EtudeCiblesClientele/etudes-cibles-de-clientele"
             }
             index={studies.data[0].id}
-            primaryButtonLabel={studies.data[0].attributes.primaryButtonLabel}
-            secondaryButtonLabel={
-              studies.data[0].attributes.secondaryButtonLabel
-            }
+            primaryButtonLabel="Demander le résumé de
+            l’étude"
+            secondaryButtonLabel="Résultats de l'étude"
             itemsCount={7}
             itemPosition={itemPosition}
             slug={studies.data[0].attributes.slug}
-            description={studies.data[0].attributes.description}
+            description="Regards croisés des Salariés et des Responsables
+            des Ressources Humaines."
           />
           <CoverPanel
             itemHeight={itemHeight}

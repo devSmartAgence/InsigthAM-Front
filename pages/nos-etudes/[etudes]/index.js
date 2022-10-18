@@ -66,7 +66,7 @@ export default function Etudes({ studies }) {
         /> */}
 
         <div
-          className={`fixed z-50 right-0 w-1/2 h-4/5 top-[${
+          className={`fixed z-0 right-0 w-1/2 h-4/5 top-[${
             viewportWidth > 992 ? "110px" : "75px"
           }]`}
         >
