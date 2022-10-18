@@ -50,7 +50,7 @@ const Universals = ({ pageData }) => {
           <div>
             <h1
               className={
-                "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 "
+                "flex justify-center overflow-hidden text-3xl font-sans text-deep-blue text-center leading-tight md:text-4xl mb-16 "
               }
             >
               {pageData.data.attributes.title}

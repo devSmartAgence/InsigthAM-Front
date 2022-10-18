@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import BackButton from "./BackButton";
 import { breadcrumbBeautyfier } from "../../utils/breadcrumbBeautyfier";
+import { breadcrumbLinkManager } from "../../utils/breadcrumbBeautyfier copy";
 import useDeviceSize from "../hooks/useDevicesize";
 export default function BreadCrumbModule({ modulePosition, style, arrPath }) {
   const [viewportWidth, viewportHeight] = useDeviceSize();
@@ -36,19 +37,21 @@ export default function BreadCrumbModule({ modulePosition, style, arrPath }) {
           >
             &nbsp; &nbsp; &#x0003E;
           </span>
-          {arrPath.map((path, index) => (
-            <Link href="/" key={index} passHref>
-              <div
-                className={
-                  style === "light"
-                    ? "text-deep-blue text-[11px] cursor-pointer hover:underline"
-                    : "text-white text-[11px] cursor-pointer hover:underline"
-                }
-              >
-                {breadcrumbBeautyfier(path)}
-              </div>
-            </Link>
-          ))}
+          {arrPath.map((path, index) => {
+            if (1 === 1) {
+              <Link href={"/" + path} key={index} passHref>
+                <div
+                  className={
+                    style === "light"
+                      ? "text-deep-blue text-[11px] cursor-pointer hover:underline"
+                      : "text-white text-[11px] cursor-pointer hover:underline"
+                  }
+                >
+                  {breadcrumbBeautyfier(path)}
+                </div>
+              </Link>;
+            }
+          })}
         </div>
       </motion.div>
     );

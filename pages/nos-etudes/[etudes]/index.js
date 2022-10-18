@@ -66,7 +66,7 @@ export default function Etudes({ studies }) {
         /> */}
 
         <div
-          className={`fixed z-50 right-0 z-0 w-1/2 h-4/5 top-[${
+          className={`fixed z-50 right-0 w-1/2 h-4/5 top-[${
             viewportWidth > 992 ? "110px" : "75px"
           }]`}
         >
@@ -78,7 +78,7 @@ export default function Etudes({ studies }) {
             <div>
               <h1
                 className={
-                  "flex justify-center overflow-hidden text-3xl font-sans text-white mt-8 text-center md:text-left leading-tight mb-8 md:text-4xl mb-16 "
+                  "flex justify-center overflow-hidden text-3xl font-sans text-white mt-8 text-center md:text-left leading-tight mb-8 md:text-4xl "
                 }
               >
                 {themeBeautyfier(theme)}

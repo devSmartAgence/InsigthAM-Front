@@ -68,7 +68,7 @@ const Universals = ({ pageData }) => {
           "
         >
           <div>
-            <h1 className="text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl mb-16 ">
+            <h1 className="text-3xl font-sans text-deep-blue text-center leading-tight mb-[6%] md:text-4xl ">
               {pageData.data[0].attributes.title}
             </h1>
             <p className="font-serif font-bold text-black text-md text-center mb-[7.5%] md:text-xl">
@@ -99,6 +99,7 @@ export async function getServerSideProps(context) {
   try {
     const data = getDataStudy(slug, locale);
     const res = await fetch(delve(data, "data"));
+    console.log("DATA===>", data);
     const json = await res.json();
 
     // if (!json) {
