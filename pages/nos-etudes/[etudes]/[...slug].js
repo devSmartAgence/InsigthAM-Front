@@ -99,7 +99,6 @@ export async function getServerSideProps(context) {
   try {
     const data = getDataStudy(slug, locale);
     const res = await fetch(delve(data, "data"));
-    console.log("DATA===>", data);
     const json = await res.json();
 
     // if (!json) {

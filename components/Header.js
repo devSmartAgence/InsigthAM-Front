@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const router = useRouter();
-  console.log(router.asPath.split("/")[1]);
   const [viewportWidth, height] = useDeviceSize();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -49,7 +48,7 @@ export default function Header() {
     >
       <Link href="/" passHref>
         <div
-          className="h-12 w-[100px] cursor-pointer relative md:h-16 w-[105px]"
+          className="h-12 cursor-pointer relative md:h-16 w-[105px]"
           onClick={() => handleLogoClick()}
         >
           <Image

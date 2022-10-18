@@ -93,11 +93,13 @@ export default function HomeSections({
           </div>
           <ContentPanel
             itemHeight={itemHeight}
-            heading={studies.data[0].attributes.heading}
+            heading="Quel rôle
+            aujourd’hui de l’épargne retraite et salariale au
+            sein de l’entreprise ?"
             theme={studies.data[0].attributes.theme}
             title={studies.data[0].attributes.title}
             hrefFirstButton={
-              "/nos-etudes/EtudesReferencementThematique/les-epargnants-et-l-investissement-responsable/#form"
+              "/nos-etudes/EtudeCiblesClientele/etudes-cibles-de-clientele/#form"
             }
             hrefSecondButton={
               "/nos-etudes/EtudesReferencementThematique/les-epargnants-et-l-investissement-responsable"
