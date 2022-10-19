@@ -93,7 +93,7 @@ export default function HomeSections({
           </div>
           <ContentPanel
             itemHeight={itemHeight}
-            heading="Notre dernière publication"
+            heading="Nos dernières publications"
             theme="EtudeCiblesClientele"
             title="Quel rôle aujourd’hui de l’épargne retraite et salariale au
             sein de l’entreprise ?"
@@ -111,7 +111,7 @@ export default function HomeSections({
             itemPosition={itemPosition}
             slug={studies.data[0].attributes.slug}
             description="Regards croisés des Salariés et des Responsables
-            des Ressources Humaines."
+            des Ressources Humaines - Octobre 2022"
           />
           <CoverPanel
             itemHeight={itemHeight}
